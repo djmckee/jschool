@@ -300,5 +300,32 @@ h1 {
 }
 
 
+/* Media queries for screens smaller than standard desktop */
+@media screen and (max-width: 745px) {
+    /* below 745px, a collision between links and credit in the footer occurs,
+        stop this from happening by displaying it in a block instead of floating */
+    footer p {
+        margin-top: 16px;
+        float: none;
+        text-align: center;
+        position: inherit;
+    }
 
-/* TODO: Media queries for small screens! Specifically regarding header and footer.*/
+    /* display the list of links in block form, centered, with a decent amount of spacing between them vertically */
+    footer > ul > li {
+        text-align: center;
+        margin-right: 10px;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* display the nav links in the header in block form, unfloated, with some vertical spacing between them */
+    header ul {
+        float: none;
+    }
+
+    header ul li {
+        display: block;
+        margin-top: 10px;
+    }
+}
