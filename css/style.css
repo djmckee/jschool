@@ -1,7 +1,9 @@
 /* style.css is a stylesheet for the Jschool website,
     created by Dylan McKee on 15/04/2015  */
 
-/* Import reset stylesheet (taken from meyerweb.com) */
+/* Using imports in the CSS file to keep my HTML as symantically clean as possible
+    and not clutter it up with link tags */
+/* Import reset stylesheet (taken from http://meyerweb.com/eric/tools/css/reset/) */
 @import url("reset.css");
 
 
@@ -258,20 +260,43 @@ h1 {
     padding: 20px;
 }
 
-/* Generic animations */
+/* Generic animations - cross browser support prefixes generated with http://pleeease.io/play/ */
 @-webkit-keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
 }
 
 @keyframes fadeout {
-    from {opacity: 1;}
-    to {opacity: 0;}
+    from {opacity: 1;filter: alpha(opacity=100);}
+    to {opacity: 0;filter: alpha(opacity=0);}
 }
 
 .fade-out {
-    -webkit-animation: fadeout 1s forwards;
-    animation-name: fadeout 1s forwards;
+    -webkit-animation-name: fadeout;
+            animation-name: fadeout;
+    -webkit-animation-direction: forwards;
+            animation-direction: forwards;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+}
+
+@-webkit-keyframes fadein {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 100;filter: alpha(opacity=1);}
+}
+
+@keyframes fadein {
+    from {opacity: 0;filter: alpha(opacity=0);}
+    to {opacity: 100;filter: alpha(opacity=1);}
+}
+
+.fade-in {
+    -webkit-animation-name: fadein;
+            animation-name: fadein;
+    -webkit-animation-direction: forwards;
+            animation-direction: forwards;
+    -webkit-animation-duration: 1s;
+            animation-duration: 1s;
 }
 
 
