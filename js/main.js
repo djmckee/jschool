@@ -71,7 +71,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                 // okay the user's actually done something worth writing about.
 
                 // concatenate the string together using String() to typecase Numbers to Strings for simple concatenation purposes
-                stringToInclude = "You've completed " + String(completed) + " quizzes so far - well done!";
+                stringToInclude = "You've completed " + String(completed) + " of the quizzes so far - well done!";
 
             }
 
@@ -146,7 +146,15 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                     location.reload();
                 }
 
-            })
+            });
+
+            // see if the user's completed all quizzes yet?
+            if (Object.keys(profileData.data).length >= quizData.length) {
+                // they've completed (at least) as many quizzes as are available
+                // allow them to print the certificate.
+                var congratulationsMessage = '<p>You\'ve completed all quizzes - <a href="#" id="certificate-claim-button">click here</a> to get your certificate';
+                $('#quiz-info-lead').append(congratulationsMessage);
+            }
 
         }
 

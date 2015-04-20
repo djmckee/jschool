@@ -53,13 +53,11 @@ function addQuizScoreToProfileData(quizName, quizScore){
     saveProfileData();
 }
 
-
 function getCompletedQuizScores() {
 
     // return score data.
     return profileData.data;
 }
-
 
 function clearAllProfileDataForever(){
     // reset local storage data! The user wishes to reset their account.

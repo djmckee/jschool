@@ -363,11 +363,11 @@ h1 {
     }
 
     /* display the nav links in the header in block form, unfloated, with some vertical spacing between them */
-    header ul {
+    nav ul {
         float: none;
     }
 
-    header ul li {
+    nav ul li {
         display: block;
         margin-top: 10px;
     }
