@@ -35,6 +35,8 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
         // (from jQuery) to ensure that the DOM is loaded fully before performing JS.
         console.log('hello world');
 
+        // remove any potential 'no js!' warnings - JS is evidently enabled...
+        $('#no-js-warning').remove();
 
         // If the page contains any code tags, highlight their syntax with highlight.js.
         if ($('code') !== null) {
@@ -78,6 +80,57 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
 
             // append it!
             $('#homepage-lead').append(element);
+        }
+
+        if ($('#quiz-section') !== null) {
+            // it's the quizzes page!
+            // currently available quizzes are located in quizData (initialised by quizData.js)
+            // iterate through the quizData array, drawing a div for each one in the quiz-section grid.
+            for (var i = 0; i < quizData.length; i++) {
+                // get the current quiz element
+                var quiz = quizData[i];
+
+                // begin computing some HTML for it...
+                var quizElement = '<div>';
+
+                // add a title...
+                quizElement += ('<h3>' + quiz.title + '</h3>');
+
+                // add a description
+                quizElement += ('<p>' + quiz.description + '</p>');
+
+                // the user may have taken the quiz already? If they have, add a cool icon and thing telling them their score...
+                var score = profileData.data[quiz.title];
+
+                // if score is null, they haven't taken it - otherwise, they have, and it contains their quiz score
+                if (score !== null) {
+                    // yay, score is a number, they've taken the quiz.
+                    // formulate a HTML element to congratulate them...
+                    quizElement += '<p class="quiz-status">';
+                    quizElement += '<i class="fa fa-check-circle-o"></i>';
+                    quizElement += ' You\'ve already taken this quiz, with a score of ' + String(score);
+                    quizElement += ' out of ' + String(quiz.questions.length) + '.';
+                    quizElement += '</p>';
+
+                }
+
+                // compute Base 64 Encoding of the quiz name to use in link
+                var encodedQuizName = btoa(quiz.title);
+
+                // formulate link to quiz page...
+                var quizLinkComponent = 'quiz.html?quizid=' + encodedQuizName;
+
+                // add link element to grid element...
+                quizElement += ('<a href="' + quizLinkComponent + '"> Take the quiz! </a>');
+
+                // close element...
+                quizElement += '</div>';
+
+                // append to the grid...
+                $('#quiz-section').append(quizElement);
+
+            }
+
         }
 
     });

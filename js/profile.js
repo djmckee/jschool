@@ -54,6 +54,7 @@ function addQuizScoreToProfileData(quizName, quizScore){
 }
 
 
+
 function getCompletedQuizScores() {
 
     // return score data.

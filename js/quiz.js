@@ -20,8 +20,7 @@ var currentQuizTitle = '';
 // to be called in the document ready method of the main.js, once we've
 // established that the current page is indeed a quiz page.
 function initialiseQuizPage() {
-    // remove the 'no js!' warnings - JS is evidently enabled...
-    $('#no-js-warning').remove();
+
 
     // okay, work out what quiz we want... Base 64 decode the URL's quizid component...
     // get URL string piece
@@ -189,7 +188,7 @@ function finishQuiz() {
     // concatenate a 'well done' congratulations string
     var totalQuestions = String(quizQuestions.length);
 
-    var completionString = 'Well done! You got ' + String(correctAnswers) + ' out of ' + String(totalQuestions) + '.';
+    var completionString = 'Well done! You scored ' + String(correctAnswers) + ' out of ' + String(totalQuestions) + '.';
 
     // save score to profile!
     addQuizScoreToProfileData(currentQuizTitle, correctAnswers);
@@ -199,7 +198,7 @@ function finishQuiz() {
     var currentUrl = window.location.href;
 
     // concatenate twitter link (as per their docs: https://dev.twitter.com/web/tweet-button)
-    var twitterLink = 'https://twitter.com/home?status=I just scored ' + String(correctAnswers) + '/' + String(totalQuestions) + ' on Jschools...%20' + currentUrl;
+    var twitterLink = 'https://twitter.com/home?status=I just scored ' + String(correctAnswers) + '/' + String(totalQuestions) + ' on ' + currentQuizTitle + '...%20' + currentUrl;
 
     // concatenate facebook link too (as per API docs: https://developers.facebook.com/docs/plugins/share-button)
     var facebookLink = 'https://www.facebook.com/sharer/sharer.php?u=' + currentUrl;
@@ -215,6 +214,11 @@ function finishQuiz() {
         // programatically create the HTML elements required for the 'quiz complete' section
         var quizCompleteElement = '<div id="quiz-complete" class="fade-in">';
 
+        // add a nice large tick icon from FontAwesome
+        var tick = '<i class="fa fa-check-circle-o"></i>';
+
+        quizCompleteElement += tick;
+
         // add 'well done' message in pargraph element
         var wellDoneParagraph = '<p>' + completionString + '</p>';
 
@@ -229,9 +233,9 @@ function finishQuiz() {
         // append social sharing buttons
         var socialSharingContainer = '<div id="social-links">';
 
-        var facebookButton = '<a id="facebook-button" href="' + facebookLink + '"><i class="fa fa-facebook-square"></i> Share on Facebook</a>';
+        var facebookButton = '<a id="facebook-button" target="blank" href="' + facebookLink + '"><i class="fa fa-facebook-square"></i> Share on Facebook</a>';
 
-        var twitterButton = '<a id="twitter-button" href="' + twitterLink + '"><i class="fa fa-twitter-square"></i> Share on Twitter</a>';
+        var twitterButton = '<a id="twitter-button" target="blank" href="' + twitterLink + '"><i class="fa fa-twitter-square"></i> Share on Twitter</a>';
 
         // append and close their container...
         socialSharingContainer += facebookButton;

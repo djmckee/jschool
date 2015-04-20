@@ -10,6 +10,7 @@
 /* Import font dependencies from the fonts stylesheet */
 @import url("fonts.css");
 
+/* Body styles affect everything in the document - so very simply setting background-color and font up */
 body {
 
     /* A slightly off white background colour, in keeping with flat design */
@@ -19,38 +20,45 @@ body {
     font-family: 'Lato';
 }
 
-
+/* The header section is at the top of every page and contains logo and nav, in a coloured 'banner' */
 header {
+    /* A dark blue background for the banner, with some padding around it to give it proper shape/size */
     background-color: #2c3e50;
     min-height: 70px;
     padding: 10px 50px;
     padding-top: 40px;
 }
 
+/* Navigation element is present within the header tag on every page and contains a list of nav links */
 nav {
+    /* nav needs to be displayed to the right of the logo within the banner, so display inline where there's space */
     display: inline;
     font-weight: 300;
 }
 
+/* header logo is the large logo on the top left of the page within the header banner */
 #header-logo {
+    /* give it a large thin font, with light colour to contrast with the dark blue banner background */
     color: #ecf0f1;
     font-size: 32pt;
     display: inline;
     font-weight: 300;
 }
 
+/* links within the header don't want an ugly underline, they simply need a nice visible white colour */
 header a {
     text-decoration: none;
     color: #ecf0f1;
-
 }
 
-header ul {
+/* the navigation links must be floated to the right of the logo, and the list they're in doesn't require style (in the way of bullet points) */
+nav ul {
     list-style: none;
     float: right;
 }
 
-header ul li {
+/* nagiation 'list' items need to display inline next to each other, with a button style box around them, with rounded corners, and the link title in the center */
+nav ul li {
     display: inline-block;
     font-size: 14pt;
     padding: 10px;
@@ -62,10 +70,12 @@ header ul li {
     text-align: center;
 }
 
-header ul li:hover {
+/* navigation link buttons need to change their background colour when hovered over to show they're selected */
+nav ul li:hover {
     background-color: #34495e;
 }
 
+/* the footer is a banner bar present at the bottom of every page, with the same colour as the header banner */
 footer {
     min-height: 50px;
     background-color: #2c3e50;
@@ -256,8 +266,19 @@ h1 {
     background-color: #55acee;
 }
 
+#quiz-complete > i {
+    /* colour a nice flat green colour since it's a positive icon */
+    color: #2ecc71;
+    font-size: 90pt;
+}
+
 #social-links {
     padding: 20px;
+}
+
+.quiz-status {
+    color: #27ae60;
+    font-weight: 200;
 }
 
 /* Generic animations - cross browser support prefixes generated with http://pleeease.io/play/ */

@@ -7,6 +7,7 @@
 var quizData = [
     {
         title:"Quiz1",
+        description: "This is a rly good quiz srlsy. 10/10 would take.",
         questions: [
             {
                 question:"Question 1",
