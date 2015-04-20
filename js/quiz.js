@@ -230,6 +230,11 @@ function finishQuiz() {
 
         quizCompleteElement += savedString;
 
+        // append 'back to quizzes' link
+        var backLink = '<a href="quizzes.html">Back to quizzes...</a>';
+
+        quizCompleteElement += backLink;
+
         // append social sharing buttons
         var socialSharingContainer = '<div id="social-links">';
 

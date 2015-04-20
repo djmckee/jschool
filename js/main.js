@@ -53,8 +53,8 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
             initialiseQuizPage();
         }
 
-        if ($('#homepage-lead') !== null) {
-            // It's the homepage - and we need to append the brief "you've completed X of Y quizzes" text...
+        if ($('#quiz-info-lead') !== null) {
+            // We need to append the brief "you've completed X of Y quizzes" text...
             // load profile data in first...
             loadProfileData();
             // get quiz scores from persisted profile data (see profile.js)...
@@ -65,7 +65,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
             var completed = Object.keys(completedResults).length;
 
             // fill in deafult text in case the user hasn't completed quizzes yet
-            var stringToInclude = "It doesn't look like you've completed any quizzes yet - get started by choosing a tutorial below!";
+            var stringToInclude = "It doesn't look like you've completed any quizzes yet - get started by choosing from the selection below!";
 
             if (completed > 0) {
                 // okay the user's actually done something worth writing about.
@@ -79,7 +79,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
             var element = '<p>' + stringToInclude + '</p>';
 
             // append it!
-            $('#homepage-lead').append(element);
+            $('#quiz-info-lead').append(element);
         }
 
         if ($('#quiz-section') !== null) {
@@ -103,7 +103,8 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                 var score = profileData.data[quiz.title];
 
                 // if score is null, they haven't taken it - otherwise, they have, and it contains their quiz score
-                if (score !== null) {
+                // (comparison here using != because if they got a score of zero, we're not going to count it as done!)
+                if (score != null) {
                     // yay, score is a number, they've taken the quiz.
                     // formulate a HTML element to congratulate them...
                     quizElement += '<p class="quiz-status">';
@@ -121,7 +122,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                 var quizLinkComponent = 'quiz.html?quizid=' + encodedQuizName;
 
                 // add link element to grid element...
-                quizElement += ('<a href="' + quizLinkComponent + '"> Take the quiz! </a>');
+                quizElement += ('<a class="rounded-button" href="' + quizLinkComponent + '"> Take the quiz! </a>');
 
                 // close element...
                 quizElement += '</div>';
@@ -130,6 +131,22 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                 $('#quiz-section').append(quizElement);
 
             }
+
+            // add the 'clear all button' functionality
+            $('#quiz-clear-section > a').click(function(){
+                // prompt the user?
+                var shouldClear = confirm("Are you sure you want to clear all quiz score history forever?");
+
+                // if they want to, go ahead
+                if (shouldClear) {
+                    clearAllProfileDataForever();
+
+                    // refresh the page so it appears cleared to them too...
+                    // (looked this up at http://www.w3schools.com/jsref/met_loc_reload.asp)
+                    location.reload();
+                }
+
+            })
 
         }
 

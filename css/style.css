@@ -173,7 +173,7 @@ h1 {
     font-size: 40px;
 }
 
-.grid > div > a {
+.rounded-button {
     background-color: #27ae60;
     text-transform: uppercase;
     color: #f9f9f9;
@@ -184,7 +184,7 @@ h1 {
     font-weight: 200;
 }
 
-.grid > div > a:hover {
+.rounded-button:hover {
     background-color: #2ecc71;
 }
 
@@ -246,7 +246,14 @@ h1 {
     font-size: 15pt;
 }
 
-#quiz-complete a {
+#quiz-complete > a {
+    font-size: 16pt;
+    font-weight: 200;
+    text-decoration: none;
+    color: #2c3e50;
+}
+
+#social-links a {
     padding: 15px;
     color: #f9f9f9;
     margin-right: 10px;
@@ -258,11 +265,11 @@ h1 {
     margin-bottom: 10px;
 }
 
-#quiz-complete a#facebook-button {
+#social-links a#facebook-button {
     background-color: #3b5998;
 }
 
-#quiz-complete a#twitter-button {
+#social-links a#twitter-button {
     background-color: #55acee;
 }
 
@@ -276,9 +283,24 @@ h1 {
     padding: 20px;
 }
 
+/* Quizzes page styles */
 .quiz-status {
     color: #27ae60;
     font-weight: 200;
+}
+
+#quiz-clear-section {
+    text-align: center;
+    margin: 20px;
+}
+
+
+.red-button {
+    background-color: #c0392b;
+}
+
+.red-button:hover {
+    background-color: #e74c3c;
 }
 
 /* Generic animations - cross browser support prefixes generated with http://pleeease.io/play/ */
