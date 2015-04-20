@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1>Jschool</h1></a>
+
+        <!-- Navbar in the symantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="lead" id="homepage-lead">
+        <h1>Welcome to Jschool</h1>
+        <p>The premier front-end JavaScript learning resource, containing <a href="#">tutorials</a>,
+            <a href="#">quizzes</a>, and videos.</p>
+    </section>
+
+    <section id="tutorial-section" class="grid">
+        <div>
+            <h3>Tutorial name</h3>
+            <div class="icon"><i class="fa fa-history"></i></div>
+            <p>A description of this tutorial goes here!</p>
+            <a href="#">Get started</a>
+        </div>
+        <div>
+            <h3>Tutorial name</h3>
+            <div class="icon"></div>
+            <p>A description of this tutorial goes here!</p>
+            <a href="#">Get started</a>
+        </div>
+        <div>
+            <h3>Tutorial name</h3>
+            <div class="icon"></div>
+            <p>A description of this tutorial goes here!</p>
+            <a href="#">Get started</a>
+        </div>
+    </section>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be symantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>

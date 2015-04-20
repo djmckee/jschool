@@ -1,0 +1,86 @@
+// The main.js file that will be used on the JSchool site.
+// Created by Dylan McKee on 15/04/2015.
+
+// 3rd party JavaScript libraries that I've downloaded and am using are stored
+// within the js/lib directory.
+
+/* RequireJS is a library that I downloaded from http://requirejs.org/ on the
+   16/04/15, and is licensed under the MIT liscence.
+
+   It is being used as a dependency/library management system within this project.
+
+*/
+// set up RequireJS, configuring the libraries that I wish to import with it...
+require.config({
+    baseUrl: 'js/lib',
+    paths: {
+        // I downloaded the jQuery library from https://jquery.com/ on 16/04/15
+        // It is licensed under the jQuery license
+        jquery: 'jquery-2.1.3',
+        // I downloaded the highlight.js library from https://highlightjs.org/
+        // on 16/04/15. It is licensed under a suitably permissive library.
+        highlight: 'highlight.pack',
+        profileData: '../profile',
+        quizData: '../quizdata',
+        quiz: '../quiz'
+    }
+});
+
+// import our requirements - bringing the libraries we specified above into scope - and begin the actual JavaScripting
+require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
+    // this code is called once RequireJS has loaded the libraries I require.
+    $(document).ready(function() {
+        // whilst library loading will *probably* take longer than loading the DOM,
+        // I don't wanna assume anything - so be cautious and use document ready
+        // (from jQuery) to ensure that the DOM is loaded fully before performing JS.
+        console.log('hello world');
+
+
+        // If the page contains any code tags, highlight their syntax with highlight.js.
+        if ($('code') !== null) {
+            // If there's code in the page, highlight it...
+            // iterate through the code tags...
+            $('code').each(function(i, block) {
+                // highlight the code within the tag.
+                hljs.highlightBlock(block);
+            });
+        }
+
+        if ($('#quiz-container').length > 0) {
+            // it's a quiz page, initialise the quiz.js
+            initialiseQuizPage();
+        }
+
+        if ($('#homepage-lead') !== null) {
+            // It's the homepage - and we need to append the brief "you've completed X of Y quizzes" text...
+            // load profile data in first...
+            loadProfileData();
+            // get quiz scores from persisted profile data (see profile.js)...
+            var completedResults = getCompletedQuizScores();
+
+            // Count the number of keys in the completed quiz object (indicating the number of completed quizzes)
+            // I found the following counting method from http://stackoverflow.com/questions/126100/how-to-efficiently-count-the-number-of-keys-properties-of-an-object-in-javascrip
+            var completed = Object.keys(completedResults).length;
+
+            // fill in deafult text in case the user hasn't completed quizzes yet
+            var stringToInclude = "It doesn't look like you've completed any quizzes yet - get started by choosing a tutorial below!";
+
+            if (completed > 0) {
+                // okay the user's actually done something worth writing about.
+
+                // concatenate the string together using String() to typecase Numbers to Strings for simple concatenation purposes
+                stringToInclude = "You've completed " + String(completed) + " quizzes so far - well done!";
+
+            }
+
+            // add stringToInclude in the right kind of HTML element then append to '#homepage-lead'.
+            var element = '<p>' + stringToInclude + '</p>';
+
+            // append it!
+            $('#homepage-lead').append(element);
+        }
+
+    });
+
+
+});

@@ -1,0 +1,56 @@
+/* fonts.css is a stylesheet that handles font importing for the Jschools website,
+    created by Dylan McKee on 16/04/2015
+
+    Fonts are located in the fonts subdirectory relative to this CSS file
+
+    I looked up how to use the @font-face directive here... http://www.w3schools.com/css/css3_fonts.asp
+*/
+
+/* FontAwesome was taken from https://fortawesome.github.io/Font-Awesome/ on 16/04/2015 and is an
+    open source icon webfont, liscenced under the permissive MIT liscence */
+
+/* Import FontAwesome from it's relevant CSS file */
+@import url("fontawesome.css");
+
+/*
+    Lato is a flat web font. It's very nice and liscenced under the permissive Open Font Licsense,
+    of which I've included a copy (OFL.txt).
+
+    Credit to the original author, Łukasz Dziedzic, and to Google Fonts for providing
+    me with the actual files.
+
+    I downloaded this webfont on 15/04/2015 from https://www.google.com/fonts/specimen/Lato
+
+*/
+
+/* We want the normal variant... */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: normal;
+  src: url('fonts/Lato/Lato-Regular.ttf');
+}
+
+/* the bold variant... */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: bold;
+  src: url('fonts/Lato/Lato-Bold.ttf');
+}
+
+/* the italic variant... */
+@font-face {
+  font-family: 'Lato';
+  font-style: italic;
+  font-weight: normal;
+  src: url('fonts/Lato/Lato-Italic.ttf');
+}
+
+/* and the light variant... */
+@font-face {
+  font-family: 'Lato';
+  font-style: normal;
+  font-weight: 300;
+  src: url('fonts/Lato/Lato-Light.ttf');
+}
