@@ -1,7 +1,7 @@
 /* style.css is a stylesheet for the Jschool website,
     created by Dylan McKee on 15/04/2015  */
 
-/* Using imports in the CSS file to keep my HTML as symantically clean as possible
+/* Using imports in the CSS file to keep my HTML as semantically clean as possible
     and not clutter it up with link tags */
 /* Import reset stylesheet (taken from http://meyerweb.com/eric/tools/css/reset/) */
 @import url("reset.css");
