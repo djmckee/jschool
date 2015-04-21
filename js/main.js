@@ -1,3 +1,5 @@
+"use strict";
+// ^ using strict JavaScript to ensure speed and enforce code quality.
 // The main.js file that will be used on the JSchool site.
 // Created by Dylan McKee on 15/04/2015.
 
@@ -23,7 +25,7 @@ require.config({
         profileData: '../profile',
         quizData: '../quizdata',
         quiz: '../quiz'
-    }
+        }
 });
 
 // import our requirements - bringing the libraries we specified above into scope - and begin the actual JavaScripting

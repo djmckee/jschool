@@ -20,7 +20,6 @@ var quizData = [
                 correctAnswer: 1
             }
         ]
-
     }
 
 ];
