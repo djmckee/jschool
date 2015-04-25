@@ -24,7 +24,9 @@ body {
 header {
     /* A dark blue background for the banner, with some padding around it to give it proper shape/size */
     background-color: #2c3e50;
+    /* the header needs a minimum height so that desktop sized screens display it properly */
     min-height: 70px;
+    /* some padding means logos/links don't collide with the sides of the viewport */
     padding: 10px 50px;
     padding-top: 40px;
 }
@@ -83,6 +85,8 @@ footer {
     padding: 20px;
 }
 
+/* the footer paragraph contains credit notice, and must be in a light font on teh right hand side,
+    aligned vertiacally with the links on the left hand of the footer (when on a desktop sized viewport) */
 footer p {
     font-weight: 200;
     float: right;
@@ -91,57 +95,73 @@ footer p {
     top: -16px;
 }
 
+/* footer links are displayed in a horizontal manner with some seperation between them */
 footer > ul > li {
     display: inline;
     margin-left: 10px;
     margin-right: 10px;
 }
 
+/* footer links need to be visable on a dark background, and don't want any underlining */
 footer a {
     text-decoration: none;
     font-weight: normal;
     color: #ecf0f1;
 }
 
+/* hovered footer links go a little lighter to show the user they're hovered */
 footer a:hover {
     color: #f9f9f9;
 }
 
+/* sections all require some padding to ensure their contents don't bump into the walls
+    of the viewport in any manner */
 section {
     padding: 20px 30px;
 }
 
+/* A good size heading, with padding around it to give extra prominence */
 h1 {
     font-size: 36pt;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
+/* lead text needs to be large and light, and centered, for prominence */
 .lead {
     text-align: center;
     font-weight: 300;
     font-size: 16pt;
 }
 
+/* individual paragraph elements want extra spacing (vertically) to make them
+    more readable */
 .lead p {
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
+/* all section links should be in a dark blue colour, with bold text, but no underline */
 section a {
     color: #2c3e50;
     text-decoration: none;
     font-weight: bolder;
 }
 
+/* change to being underlined on hover to show their state to the user */
 section a:hover {
     text-decoration: underline;
 }
 
+/* the grid is to contain div's - tiled out from the center */
 .grid {
     text-align: center;
 }
 
+/* divs within the grid must have a max width suitable for small screens,
+    and must display inline-block (to physically be in grid form, resizable
+    as the browser resizes). They have a dark blue border around them, with
+    rounded corners */
 .grid > div {
     max-width: 300px;
     width: 100%;
@@ -153,6 +173,7 @@ section a:hover {
     vertical-align: top;
 }
 
+/* grid items have a prominent bold heading */
 .grid > div > h3 {
     font-size: 16pt;
     font-weight: bold;
@@ -160,10 +181,12 @@ section a:hover {
     margin-bottom: 10px;
 }
 
+/* text needs spaced properly between the grid item's heading and borders */
 .grid > div > p {
     margin-top: 20px;
     margin-bottom: 30px;
 }
+
 
 #tutorial-section > div > div > i{
     color: #f9f9f9;
@@ -173,6 +196,7 @@ section a:hover {
     font-size: 40px;
 }
 
+/* a re-usable rounded button to apply to link elements, with a green background colour */
 .rounded-button {
     background-color: #27ae60;
     text-transform: uppercase;
@@ -184,6 +208,7 @@ section a:hover {
     font-weight: 200;
 }
 
+/* the button turns a lighter green when hoevered, and its text goes bolder (but not underlined) */
 .rounded-button:hover {
     background-color: #2ecc71;
     text-decoration: none;
@@ -191,18 +216,21 @@ section a:hover {
 }
 
 /* Quiz styles */
+/* question text is to contain the text for the question - medium weighted, fairly large */
 #question-text {
     font-weight: 400;
     font-size: 26pt;
     margin-top: 20px;
 }
 
+/* the title of the quiz - large, bold, prominent */
 #quiz-title {
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 35pt;
 }
 
+/* a slightly rounded, wide button - to hold possible quiz answer choices */
 .answer-button, .answer-button:visited {
     text-align: center;
     padding: 10px;
@@ -220,15 +248,18 @@ section a:hover {
     max-width: 350px;
 }
 
+/* the button goes a ligter blue when hovered over to indicate to the user that they're about to select that answer */
 .answer-button:hover {
     background-color: #4C6C8B;
 }
 
+/* a section below the quiz that contains the quiz question number, in the center */
 #progress-update {
     text-align: center;
     font-weight: 200;
 }
 
+/* the progress bar in the progress section doesn't want to be *too* wide */
 #progress-update > progress{
     max-width: 300px;
 }
@@ -412,4 +443,10 @@ section a:hover {
         display: block;
         margin-top: 10px;
     }
+
+    /* credits need a longer run on smaller screens due to text wrapping - increase the height */
+    #scrolling-credits {
+        height: 720px;
+    }
+
 }
