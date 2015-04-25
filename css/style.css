@@ -128,13 +128,13 @@ h1 {
     padding-bottom: 5px;
 }
 
-.lead a {
+section a {
     color: #2c3e50;
     text-decoration: none;
     font-weight: bolder;
 }
 
-.lead a:hover {
+section a:hover {
     text-decoration: underline;
 }
 
@@ -186,6 +186,8 @@ h1 {
 
 .rounded-button:hover {
     background-color: #2ecc71;
+    text-decoration: none;
+    font-weight: bolder;
 }
 
 /* Quiz styles */
@@ -306,21 +308,40 @@ h1 {
 /* Credits */
 @-webkit-keyframes creditroll {
     from {top: -100%;}
-    to {top: 100%;}
+    to {top: 0;}
 }
 
 @keyframes creditroll {
     from {top: -100%;}
-    to {top: 100%;}
+    to {top: 0;}
 }
 
 #scrolling-credits {
+    overflow: hidden;
+    position: relative;
+    height: 420px;
+}
+
+#scrolling-credits > div {
+    position: absolute;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: calc(100% - 50px);
+    line-height: 200%;
             -webkit-animation-name: creditroll;
                     animation-name: creditroll;
-            -webkit-animation-duration: 10s;
-                    animation-duration: 10s;
-            -webkit-animation-delay: 1s;
-                    animation-delay: 1s;
+            -webkit-animation-duration: 3s;
+                    animation-duration: 3s;
+                    -webkit-animation-direction: forwards;
+                            animation-direction: forwards;
+
+}
+
+#scrolling-credits > div > p {
+    font-weight: 200;
+    font-size: 16pt;
+
 }
 
 /* Generic animations - cross browser support prefixes generated with http://pleeease.io/play/ */
