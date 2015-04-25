@@ -151,22 +151,32 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
 
             });
 
-            // add 'make certificate' button functionality...
-            $('#certificate-claim-button').click(function(){
-                // check the user's earned a certificate, otherwise fail with alert!
-                if (Object.keys(profileData.data).length >= quizData.length) {
-                    generateCertificate();
-                } else {
-                    alert('Sorry - it doesn\'t look like you\'ve earned a certificate yet...');
-                }
-            });
-
             // see if the user's completed all quizzes yet?
             if (Object.keys(profileData.data).length >= quizData.length) {
                 // they've completed (at least) as many quizzes as are available
                 // allow them to print the certificate.
-                var congratulationsMessage = '<p>You\'ve completed all quizzes - <a href="#" id="certificate-claim-button">click here</a> to get your certificate';
+                var congratulationsMessage = '<p id="claim-text">You\'ve completed all quizzes - <a href="#" id="certificate-claim-button">click here</a> to get your certificate';
                 $('#quiz-info-lead').append(congratulationsMessage);
+
+                // add 'make certificate' button functionality...
+                $('#certificate-claim-button').click(function(){
+                    // check the user's earned a certificate, otherwise fail with alert!
+                    if (Object.keys(profileData.data).length >= quizData.length) {
+                        generateCertificate();
+
+                        // and remove the claim text! (animating it out smoothly)
+                        $('p#claim-text').addClass('fade-out');
+
+                        // remove from DOM once CSS fade is complete...
+                        setTimeout(function(){
+                            $('p#claim-text').remove();
+                        }, 900);
+
+                    } else {
+                        alert('Sorry - it doesn\'t look like you\'ve earned a certificate yet...');
+                    }
+                });
+
             }
 
         }
