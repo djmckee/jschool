@@ -24,12 +24,13 @@ require.config({
         highlight: 'highlight.pack',
         profileData: '../profile',
         quizData: '../quizdata',
-        quiz: '../quiz'
+        quiz: '../quiz',
+        certificategenerator: '../certificategenerator'
         }
 });
 
 // import our requirements - bringing the libraries we specified above into scope - and begin the actual JavaScripting
-require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
+require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificategenerator"], function() {
     // this code is called once RequireJS has loaded the libraries I require.
     $(document).ready(function() {
         // whilst library loading will *probably* take longer than loading the DOM,
@@ -55,7 +56,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
             initialiseQuizPage();
         }
 
-        if ($('#quiz-info-lead') !== null) {
+        if ($('#quiz-info-lead').length > 0) {
             // We need to append the brief "you've completed X of Y quizzes" text...
             // load profile data in first...
             loadProfileData();
@@ -84,7 +85,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
             $('#quiz-info-lead').append(element);
         }
 
-        if ($('#quiz-section') !== null) {
+        if ($('#quiz-section').length > 0) {
             // it's the quizzes page!
             // currently available quizzes are located in quizData (initialised by quizData.js)
             // iterate through the quizData array, drawing a div for each one in the quiz-section grid.
@@ -148,6 +149,16 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz"], function() {
                     location.reload();
                 }
 
+            });
+
+            // add 'make certificate' button functionality...
+            $('#certificate-claim-button').click(function(){
+                // check the user's earned a certificate, otherwise fail with alert!
+                if (Object.keys(profileData.data).length >= quizData.length) {
+                    generateCertificate();
+                } else {
+                    alert('Sorry - it doesn\'t look like you\'ve earned a certificate yet...');
+                }
             });
 
             // see if the user's completed all quizzes yet?
