@@ -7,7 +7,7 @@
 
 // Storing SVG data as a variable because AJAX doesn't work locally in Google Chrome due to security reasons, grr.
 // In real life this would obviously be serverside in an appropriate location in its own SVG file.
-var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">'
+var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">';
 certificateSvgData += '<rect id="box" fill="#2C3E50" stroke="#000000" stroke-miterlimit="10" width="841.89" height="595.28"/>';
 certificateSvgData += '<rect id="box_1_" x="33.904" y="23.972" fill="#F1F2F2" stroke="#000000" stroke-miterlimit="10" width="774.083" height="547.336"/>';
 certificateSvgData += '<rect id="box_2_" x="64.479" y="45.591" fill="#35495E" stroke="#000000" stroke-miterlimit="10" width="712.931" height="504.098"/>';
@@ -67,7 +67,13 @@ function generateCertificate(){
     var encodedSvg = btoa($('div#certificate-container').html());
 
     // SVG downloading via link from http://stackoverflow.com/questions/2483919/how-to-save-svg-canvas-to-local-filesystem
-    var linkString = '<a class="button" href-lang="image/svg+xml" href="data:image/svg+xml;base64,\n' + encodedSvg + '" target="_blank" download="jschool-certificate.svg">Download your certificate!</a>';
+    var linkString = '<a class="button" href-lang="image/svg+xml" href="data:image/svg+xml;base64,\n';
+
+    // append in the encoded SVG data
+    linkString =+ encodedSvg;
+
+    // and close the link tag
+    linkString =+ '" target="_blank" download="jschool-certificate.svg">Download your certificate!</a>';
 
     // append the link (as a styled 'button' - thanks to the button CSS class) to the quiz-info-lead section...
     $('#quiz-info-lead').append(linkString);
