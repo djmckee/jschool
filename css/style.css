@@ -10,6 +10,11 @@
 /* Import font dependencies from the fonts stylesheet */
 @import url("fonts.css");
 
+
+/* Import the theme that highlight.js requires for syntax colouring */
+@import url("highlightjs-theme.css");
+
+
 /* Body styles affect everything in the document - so very simply setting background-color and font up */
 body {
 

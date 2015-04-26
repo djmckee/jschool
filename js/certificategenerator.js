@@ -20,7 +20,8 @@ certificateSvgData += '<text id="name_label" style="text-anchor: middle; font-we
 certificateSvgData += '<rect x="209.239" y="326.298" fill="none" width="435.412" height="139.158"/>';
 certificateSvgData += '<text transform="matrix(1 0 0 1 220.9893 353.252)"><tspan x="0" y="0" fill="#FDFDFE" font-family="\'Lato-Light\', \'Lato\', Helvetica, Arial, sans-serif" font-size="37">has completed the Jschool </tspan><tspan x="42.494" y="44.4" fill="#FDFDFE" font-family="\'Lato-Light\', \'Lato\', Helvetica, Arial, sans-serif" font-size="37">tutorials in front-end </tspan><tspan x="13.92" y="88.8" fill="#FDFDFE" font-family="\'Lato-Light\', \'Lato\', Helvetica, Arial, sans-serif" font-size="37">JavaScript development.</tspan></text>';
 certificateSvgData += '<rect x="64.479" y="518.965" fill="none" width="712.931" height="30.725"/>';
-certificateSvgData += '<text id="date_label" style="text-anchor: middle; font-weight: 200;" transform="matrix(1 0 0 1 367.0859 533.7051)" fill="#FDFDFE" font-family="\'Lato-Regular\'" font-size="20">22/04/2016</text> </svg>';
+certificateSvgData += '<text id="date_label" style="text-anchor: middle; font-weight: 200;" transform="matrix(1 0 0 1 367.0859 533.7051)" fill="#FDFDFE" font-family="\'Lato-Regular\'" font-size="20">22/04/2016</text>';
+certificateSvgData += '</svg>';
 
 function generateCertificate(){
     // get the contents of certificateSvgData rendered into

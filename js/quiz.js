@@ -28,7 +28,19 @@ function initialiseQuizPage() {
     var quizIdEncoded = getQueryComponents.split("quizid=")[1];
 
     // looked up Base 64 Decode at https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob
-    var decodedName = window.atob(quizIdEncoded);
+    var decodedName = null;
+
+    try {
+        // this needs to be a in a try/catch block because invalid quiz names throw
+        // an ugly InvalidCharacterError which needs catching...
+        decodedName = window.atob(quizIdEncoded);
+    } catch (error) {
+        // keep decodedName as null - we'll be able to pick up the error later.
+        decodedName = null;
+    }
+
+    // set title placeholder
+    currentQuizTitle = decodedName;
 
     // iterate through the quizzes until we find a name that matches the current one...
     for (var i = 0; i < quizData.length; i++) {
@@ -43,11 +55,25 @@ function initialiseQuizPage() {
         }
     }
 
-    //okay, if quizQuestions is null by this point, something's gone *horribly* wrong.
-    //TODO: warn user if quizQuestions is null
 
-    // set title placeholder
-    currentQuizTitle = decodedName;
+    //okay, if quizQuestions is null by this point, something's gone *horribly* wrong.
+    if (quizQuestions.length < 1 || quizQuestions === null) {
+        // something's gone horribly wrong - let's direct users to the quizzes page...
+        // remove the progress and answer sections...
+        $('#progress-update').remove();
+        $('#answer-container').remove();
+
+        // title needs to be 'Quiz Not Found'...
+        currentQuizTitle = 'Quiz Not Found';
+
+        // fill in some warning text... (hijacking the nice question-number CSS style)
+        // and make it fade in using our CSS animation class...
+        var warningElement = '<p class="fade-in" id="question-number">We\'re terribly sorry but the quiz in question couldn\'t be found - please select from the choices <a href="quizzes.html">here</a>.</p>';
+
+        // append the warning to the quiz container...
+        $('.lead').append(warningElement);
+    }
+
 
     // set title up... (both window title and title in HTML)
     window.document.title = (currentQuizTitle + ' | Jschools Quiz');
@@ -57,8 +83,12 @@ function initialiseQuizPage() {
     // set the progress bar's maximum value to the number of questions in the quiz
     $('#progress-update > progress').attr('max', quizQuestions.length);
 
-    // call the nextQuestionClicked method to set-up the first question... (cutting down on code duplication)
-    nextQuestionClicked();
+    // check there's some questions before we actually try to display them...
+    if (quizQuestions.length > 0) {
+        // okay, there's actually questions - go ahead...
+        // call the nextQuestionClicked method to set-up the first question... (cutting down on code duplication)
+        nextQuestionClicked();
+    }
 
 }
 
