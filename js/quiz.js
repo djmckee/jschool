@@ -21,19 +21,21 @@ var currentQuizTitle = '';
 // established that the current page is indeed a quiz page.
 function initialiseQuizPage() {
 
-
-    // okay, work out what quiz we want... Base 64 decode the URL's quizid component...
-    // get URL string piece
-    var getQueryComponents = window.location.search.split("?")[1];
-    var quizIdEncoded = getQueryComponents.split("quizid=")[1];
-
-    // looked up Base 64 Decode at https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob
+    // placeholder variable for the quiz name, so we can perform null checking later on.
     var decodedName = null;
 
     try {
         // this needs to be a in a try/catch block because invalid quiz names throw
-        // an ugly InvalidCharacterError which needs catching...
+        // an ugly InvalidCharacterError - or a TypeError - which needs catching...
+
+        // okay, work out what quiz we want... Base 64 decode the URL's quizid component...
+        // get URL string piece
+        var getQueryComponents = window.location.search.split("?")[1];
+        var quizIdEncoded = getQueryComponents.split("quizid=")[1];
+
+        // looked up Base 64 Decode at https://developer.mozilla.org/en-US/docs/Web/API/WindowBase64/atob
         decodedName = window.atob(quizIdEncoded);
+
     } catch (error) {
         // keep decodedName as null - we'll be able to pick up the error later.
         decodedName = null;
@@ -66,11 +68,10 @@ function initialiseQuizPage() {
         // title needs to be 'Quiz Not Found'...
         currentQuizTitle = 'Quiz Not Found';
 
-        // fill in some warning text... (hijacking the nice question-number CSS style)
-        // and make it fade in using our CSS animation class...
-        var warningElement = '<p class="fade-in" id="question-number">We\'re terribly sorry but the quiz in question couldn\'t be found - please select from the choices <a href="quizzes.html">here</a>.</p>';
+        // fill in some warning text and make it fade in using our CSS animation class...
+        var warningElement = '<p class="fade-in">We\'re terribly sorry but the quiz in question couldn\'t be found - please select from the choices <a href="quizzes.html">here</a>.</p>';
 
-        // append the warning to the quiz container...
+        // append the warning to the lead text container...
         $('.lead').append(warningElement);
     }
 
