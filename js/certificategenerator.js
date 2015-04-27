@@ -68,13 +68,18 @@ function generateCertificate(){
     var encodedSvg = btoa($('div#certificate-container').html());
 
     // SVG downloading via link from http://stackoverflow.com/questions/2483919/how-to-save-svg-canvas-to-local-filesystem
-    var linkString = '<a class="button" href-lang="image/svg+xml" href="data:image/svg+xml;base64,\n';
+    var linkOpen = '<a class="button" href-lang="image/svg+xml" href="data:image/svg+xml;base64,\n';
 
     // append in the encoded SVG data
-    linkString =+ encodedSvg;
+    dataString = encodedSvg.toString();
 
     // and close the link tag
-    linkString =+ '" target="_blank" download="jschool-certificate.svg">Download your certificate!</a>';
+    var linkClose = '" target="_blank" download="jschool-certificate.svg">Download your certificate!</a>';
+
+    // concatenate these together...
+    var linkString = linkOpen.concat(dataString, linkClose);
+
+    console.log(linkString);
 
     // append the link (as a styled 'button' - thanks to the button CSS class) to the quiz-info-lead section...
     $('#quiz-info-lead').append(linkString);
