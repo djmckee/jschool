@@ -56,6 +56,7 @@ function generateCertificate(){
     // I looked up date formatting at http://stackoverflow.com/questions/5250244/jquery-date-formatting
     var date = new Date();
     var day = date.getDate();
+    // plus one here because JavaScript dates are zero indexed :o
     var month =  (date.getMonth() + 1);
     var year = date.getFullYear();
 
@@ -70,16 +71,14 @@ function generateCertificate(){
     // SVG downloading via link from http://stackoverflow.com/questions/2483919/how-to-save-svg-canvas-to-local-filesystem
     var linkOpen = '<a class="button" href-lang="image/svg+xml" href="data:image/svg+xml;base64,\n';
 
-    // append in the encoded SVG data
-    dataString = encodedSvg.toString();
+    // create a data String object using the toString method, ensuring type safety
+    var dataString = encodedSvg.toString();
 
-    // and close the link tag
+    // and close the link tag (note use of HTML5's download attribute to specify a download filename and encourage the browser to download the file rather than viewing in a window)
     var linkClose = '" target="_blank" download="jschool-certificate.svg">Download your certificate!</a>';
 
     // concatenate these together...
     var linkString = linkOpen.concat(dataString, linkClose);
-
-    console.log(linkString);
 
     // append the link (as a styled 'button' - thanks to the button CSS class) to the quiz-info-lead section...
     $('#quiz-info-lead').append(linkString);
