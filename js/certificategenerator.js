@@ -6,7 +6,9 @@
 // Created by Dylan McKee on 21/04/2015.
 
 // Storing SVG data as a variable because AJAX doesn't work locally in Google Chrome due to security reasons, grr.
-// In real life this would obviously be serverside in an appropriate location in its own SVG file.
+// In real life this would obviously be serverside in an appropriate location in its own SVG file, but this sadly
+// isn't possible here due to Cross Site Scripting security limitations.
+// The SVG data is from certificate.svg, in the images folder.
 var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">';
 certificateSvgData += '<rect id="box" fill="#2C3E50" stroke="#000000" stroke-miterlimit="10" width="841.89" height="595.28"/>';
 certificateSvgData += '<rect id="box_1_" x="33.904" y="23.972" fill="#F1F2F2" stroke="#000000" stroke-miterlimit="10" width="774.083" height="547.336"/>';

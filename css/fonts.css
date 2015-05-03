@@ -28,7 +28,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: normal;
-  src: url('fonts/Lato/Lato-Regular.ttf');
+  src: url('../fonts/Lato/Lato-Regular.ttf');
 }
 
 /* the bold variant... */
@@ -36,7 +36,7 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: bold;
-  src: url('fonts/Lato/Lato-Bold.ttf');
+  src: url('../fonts/Lato/Lato-Bold.ttf');
 }
 
 /* the italic variant... */
@@ -44,7 +44,7 @@
   font-family: 'Lato';
   font-style: italic;
   font-weight: normal;
-  src: url('fonts/Lato/Lato-Italic.ttf');
+  src: url('../fonts/Lato/Lato-Italic.ttf');
 }
 
 /* and the light variant... */
@@ -52,5 +52,5 @@
   font-family: 'Lato';
   font-style: normal;
   font-weight: 300;
-  src: url('fonts/Lato/Lato-Light.ttf');
+  src: url('../fonts/Lato/Lato-Light.ttf');
 }
