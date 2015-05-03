@@ -161,6 +161,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
                 $('#certificate-claim-button').click(function(){
                     // check the user's earned a certificate, otherwise fail with alert!
                     if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
+                        // they've earned it - go ahead and generate...
                         CertificateGenerator.generateCertificate();
 
                         // and remove the claim text! (animating it out smoothly)
