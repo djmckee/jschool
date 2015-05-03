@@ -2,64 +2,68 @@
 // seraialized inside of JSON objects, and persisted using local storage.
 // Created by Dylan McKee on 16/04/2015.
 
-// A 'constant' key to use to save profile data under in local storage with.
-var PROFILE_DATA_SAVE_KEY = "profileData";
+var Profile = new function() {
 
-// The profile data object that our saved data is loaded into.
-var profileData = {
-    // a blank data field, to eventually hopefully be filled with key/value pairs
-    // with a string as the key (the quiz name), and a number as the value (the quiz score).
-    data: {}
-};
+    // A 'constant' key to use to save profile data under in local storage with.
+    var PROFILE_DATA_SAVE_KEY = "profileData";
 
-function loadProfileData(){
-    // to be called on quiz page initialisation/homepage initialisation.
-    // this function loads in profile data from local storage, into the data field of the variable in this file.
+    // The profile data object that our saved data is loaded into.
+    this.profileData = {
+        // a blank data field, to eventually hopefully be filled with key/value pairs
+        // with a string as the key (the quiz name), and a number as the value (the quiz score).
+        data: {}
+    };
 
-    // get item from localStorage
-    var seraialized = window.localStorage.getItem(PROFILE_DATA_SAVE_KEY);
+    this.loadProfileData = function(){
+        // to be called on quiz page initialisation/homepage initialisation.
+        // this function loads in profile data from local storage, into the data field of the variable in this file.
 
-    // if there's nothing there give up, set the data field to a blank object and return...
-    if (seraialized === null) {
-        // no data to retrieve,
-        // set data field to a blank object...
-        profileData.data = {};
-        // and return!
-        return;
+        // get item from localStorage
+        var seraialized = window.localStorage.getItem(PROFILE_DATA_SAVE_KEY);
+
+        // if there's nothing there give up, set the data field to a blank object and return...
+        if (seraialized === null) {
+            // no data to retrieve,
+            // set data field to a blank object...
+            this.profileData.data = {};
+            // and return!
+            return;
+        }
+
+        // okay we've verified there's some seraialized data, make it into an object by parsing the JSON...
+        var deserialized = JSON.parse(seraialized);
+
+        // and set the deserialized object to be the data field of the profileData object.
+        this.profileData.data = deserialized;
+
     }
 
-    // okay we've verified there's some seraialized data, make it into an object by parsing the JSON...
-    var deserialized = JSON.parse(seraialized);
+    this.saveProfileData = function(){
+        // serailize the contents of the data field of the profileData object into a JSON string...
+        var seraialized = JSON.stringify(this.profileData.data);
 
-    // and set the deserialized object to be the data field of the profileData object.
-    profileData.data = deserialized;
+        // save the string to local storage...
+        window.localStorage.setItem(PROFILE_DATA_SAVE_KEY, seraialized);
 
-}
+    }
 
-function saveProfileData(){
-    // serailize the contents of the data field of the profileData object into a JSON string...
-    var seraialized = JSON.stringify(profileData.data);
+    this.addQuizScoreToProfileData = function(quizName, quizScore){
+        // set profileData data key/value pair to what we've been passed....
+        this.profileData.data[quizName] = quizScore;
 
-    // save the string to local storage...
-    window.localStorage.setItem(PROFILE_DATA_SAVE_KEY, seraialized);
+        // save changes we've made.
+        this.saveProfileData();
+    }
 
-}
+    this.getCompletedQuizScores = function() {
 
-function addQuizScoreToProfileData(quizName, quizScore){
-    // set profileData data key/value pair to what we've been passed....
-    profileData.data[quizName] = quizScore;
+        // return score data.
+        return this.profileData.data;
+    }
 
-    // save changes we've made.
-    saveProfileData();
-}
+    this.clearAllProfileDataForever = function(){
+        // reset local storage data! The user wishes to reset their account.
+        window.localStorage.clear();
+    }
 
-function getCompletedQuizScores() {
-
-    // return score data.
-    return profileData.data;
-}
-
-function clearAllProfileDataForever(){
-    // reset local storage data! The user wishes to reset their account.
-    window.localStorage.clear();
 }

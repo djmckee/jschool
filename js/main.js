@@ -53,15 +53,15 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
 
         if ($('#quiz-container').length > 0) {
             // it's a quiz page, initialise the quiz.js
-            initialiseQuizPage();
+            Quiz.initialiseQuizPage();
         }
 
         if ($('#quiz-info-lead').length > 0) {
             // We need to append the brief "you've completed X of Y quizzes" text...
             // load profile data in first...
-            loadProfileData();
+            Profile.loadProfileData();
             // get quiz scores from persisted profile data (see profile.js)...
-            var completedResults = getCompletedQuizScores();
+            var completedResults = Profile.getCompletedQuizScores();
 
             // Count the number of keys in the completed quiz object (indicating the number of completed quizzes)
             // I found the following counting method from http://stackoverflow.com/questions/126100/how-to-efficiently-count-the-number-of-keys-properties-of-an-object-in-javascrip
@@ -89,9 +89,9 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             // it's the quizzes page!
             // currently available quizzes are located in quizData (initialised by quizData.js)
             // iterate through the quizData array, drawing a div for each one in the quiz-section grid.
-            for (var i = 0; i < quizData.length; i++) {
+            for (var i = 0; i < QuizData.data.length; i++) {
                 // get the current quiz element
-                var quiz = quizData[i];
+                var quiz = QuizData.data[i];
 
                 // begin computing some HTML for it...
                 var quizElement = '<div>';
@@ -103,7 +103,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
                 quizElement += ('<p>' + quiz.description + '</p>');
 
                 // the user may have taken the quiz already? If they have, add a cool icon and thing telling them their score...
-                var score = profileData.data[quiz.title];
+                var score = Profile.profileData.data[quiz.title];
 
                 // if score is null, they haven't taken it - otherwise, they have, and it contains their quiz score
                 // (comparison here using != because if they got a score of zero, we're not going to count it as done!)
@@ -142,7 +142,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
 
                 // if they want to, go ahead
                 if (shouldClear) {
-                    clearAllProfileDataForever();
+                    Profile.clearAllProfileDataForever();
 
                     // refresh the page so it appears cleared to them too...
                     // (looked this up at http://www.w3schools.com/jsref/met_loc_reload.asp)
@@ -152,7 +152,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             });
 
             // see if the user's completed all quizzes yet?
-            if (Object.keys(profileData.data).length >= quizData.length) {
+            if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
                 // they've completed (at least) as many quizzes as are available
                 // allow them to print the certificate.
                 var congratulationsMessage = '<p id="claim-text">You\'ve completed all quizzes - <a href="#" id="certificate-claim-button">click here</a> to get your certificate';
@@ -161,8 +161,8 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
                 // add 'make certificate' button functionality...
                 $('#certificate-claim-button').click(function(){
                     // check the user's earned a certificate, otherwise fail with alert!
-                    if (Object.keys(profileData.data).length >= quizData.length) {
-                        generateCertificate();
+                    if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
+                        CertificateGenerator.generateCertificate();
 
                         // and remove the claim text! (animating it out smoothly)
                         $('p#claim-text').addClass('fade-out');
