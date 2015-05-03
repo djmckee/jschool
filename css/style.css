@@ -146,6 +146,12 @@ h1 {
     padding-bottom: 5px;
 }
 
+/* about page paragraphs require decent vertical spacing */
+.about p {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 /* all section links should be in a dark blue colour, with bold text, but no underline */
 section a {
     color: #2c3e50;

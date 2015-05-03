@@ -36,7 +36,6 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
         // whilst library loading will *probably* take longer than loading the DOM,
         // I don't wanna assume anything - so be cautious and use document ready
         // (from jQuery) to ensure that the DOM is loaded fully before performing JS.
-        console.log('hello world');
 
         // remove any potential 'no js!' warnings - JS is evidently enabled...
         $('#no-js-warning').remove();

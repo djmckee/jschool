@@ -1,5 +1,5 @@
 // quizdata.js stores quiz data in a JavaScript array of objects (which contain the actual
-// quiz data itsself), in a JavaScript variable.
+// quiz data itsself).
 // I've used this seperate data file approach to provide a decent level of abstraction
 // within my JavaScript and split up my data model from my actually code that controls the quiz view.
 // Created by Dylan McKee on 16/04/2015.
