@@ -384,6 +384,7 @@ section a:hover {
 /* code examples need to be in a monospaced font! */
 code {
     font-family: monospace;
+    border-radius: 10px;
 }
 
 /* code examples need to be preceeded by a 'Code Example title too' */
@@ -399,6 +400,7 @@ code::before {
     background-color: #e67e22;
     color: #ecf0f1;
     padding: 15px;
+    border-radius: 10px;
 }
 
 /* they require a title to be inserted before them too... */
