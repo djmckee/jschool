@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Introduction Tutorial | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>Introduction</h1>
+            <p>JavaScript is a programming language that can be used to make websites interactive, it is ran entierly in the web browser (client side) after being downloaded from the server. JavaScript is interpreted, meaning  it does not need to be compiled - it is written then ran.</p>
+        </section>
+        <section>
+            <h2>What makes JavaScript special?</h2>
+            <p>JavaScript is the only language that can be used to script within the web browser - therefore it is the only choice when you're making a website with an interactive front-end component.</p>
+        </section>
+        <section>
+            <h2>How's it written?</h2>
+            <p>JavaScript follows the <a href="http://www.tutorialspoint.com/java/java_basic_syntax.htm" target="_blank">syntax of the Java language</a> (however it's the only thing that it takes from Java), making it similar to C &amp; C++ too. However, unlike these languages, data types are not declared for variables - instead they are inferred at runtime - meaning a variable can change type throughout a script (similar to Python's type system). In technical terms, it has a loose dynamic type system.</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+var helloWorld = "Hello World";
+console.log(helloWorld);
+
+var five = 5;
+var six = 6;
+
+if (five > six) {
+    console.log("Wrong!");
+} else {
+    console.log("Right!");
+}
+
+                </code>
+            </pre>
+            <p class="top-tip">Whilst most JavaScript interpreters are loose enough to allow scripts without semi-colons to be written, they should technically always be used at the end of statements (like in the example above). console.log() is smiply a print to console statement - like println() in Java, or printf() in C.</p>
+        </section>
+        <section>
+            <h2>History</h2>
+            <p>JavaScript was created in 1995 by Brendan Eich, whilst working at Netscape. He made the language as a 'hack' project within 1 week <a href="https://en.wikipedia.org/wiki/JavaScript">(source)</a>. Since then, the langauge has been officially standardised by ECMA - making JavaScript an implementation of ECMAScript.</p>
+        </section>
+        <section>
+            <h2>Simple Flow Control</h2>
+            <p>JavaScript includes all of the basic standard flow control statements you'd expect to find in a programming language - namely, if/else if/else statements for conditions, and for and while loops. Below is an example of them in action...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+// This is a comment!
+/* And this is a comment over
+    several lines */
+
+// check sanity...
+var isItTrue = true;
+if (isItTrue) {
+    console.log("That was true!!");
+} else if (isItTrue === 3) {
+    console.log("Wow such number 3");
+} else {
+    console.log("Not true.");
+}
+
+// loop 5 times...
+var count = 5;
+for (var i = 0; i < count; i++) {
+    // print the number we're currently at in the loop...
+    console.log(count);
+}
+
+// to infinity and beyond
+var condition = true;
+while (condition) {
+    console.log("This is really not recommended");
+}
+
+                </code>
+            </pre>
+            <p class="top-tip">In JavaScript, == checks if two variables have the same value (but they DO NOT have to be of the same type), === checks that they are of the same value AND the same type. This means "5" == 5 is true (because the Number representation of the "5" String is 5), but "5" === 5 is false, because they are of different types. There's more on Data Types in JavaScript next...</p>
+        </section>
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>

@@ -7,27 +7,53 @@
 var QuizData = new function() {
     this.data = [
         {
-            title:"Quiz1",
-            description: "This is a rly good quiz srlsy. 10/10 would take.",
+            title:"Introduction",
+            description: "History, facts and syntax.",
             questions: [
                 {
-                    question:"Question 1",
+                    question:"In which year was JavaScript first invented?",
                     answers: [
-                        "Answer 1",
-                        "Answer 2",
-                        "Answer 3",
-                        "Answer 4"
+                        "1995",
+                        "1989",
+                        "2002",
+                        "1742"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"Question 2",
+                    question:"Who standardises the JavaScript language?",
                     answers: [
-                        "Answer 1",
-                        "Answer 2",
-                        "Answer 3",
-                        "Answer 4"
+                        "Netscape",
+                        "Google",
+                        "ECMA",
+                        "Microsoft"
                     ],
-                    correctAnswer: 1
+                    correctAnswer: 3
+                }, {
+                    question:"Is \"22\" === 22 true or false?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"Which langauges inspired JavaScript's syntax?",
+                    answers: [
+                        "HTML & XML",
+                        "Python & Ruby",
+                        "Java, C & C++",
+                        "Erlang & Haskell",
+                        "CoffeeScript"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"Which langauges can be ran in the browser?",
+                    answers: [
+                        "Only Python",
+                        "Only JavaScript",
+                        "C & C++",
+                        "Only PHP"
+                    ],
+                    correctAnswer: 2
                 }
             ]
         }

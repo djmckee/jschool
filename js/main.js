@@ -50,6 +50,23 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             });
         }
 
+        if ($('#tutorial-container').length > 0) {
+            // it's a tutorial page - compute and link to the relevant quiz at the end...
+            // get tutorial name...
+            var tutorialName = $('#tutorial-container > section.lead > h1').text();
+
+            // base64 encode name to get quiz id...
+            var encodedName = window.btoa(tutorialName);
+
+            var quizLink = 'quiz.html?quizid=' + encodedName;
+
+            var quizLinkButton = '<section><a href="' + quizLink + '" class="rounded-button">Take quiz...</a></section>';
+
+            // append our button... (in its own section...)
+            $('#tutorial-container').append(quizLinkButton);
+
+        }
+
         if ($('#quiz-container').length > 0) {
             // it's a quiz page, initialise the quiz.js
             Quiz.initialiseQuizPage();

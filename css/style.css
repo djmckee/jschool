@@ -348,6 +348,68 @@ section a:hover {
     background-color: #e74c3c;
 }
 
+/* Tutorial page styles */
+/* sections within the tutorial container require special styling... */
+#tutorial-container > section {
+    font-weight: 200;
+    line-height: 1.2;
+    font-size: 14pt;
+}
+
+/* tutorial section headings (in h2's) require large-ish fonts */
+#tutorial-container > section > h2 {
+    font-size: 20pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* the last thing in a tutorial container is always a 'take the quiz' button section,
+    which needs center alignment - along with decent vertical spacing */
+#tutorial-container > section:last-child {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* tutorial videos need to be centered, and decently padded */
+#tutorial-container > section > video {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 15px;
+}
+
+/* code examples need to be in a monospaced font! */
+code {
+    font-family: monospace;
+}
+
+/* code examples need to be preceeded by a 'Code Example title too' */
+code::before {
+    content: "Code Example";
+    display: block;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+/* top tips are special highlighted features within tutorials */
+#tutorial-container > section > p.top-tip {
+    background-color: #e67e22;
+    color: #ecf0f1;
+    padding: 15px;
+}
+
+/* they require a title to be inserted before them too... */
+#tutorial-container > section > p.top-tip::before {
+    content: "Top Tip";
+    display: block;
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+
 /* Credits */
 /* define rolling credits that look like movie credits, scrolling down from the
     top of the screen (then stopping) */
