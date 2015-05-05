@@ -96,6 +96,62 @@ var QuizData = new function() {
                     correctAnswer: 3
                 }
             ]
+        }, {
+            title:"Functions in JavaScript",
+            description: "How do functions work in JavaScript?",
+            questions: [
+                {
+                    question:"What keyword defines a function?",
+                    answers: [
+                        "func",
+                        "funky",
+                        "function",
+                        "public static void"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"True or False: JavaScript functions have to declare a return type?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"How many parameters can a JavaScript function have?",
+                    answers: [
+                        "None",
+                        "1",
+                        "2",
+                        "Unlimited"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"How many objects can a JavaScript function return?",
+                    answers: [
+                        "Unlimited",
+                        "2",
+                        "1",
+                        "27",
+                        "OVER 9000"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"Can functions be treated as variables?",
+                    answers: [
+                        "Yes - as anonymous functions",
+                        "Yes - as static functions",
+                        "No"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"Can JavaScript objects hold functions within them?",
+                    answers: [
+                        "Yes",
+                        "No"
+                    ],
+                    correctAnswer: 1
+                }
+            ]
         }
 
 

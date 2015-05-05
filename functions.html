@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Functions in JavaScript | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>Functions in JavaScript</h1>
+            <p>Functions are a key part of JavaScript and allow you to write code that is efficient, without repeating yourself. Aditionally, JavaScript treats functions as objects, so they can be passed around as variables (where the value of the variable is what the function returns).</p>
+        </section>
+        <section>
+            <h2>A simple function</h2>
+            <p>Functions are declared in JavaScript using the function keyword, followed by () brackets to hold any paramters the fucntion requires, and { } brackets, where the code that the fucntion excecutes is held; and look somewhat similar to methods in Java. Functions are called simply by using their name, followed by () brackets containing any parameters they need passed in, and then a semi-colon. Below is a simple example...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+// define the function...
+function myFunction() {
+    // the following code is executed when myFunction is called...
+    console.log("Hello function world!");
+}
+
+// let's call myFunction...
+myFunction();
+
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Return values</h2>
+            <p>Functions return values, although they don't have to. This means a variable can be set to the result of a function</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+// define the function...
+function returnSomething() {
+    var x = 5;
+    // let's return x... (of type Number)
+    return x;
+}
+
+// let's set y to the result of the returnSomething function...
+var y = returnSomething();
+
+// y will now be equal to 5 (the returned value of the function)...
+console.log(y);
+
+                </code>
+            </pre>
+            <p class="top-tip">If a function returns no value, it returns an undefined type. Functions can return only one value - to return multiple, look at returning an object populated with the values instead.</p>
+        </section>
+        <section>
+            <h2>Passing in values</h2>
+            <p>Functions can have values passed into them. They can then use these values within, and potentially manipulate them or use them to return a result. Below is a simple example of a 'square' function, where a number is passed into it, and the square of that number is returned...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+// define the square function...
+function square(numberToSquare) {
+    // multiply the number by itsself to get its square...
+    var square = (numberToSquare * numberToSquare);
+
+    // return the square...
+    return square;
+}
+
+// let's square something...
+var squareMe = square(5);
+
+// squareMe will now be equal to 25 (5 squared)
+console.log(squareMe);
+
+                </code>
+            </pre>
+            <p class="top-tip">Multiple parameters can be passed into one function, simply seperate them by commas in the function decleration, and where the function is being called.</p>
+        </section>
+        <section>
+            <h2>Functions as variables</h2>
+            <p>JavaScript allows functions to be used and passed around as variables. You can see this in action in the code example below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+// set a variable to a function...
+var addThese = function(x, y) {
+    // add them and return...
+    return (x + y);
+}
+
+// variable addThese can now be used just like a function...
+var result = addThese(5, 10);
+
+// let's check it holds 15 (5 + 10)...
+console.log(result);
+
+                </code>
+            </pre>
+            <p class="top-tip">Because functions can be treated as variables, they can also be stored in arrays, or as values within objects, so objects can be given methods - rather than just holding static values. The technical term for treating functions as variables is 'anonymous functions'.</p>
+        </section>
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>
