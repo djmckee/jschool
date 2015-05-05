@@ -226,6 +226,83 @@ var QuizData = new function() {
                     correctAnswer: 1
                 }
             ]
+        }, {
+            title:"Manipulating the DOM",
+            description: "How can you modify HTML to make pages interactive with JavaScript?",
+            questions: [
+                {
+                    question:"How would a HTML element with an ID attribute be selected?",
+                    answers: [
+                        "element.id",
+                        "selectElementWithIDAttribute()",
+                        "findElementWithId()",
+                        "document.getElementById()"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"How would all elements with class 'fancy-text' be selected?",
+                    answers: [
+                        "document.findElementsWithClass('fancy-text')",
+                        "document.find('fancy-text')",
+                        "document.querySelector('fancy-text')",
+                        "document.querySelectorAll('fancy-text')"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"How would all <p> tags on the page be selected?",
+                    answers: [
+                        "document.find('p')",
+                        "document.querySelectorAll('&lt;p&gt;')",
+                        "document.querySelectorAll('p')",
+                        "documnet.selectParagraphTags()"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would the text inside of a paragraph tag element 'myParagraph' be set to \"Hello\"?",
+                    answers: [
+                        "myParagraph.text = \"Hello\";",
+                        "myParagraph.text(\"Hello\");",
+                        "myParagraph.textContent = \"Hello\";",
+                        "myParagraph.contentText = \"Hello\";"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would you get the text within 'myParagraph' (a paragraph element)?",
+                    answers: [
+                        "myParagraph.getText()",
+                        "myParagraph.textContent",
+                        "getText(myParagraph)",
+                        "myParagraph.text"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"How would you make element myButton perform function myFunction when clicked?",
+                    answers: [
+                        "myButton.setOnClick(myFunction);",
+                        "myButton.onclick = myFunction();",
+                        "myButton.onclick = myFunction;",
+                        "myButton.onclicklistener = myFunction();"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would you make the function loaded run when the DOM has finished loading?",
+                    answers: [
+                        "window.onload = loaded();",
+                        "window.onload = loaded;",
+                        "document.onload = loaded;",
+                        "body.onload = loaded();"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"Why is it important to use a window.onload handler?",
+                    answers: [
+                        "The web browser is slow",
+                        "The window may close if you do not wait for it to load",
+                        "The DOM needs to have fully loaded before you can use JavaScript to maninpulate it"
+                    ],
+                    correctAnswer: 3
+                }
+            ]
         }
 
 

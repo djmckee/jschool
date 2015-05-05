@@ -216,9 +216,10 @@
         </section>
         <section>
             <h2>Adding events with JavaScript</h2>
-            <p>A crucial kind of event to add is an onload event. This is because you cannot know for sure otherwise that the HTML elements within the DOM have been rendered by the browser yet when your JavaScript is ran - and if they haven't then your code won't be able to affect them.</p>
-            <p>This is clearly a major issue (and has been left out of previous Jschool examples to cut down on code complexity, but may be why some examples don't work striaght away).</p>
-            <p>To ensure that the DOM has been fully rendered before executing your script, you should add an event for the body tag's .onload event handler (via document.body.onload). An example of this in action is below...</p>
+            <p>The next stage of using JavaScript with the DOM to make HTML pages interactive is to add event listeners, meaning that JavaScript functions can be called when certain things happen on the page (such as specific elements being clicked or hovered over, etc.).</p>
+            <p>A full list of events is <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">available here</a>, but in this tutorial we'll be specifically focusing on adding 'on click' events - although the principle is much the same for any type.</p>
+            <p>Firstly, you must select the element you wish to add the event to, and then set its .onclick property to a function (remembering here that functions in JavaScript can be passed as variables!).</p>
+            <p>An example of the onclick listener being added is shown below...</p>
             <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
             <pre>
                 <code>
@@ -252,10 +253,9 @@
         </section>
         <section>
             <h2>On-load events</h2>
-            <p>The next stage of using JavaScript with the DOM to make HTML pages interactive is to add event listeners, meaning that JavaScript functions can be called when certain things happen on the page (such as specific elements being clicked or hovered over, etc.).</p>
-            <p>A full list of events is <a href="http://www.w3schools.com/jsref/dom_obj_event.asp">available here</a>, but in this tutorial we'll be specifically focusing on adding 'on click' events - although the principle is much the same for any type.</p>
-            <p>Firstly, you must select the element you wish to add the event to, and then set its .onclick property to a function (remembering here that functions in JavaScript can be passed as variables!).</p>
-            <p>An example of the onclick listener being added is shown below...</p>
+            <p>A crucial kind of event to add is an onload event. This is because you cannot know for sure otherwise that the HTML elements within the DOM have been rendered by the browser yet when your JavaScript is ran - and if they haven't then your code won't be able to affect them.</p>
+            <p>This is clearly a major issue (and has been left out of previous Jschool examples to cut down on code complexity, but may be why some examples don't work striaght away).</p>
+            <p>To ensure that the DOM has been fully rendered before executing your script, you should add an event for the window's .onload event handler (via  window.onload). An example of this in action is below...</p>
             <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
             <pre>
                 <code>
@@ -272,8 +272,8 @@
                 console.log("The DOM has loaded - let the fun and games begin!");
             }
 
-            /* add the function to the body's onclick listener */
-            document.body.onload = loaded;
+            /* add the function to the window's onclick listener */
+            window.onload = loaded;
 
         &lt;/script&gt;
     &lt;/body&gt;
