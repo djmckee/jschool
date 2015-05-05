@@ -188,6 +188,44 @@ var QuizData = new function() {
                     correctAnswer: 2
                 }
             ]
+        }, {
+            title:"JavaScript in HTML",
+            description: "How can JavaScript be linked in with HTML?",
+            questions: [
+                {
+                    question:"What tag is used to link JavaScript in HTML?",
+                    answers: [
+                        "&lt;java&gt;",
+                        "&lt;javascript&gt;",
+                        "&lt;js&gt;",
+                        "&lt;script&gt;"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"True or False: JavaScript should be in seperate files that are linked to when used on production websites?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"Where should JavaScript script tags be located ideally?",
+                    answers: [
+                        "Within the &lt;head&gt;",
+                        "After the &lt;/html&gt;",
+                        "At the end of the &lt;body&gt;",
+                        "In the console"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"Does the order in which JavaScript files are linked matter?",
+                    answers: [
+                        "Yes",
+                        "No"
+                    ],
+                    correctAnswer: 1
+                }
+            ]
         }
 
 

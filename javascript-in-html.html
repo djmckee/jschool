@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript in HTML | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>JavaScript in HTML</h1>
+            <p>It's extremely easy to mix JavaScript into HTML, in a variety of ways, to allow your new found JavaScript skills to bring your web pages to life - as this tutorial demonstrates.</p>
+        </section>
+        <section>
+            <h2>Inline with Script Tags</h2>
+            <p>The simplest way to add JavaScript into HTML is to use the &lt;script&gt; tags - as shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JavaScript Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;script&gt;
+        /* This JavaScript is ran whilst the page is being rendered... */
+        console.log(&quot;Hello world!&quot;);
+        document.querySelector(&quot;body&quot;).textContent = &quot;Hello (again)&quot;;
+    &lt;/script&gt;
+
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <p>This makes the script within the tags get run as the page is rendered.</script>
+            <p class="top-tip">This approach is not recommended for anything larger than simple testing - for real world webpages/websites, the approach described next should be adopted instead...</p>
+        </section>
+        <section>
+            <h2>In external files</h2>
+            <p>The best way to link JavaScript into HTML is to use the &lt;script&gt; tags to link to external files. The file path is relative to your HTML document (just like the linking of external CSS files). An example of this in action is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;JavaScript Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;script src=&quot;path/to/the/script.js&quot;&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <p class="top-tip">&lt;script&gt; links should be located at the end of the document. This is so that the HTML can be rendered properly first, before JavaScript is executed.</p>
+        </section>
+        <section>
+            <h2>Does order matter?</h2>
+            <p>Yes! Scripts which refer to variables or functions defined in other scripts must be linked before scripts that rely on them.</p>
+            <h2>What about scope?</h2>
+            <p>By default, everything in JavaScript has a global scope once included - for this reason, variables and functions are usually put within objects, to stop names from colliding easily, and to provide a basic namespace system.</p>
+            <h2>Can JavaScript files import other JavaScript files within them (like CSS' @import)?</h2>
+            <p>No - not natively. However, a library called <a href="http://requirejs.org/">RequireJS</a> makes this possible (and is coincidentally used within this website).</p>
+            <p class="top-tip">In HTML versions lower than HTML5, the &lt;script&gt; tag requires the type="text/javascript" attribute to be included. In HTML5, this attribute's information is assumed automatically, and it is not required.</p>
+        </section>
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>
