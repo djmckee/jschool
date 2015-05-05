@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Manipulating the DOM | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>Manipulating the DOM</h1>
+            <p>The DOM is the Document Object Model - the way in which a HTML page can be represented in JavaScript objects. This means that JavaScript can then be used to read data from these objects, and also to manipulate them. <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model" target="_blank">A full DOM reference is available here</a>, however this tutorial provides a simple introduction to simple element selecting and manipulation, which outght to be more than enough to get started!</p>
+        </section>
+        <section>
+            <h2>Selecting Elements by ID</h2>
+            <p>The simplest way to get started with DOM element selection is to select by ID. You give the HTML element you wish to select an ID value, and then use the DOM's document.getElementById("whatever-the-id-was") function to select the object. An example of this (with associated HTML) is below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p id="my-paragraph"&gt;This is a paragraph&lt;/p&gt;
+
+        &lt;script&gt;
+            /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
+            var paragraph = document.getElementById(&quot;my-paragraph&quot;);
+
+            /* paragraph now contains the p element we wanted to select, let's check... */
+            console.log(paragraph);
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <p class="top-tip">As noted in the code comments above, you should wait until the page elements are rendered before selecting them. You can do this by placing your JavaScript in the page after the elements, or by some more sophisticated metods which we'll discuss later on.</p>
+        </section>
+        <section>
+            <h2>A better way of selecting elements - QuerySelectors</h2>
+            <p>QuerySelectors provide a far more flexible way of selecting HTML elements from the DOM. Instead of using just ID's, they allow you to use the same selectors as in CSS to select one or multiple matching elements from the DOM. This means you can select all instances of a specific elements, specific class, or more complex selectors such as direct child (e.g. div &gt; p) - just like in CSS.</p>
+            <p>The relevant JavaScript methods are <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">document.querySelector()</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelectorAll">document.querySelectorAll()</a>.</p>
+            <p>The major difference between these is that querySelector selects only ONE element (the first one it matches), whereas querySelectorAll returns an array of ALL of the matched elements - making it far more useful. Both return nil if no elements are matched. An example of these methods in action is below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
+
+
+        &lt;script&gt;
+            /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
+            /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
+            var heading = document.querySelector(&quot;h1&quot;);
+
+            /* check we got the heading... */
+            console.log(&quot;The heading is &quot; + heading);
+
+            /* select all of the .fancy-paragraph's into an array... */
+            /* see how we're using the .fancy-paragraph selector -
+                just like in CSS - to select all instances of that class */
+            var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
+
+            /* loop through our paragraphs... */
+            for (var i = 0; i &lt; paragraphs.length; i++) {
+                /* get the paragraph from the array */
+                var currentParagraph = paragraphs[i];
+
+                /* let's log it too... */
+                console.log(&quot;Fancy paragraph &quot; + String(i) + &quot; is &quot; + currentParagraph);
+            }
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <p class="top-tip">Whilst CSS selectors such as the direct child selector work with QuerySelectors, sadly the CSS pseudo classes such as first-child don't, so consideration must be made for this.</p>
+        </section>
+        <section>
+            <h2>Getting and Setting Element's content</h2>
+            <p>One of the most important features that JavaScript provides to make web pages interactive is the ability to get and set the content of elements.</p>
+            <p>Firstly, use the QuerySelectors described above to get the element, then, once the element is in a JavaScript variable, JavaScript allows you to very simply and effectively get the text within via the .textContent property - or set the text within by setting a new value to the .textContent property - as in the example below.</p>
+            <p>To get and set raw HTML, simply replace .textContent with .innerHTML.</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
+
+
+        &lt;script&gt;
+            /* lets practice some getting... */
+            /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
+            var heading = document.querySelector(&quot;h1&quot;);
+
+            /* check we got the heading... */
+            console.log(&quot;The contents of the heading is &quot; + heading.textContent);
+
+            /* now lets practice some setting... */
+            /* select all of the .fancy-paragraph's into an array... */
+            var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
+
+            /* loop through our paragraphs... */
+            for (var i = 0; i &lt; paragraphs.length; i++) {
+                /* get the paragraph from the array */
+                var currentParagraph = paragraphs[i];
+
+                /* set the paragraph's content to be the number in the array that it's at... */
+                currentParagraph.textContent = String(i);
+            }
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            <p>A video example of using QuerySelectors to get and set the content of HTML elements is below so you can follow along... </p>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/queryselectors-textcontents-tutorial.mp4" type="video/mp4">
+                    Terribly sorry but it doesn't look like your web browser supports HTML5 video - please try another browser (such as Google Chrome).
+                </video>
+            </div>
+        </section>
+        <section>
+            <h2>Styling elements with JavaScript</h2>
+            <p>Another important way in which elements can be made interactive with JavaScript is by changing their style.</p>
+            <p>The DOM provides ways to add, remove and alter CSS styles - both in terms of individual style rules, and also in terms of adding ID's and classes to elements, to style them differently.</p>
+            <p>The simplest way to modify styles is by using the .style property of elements - this property allows you to change any CSS property simply by appending the property to .style - so for example, to change the background colour of 'myElement', you'd call myElement.style.background-color = "rgb(20, 20, 20)"; on the element you've retrieved (from a QuerySelector for example).</p>
+            <p>You can also style by adding classes or ID tags - for example, to add a class to 'myElement', you'd call myElement.classList.add("newClass") (you can also first use the classList property - which is simply a standard JavaScript array - to check which classes are currently applied to the element).</p>
+            <p>Aditionally, you can add an ID to a selected element using its .id property - for example myElement.id = "cool-unique-id";</p>
+            <p>An example of some simple and some more complex styling is below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+        &lt;style&gt;
+            .cool-text {
+                background-color: rgb(0, 255, 0);
+                color: rgb(255, 255, 255);
+            }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;p&gt;This is a paragraph&lt;/p&gt;
+
+        &lt;script&gt;
+            /* let's change the heading colour... */
+            /* select the one H1 heading...*/
+            var heading = document.querySelector(&quot;h1&quot;);
+
+            /* set it's 'color' style attribute */
+            heading.style.color = "rgb(255, 0 ,0)";
+
+            /* now let's practice adding classes... */
+            var paragraph = document.querySelector(&quot;p&quot;);
+
+            /* add the cool-text class... */
+            paragraph.classList.add("cool-text");
+
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>

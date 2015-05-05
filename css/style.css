@@ -354,11 +354,24 @@ section a:hover {
     font-weight: 200;
     line-height: 1.2;
     font-size: 14pt;
+
+    /* sections of text are unplesant to read after ~1080px, so constrain width to a comfortable maximum */
+    max-width: 1080px;
+
+    /* over this max width, sections must be centered nicely */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* tutorial section headings (in h2's) require large-ish fonts */
 #tutorial-container > section > h2 {
     font-size: 20pt;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* a little spacing between tutorial paragraphs makes things far more readable */
+#tutorial-container > section > p {
     margin-top: 10px;
     margin-bottom: 10px;
 }
