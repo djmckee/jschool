@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Console | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>The Console</h1>
+            <p>The console is a quick and highly effective method to prototype and test JavaScript functions, snippits and scripts. Here, we'll talk about how to use it.</p>
+        </section>
+        <section>
+            <h2>Accessing the Console</h2>
+            <p>To access the Console, click the Console tab within the Web Inspector. The conolse allows you to define variables (with the var keyword), define functions, and call/use them by writing in raw lines of JavaScript and pressing enter to have them executed - this makes it ideal for simple rapid prototyping. Errors and logs are also displayed within the console, making it an essential debugging tool. Below is a short video tutorial...</p>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/console-tutorial.mp4" type="video/mp4">
+                    Terribly sorry but it doesn't look like your web browser supports HTML5 video - please try another browser (such as Google Chrome).
+                </video>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>

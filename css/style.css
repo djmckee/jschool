@@ -374,11 +374,20 @@ section a:hover {
 }
 
 /* tutorial videos need to be centered, and decently padded */
-#tutorial-container > section > video {
+.video-container {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
     padding: 15px;
+
+}
+
+/* video should have a maximum width, and scale up to that - keeping height at
+    auto so that it gets proportionally sized all of the time */
+.video-container > video {
+    width: 100%;
+    height: auto;
+    max-width: 720px;
 }
 
 /* code examples need to be in a monospaced font! */

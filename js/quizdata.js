@@ -152,6 +152,42 @@ var QuizData = new function() {
                     correctAnswer: 1
                 }
             ]
+        }, {
+            title:"The Console",
+            description: "What's the console, and how can it be used when coding JavaScript?",
+            questions: [
+                {
+                    question:"Where is the console located?",
+                    answers: [
+                        "The Moon",
+                        "The Web Inspector",
+                        "The Terminal",
+                        "/dev/null"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"True or False: JavaScript variables can be defined in the console?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"True or False: JavaScript functions can be defined in the console?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"JavaScript written in the console gets saved with the web page on exit?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 2
+                }
+            ]
         }
 
 
