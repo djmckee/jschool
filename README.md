@@ -1,6 +1,8 @@
 # Jschool
 Jschool - a front-end web development university project that aims to teach front-end JavaScript using a range of resources, such as written informational tutorials, code examples, video tutorials, and interactive quizzes - along with links to other resources online.
 
+**To get started, open up index.html.**
+
 Jschool was created by [Dylan McKee](http://dylanmckee.co.uk) as a [CSC1026 project](http://www.ncl.ac.uk/undergraduate/modules/module/CSC1026/) for [Computing Science at Newcastle University](http://www.ncl.ac.uk/computing/).
 
 ## Libraries used
