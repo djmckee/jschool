@@ -56,7 +56,48 @@ var QuizData = new function() {
                     correctAnswer: 2
                 }
             ]
+        }, {
+            title:"Data Types in JavaScript",
+            description: "JavaScript's key built-in data types.",
+            questions: [
+                {
+                    question:"Given the following decleration: var a = 5.65; - what type would a be?",
+                    answers: [
+                        "A float",
+                        "A double",
+                        "A Number",
+                        "An int"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"True or False: Strings can be added together using the '+' operator, just like numbers?",
+                    answers: [
+                        "True",
+                        "False"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"How would a String be converted to a Number?",
+                    answers: [
+                        "\"5\".toNumber",
+                        "Number(\"5\")",
+                        "+\"5\""
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would the 3rd element of myArray be accessed?",
+                    answers: [
+                        "myArray[3]",
+                        "myArray.get(2)",
+                        "myArray[2]",
+                        "myArray.get(3)",
+                        "myArray.3"
+                    ],
+                    correctAnswer: 3
+                }
+            ]
         }
+
 
     ];
 }

@@ -93,6 +93,33 @@ for (var i = 0; i < blankArray.length; i++) {
             </pre>
             <p class="top-tip">Array size can be accessed through myArray.length - arrays also feature built in sorting methods which can be very useful - <a href="http://www.w3schools.com/js/js_array_methods.asp">more on those here...</a></p>
         </section>
+        <section>
+            <h2>Objects</h2>
+            <p>JavaScript uses objects heavily. They're a key-value based data type - similar to Dictionaries in Python, or Maps in Java - where the object's data values are held with a corresponding key. Objects can be created using the convenient { myKey: myValue } literal syntax, and then values can be accessed via dot notation, as in the example below...</p>
+            <pre>
+                <code>
+// let's create a literal object...
+var myObject = {
+    keyOne: "valueOne",
+    keyTwo: 5,
+    keyThree: ["hi", "hello"]
+};
+
+// let's get a value from the object...
+var myString = myObject.keyOne;
+
+// and now set a value...
+myObject.keyTwo = 7;
+
+// keys can be added dynamically too...
+myObject.anotherKey = "another value";
+
+// let's check what the object now contains...
+console.log(myObject);
+                </code>
+            </pre>
+            <p class="top-tip">Because JavaScript supports functions as variables, as we'll discuss in the next section, objects can easily be given methods too.</p>
+        </section>
 </div>
 
     <!-- Consistent footer containing links and other information -->
