@@ -18,7 +18,7 @@ require.config({
     paths: {
         // I downloaded the jQuery library from https://jquery.com/ on 16/04/15
         // It is licensed under the jQuery license
-        jquery: 'jquery-2.1.3',
+        jquery: 'jquery-2.1.4',
         // I downloaded the highlight.js library from https://highlightjs.org/
         // on 16/04/15. It is licensed under a suitably permissive library.
         highlight: 'highlight.pack',

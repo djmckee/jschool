@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JavaScript Frameworks | Jschool</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+        <!-- Page header containing logo/site title, with a navbar
+        nested inside of it-->
+        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+
+        <!-- Navbar in the semantically nice nav element -->
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tutorial-section">Tutorials</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="tutorial-container" class="fade-in">
+        <section class="lead">
+            <h1>JavaScript Frameworks</h1>
+            <p>JavaScript frameworks are extremely useful at making it simple to write effective JavaScript that works properly in all browsers - without browser cross-compatibility becoming an issue.</p>
+        </section>
+        <section>
+            <h2>jQuery</h2>
+            <p>In this tutorial, we'll cover an introduction to <a href="https://jquery.com/">jQuery</a> - the world's most popular front-end jQuery framework - and explain how to use it to select and modify HTML elements.</p>
+            <p>A full jQuery documentation is <a href="https://api.jquery.com/">available here</a>, however this tutorial provides a concise guide to getting started with the framework...</p>
+            <p class="top-tip">jQuery is licensed under the <a href="https://jquery.org/license/">open source jQuery license</a>, which means that it's permissible to use it in your own projects without the need to explicitly credit it to users - which is convenient in professional websites.</p>
+        </section>
+        <section>
+            <h2>Linking jQuery</h2>
+            <p>To include jQuery, simply link it (either from a local source, or <a href="https://code.jquery.com/">from another website - such as the official CDN</a>) using the &lt;script&gt; tag before your script tag that contains the code that uses jQuery. Below is an example of this in action...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                console.log("jQuery Document Ready!");
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Selecting Items with jQuery</h2>
+            <p>jQuery has a convenient global selector function that allows simple element selection like so... $() - inside of the function, simply add the CSS Selector string you'd use to select the item(s) - just like in using QuerySelectors, but without the need to worry about how many elements may match - jQuery returns one element if only one matches (for example in an ID match), or an array of elements if multiple match (unlike QuerySelectors, which rely upon you to manually differentiate by the use of querySelector/querySelectorAll).</p>
+            <p>So, for example, to select all &lt;li&gt; elements on the page, you'd use the $('li') jQuery selector, to select an element with the ID of container you'd use $('#container'), and to find all instances of the 'fancy' class, you'd use $('.fancy'). An example of these selectors is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+        &lt;/ul&gt;
+
+        &lt;div id="container"&gt;
+        &lt;/div&gt;
+
+        &lt;p class="fancy"&gt;Paragraph 1&lt;/p&gt;
+        &lt;p class="fancy"&gt;Paragraph 2&lt;/p&gt;
+        &lt;p class="fancy"&gt;Paragraph 3&lt;/p&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // let's select all list items
+                var listItems = $("li");
+                console.log(listItems);
+
+                // let's select the container div...
+                var container = $("div#container");
+                console.log(container);
+
+                // let's select the fancy class instances...
+                var fancyElements = $(".fancy");
+                console.log(fancyElements);
+
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Modifying items with jQuery</h2>
+            <p>jQuery makes is simple to set the text within elements using the .text() function. Firstly, select the item as described previously, the use myElement.text("the new text goes here") to change the text within 'myElement'.</p>
+            <p>An example of changing the text of a heading is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select and change text...
+                $("h1").text("The new title...");
+
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Styling items with jQuery</h2>
+            <p>jQuery allows a single CSS property of an HTML element to be changed with the .style() function, for example, to change the background colour of an element with the ID of myElement, you'd perform $('#myElement').style('background-color', '#ff00ff');.</p>
+            <p>You can also set multiple CSS properties using the .css() function, for example, to change the text colour and background colour of an element with ID of myElement, you'd perform $('#myElement').css({"color": "white", "background-color": "red"});.</p>
+            <p>An example of changing the text of a heading is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+
+        &lt;h2&gt;A little heading&lt;/h2&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select and change large heading text colour...
+                $("h1").style("color", "#ff00ff");
+
+                // select and change small heading text and background colour...
+                $("h2").css("color": "#ff00ff", "background-color": "#00ff00");
+
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Event Listeners with jQuery</h2>
+            <p>jQuery provides a simple cross browser compatible way to add event listener functions to HTML elements within the DOM. A full list of <a href="https://api.jquery.com/category/events/" target="_blank">listenable events is available here</a>, but for this tutorial, we'll just concentrate on the click event.</p>
+            <p>To set a click listener, simply call .click() on the HTML element you're adding the listener to, passing in a function to be executed when the listener is called (or an anonymous function).</p>
+            <p>An example of simple jQuery click listener is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Click me!!&lt;/p&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select the p tag and add a .click listener...
+                $("p").click(function() {
+                    /* the code in this anonymous function is executed
+                        when the click listener is fired (on click) */
+                    console.log("Clicked!");
+                });
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>Animating with jQuery</h2>
+            <p>jQuery provides built in animation functions which make animation convenient. A full list of these animation effects is <a href="https://api.jquery.com/category/effects/">available here</a> - however in this tutorial, we'll provide a simple example of a simple fade effect.</p>
+            <p>A very simple example of these functions are the .fadeIn() and .fadeOut() functions, which allow an element to be faded in and faded out in animations respectively - and can be provided with a time delay, in milliseconds, for the animation duration.</p>
+            <p>An example of simple fade animation is shown below...</p>
+            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+
+        &lt;h2&gt;A little heading&lt;/h2&gt;
+
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select the p tag and add a .click listener...
+                $("p").click(function() {
+                    // let's fade out the 'p' when clicked, in 500ms...
+                    $("p").fadeOut(500);
+                });
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+        </section>
+        <section>
+            <h2>What's next?</h2>
+            <p>jQuery has many many other features which haven't been touched upon in this tutorial. If you enjoyed this tutorial and are interested in finding out what else it can do, why not <a href="https://api.jquery.com/" target="_blank">head over to the jQuery documentation here</a> and find out for yourself?</p>
+        </section>
+    </div>
+
+    <!-- Consistent footer containing links and other information -->
+    <footer>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#tutorial-section">Tutorials</a></li>
+            <li><a href="quizzes.html">Quizzes</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="credits.html">Credits</a></li>
+        </ul>
+        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+    </footer>
+
+    <!-- linking JavaScript at the end for page load speed benefits.
+        Using RequireJS has meant that I only need to link one file into the actual
+        HTML, allowing my HTML to be semantically beautiful.
+        I can also load JavaScript in Async, which is ideal to speed up loading,
+        again thanks to RequireJS.
+    -->
+    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+  </body>
+</html>
