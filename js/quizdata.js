@@ -303,6 +303,82 @@ var QuizData = new function() {
                     correctAnswer: 3
                 }
             ]
+        }, {
+            title:"JavaScript Frameworks",
+            description: "How can jQuery be used to ease cross-browser compatibility issues?",
+            questions: [
+                {
+                    question:"Does jQuery need to be included?",
+                    answers: [
+                        "Yes",
+                        "No"
+                    ],
+                    correctAnswer: 1
+                }, {
+                    question:"Does it matter where jQuery is located within the document?",
+                    answers: [
+                        "It doesn't matter - anywhere's fine",
+                        "It must be after the code that requires jQuery",
+                        "It must be before the code that requires jQuery",
+                        "It must be within the &lt;head&gt; tags",
+                        "What's a jQuery?"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would all <p> tags on the page be selected?",
+                    answers: [
+                        "document.find('p')",
+                        "jQuery.select('p')",
+                        "$('p')",
+                        "$.find('p')"
+                    ],
+                    correctAnswer: 3
+                }, {
+                    question:"How would the text inside of a paragraph tag element with an ID of'myParagraph' be set to \"Hello\"?",
+                    answers: [
+                        "myParagraph.text = \"Hello\";",
+                        "myParagraph.text(\"Hello\");",
+                        "$('#myParagraph').setText(\"Hello\");",
+                        "$('p#myParagraph').text(\"Hello\");"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"How would you get the text within a paragraph element with the ID of myParagraph?",
+                    answers: [
+                        "$('#myParagraph').getText()",
+                        "$('#myParagraph').text()",
+                        "#myParagraph.text",
+                        "myParagraph.text()"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"How would you make an element with ID 'myButton' perform function myFunction when clicked?",
+                    answers: [
+                        "#myButton.setOnClick(myFunction);",
+                        "$('#myButton').click = myFunction;",
+                        "$('#myButton').onclick(myFunction);",
+                        "$('#myButton').click(myFunction);"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question:"How would you make the function loaded() run when the DOM has finished loading?",
+                    answers: [
+                        "$(DOM).loaded();",
+                        "$(document).ready(loaded);",
+                        "document.ready = loaded;",
+                        "$(body).ready = loaded();"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question:"Why is using jQuery advantageous?",
+                    answers: [
+                        "No 'document loaded' callback is required",
+                        "The window may close if you do not wait for it to load",
+                        "Cross browser compatibility"
+                    ],
+                    correctAnswer: 3
+                }
+            ]
         }
 
 
