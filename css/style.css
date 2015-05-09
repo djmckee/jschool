@@ -119,6 +119,13 @@ footer a:hover {
     of the viewport in any manner */
 section {
     padding: 20px 30px;
+
+    /* sections of text are unpleasant to read after ~1100px, so constrain width to a comfortable maximum */
+    max-width: 1100px;
+
+    /* over this max width, sections must be centered nicely */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* A good size heading, with padding around it to give extra prominence */
@@ -355,17 +362,12 @@ section a:hover {
 
 /* Tutorial page styles */
 /* sections within the tutorial container require special styling... */
+/* tutorial text should be light and nicely spaced (in terms of line spacing)
+    to improve readability - also, decently sized */
 #tutorial-container > section {
     font-weight: 200;
     line-height: 1.2;
     font-size: 14pt;
-
-    /* sections of text are unpleasant to read after ~1080px, so constrain width to a comfortable maximum */
-    max-width: 1080px;
-
-    /* over this max width, sections must be centered nicely */
-    margin-left: auto;
-    margin-right: auto;
 }
 
 /* tutorial section headings (in h2's) require large-ish fonts */
