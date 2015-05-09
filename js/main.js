@@ -169,7 +169,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
 
             // see if the user's completed all quizzes yet?
             /* I looked up the Object.keys method at
-                http://stackoverflow.com/questions/3068534/getting-javascript-object-key-list */
+             http://stackoverflow.com/questions/3068534/getting-javascript-object-key-list */
             if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
                 // they've completed (at least) as many quizzes as are available
                 // allow them to print the certificate.

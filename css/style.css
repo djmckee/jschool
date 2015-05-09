@@ -2,16 +2,12 @@
     created by Dylan McKee on 15/04/2015  */
 /* Using imports in the CSS file to keep my HTML as semantically clean as possible
     and not clutter it up with link tags */
-
 /* Import reset stylesheet (taken from http://meyerweb.com/eric/tools/css/reset/) */
 @import url("reset.css");
-
 /* Import font dependencies from the fonts stylesheet */
 @import url("fonts.css");
-
 /* Import the theme that highlight.js requires for syntax colouring */
 @import url("highlightjs-theme.css");
-
 /* Import animation classes from the animations stylesheet */
 @import url("animations.css");
 
