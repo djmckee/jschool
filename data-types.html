@@ -41,13 +41,13 @@
             as demonstrated below...</p>
             <pre>
                 <code>
-                    var numberOne = 1;
-                    var numberTwo = 2;
-                    var numberString = "3";
+var numberOne = 1;
+var numberTwo = 2;
+var numberString = "3";
 
-                    /* note the + before numberString, which performs a type conversion -
-                    making it a Number type rather than a String type. */
-                    var total = numberOne + numberTwo + +numberString;
+/* note the + before numberString, which performs a type conversion -
+making it a Number type rather than a String type. */
+var total = numberOne + numberTwo + +numberString;
 
                 </code>
             </pre>
@@ -64,16 +64,16 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    // String literals simply use double quotes...
-                    var hello = "Hello";
-                    var world = "World";
-                    var number = 5;
+// String literals simply use double quotes...
+var hello = "Hello";
+var world = "World";
+var number = 5;
 
-                    // strings can be concatenated using the + operator...
-                    var result = hello + " " + world + " " + String(number);
+// strings can be concatenated using the + operator...
+var result = hello + " " + world + " " + String(number);
 
-                    // and printed straight to the console...
-                    console.log(result);
+// and printed straight to the console...
+console.log(result);
 
                 </code>
             </pre>
@@ -92,23 +92,24 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    var blankArray = [];
-                    var fullArray = ["Hello", "How are you today?", "JavaScript is the best!"];
+var blankArray = [];
+var fullArray = ["Hello", "How are you today?", "JavaScript is the best!"];
 
-                    // how big is the full array?
-                    var arraySize = fullArray.length;
+// how big is the full array?
+var arraySize = fullArray.length;
 
-                    // copy items from the fullArray into the blankArray...
-                    for (var i = 0; i < arraySize; i++) {
-                    blankArray[i] = fullArray[i];
-                    }
+// copy items from the fullArray into the blankArray...
+for (var i = 0; i < arraySize; i++) {
+    blankArray[i] = fullArray[i];
+}
 
-                    // now let's print out the not-so-blank contents of blankArray
-                    // (along with some info on where things were...)
-                    for (var i = 0; i < blankArray.length; i++) {
-                    var stringToPrint = blankArray[i];
-                    console.log(stringToPrint + " was at index " + String(i));
-                    }
+// now let's print out the not-so-blank contents of blankArray
+// (along with some info on where things were...)
+for (var i = 0; i < blankArray.length; i++) {
+    var stringToPrint = blankArray[i];
+    console.log(stringToPrint + " was at index " + String(i));
+
+}
 
                 </code>
             </pre>
@@ -125,24 +126,24 @@
             in the example below...</p>
             <pre>
                 <code>
-                    // let's create a literal object...
-                    var myObject = {
-                    keyOne: "valueOne",
-                    keyTwo: 5,
-                    keyThree: ["hi", "hello"]
-                    };
+// let's create a literal object...
+var myObject = {
+    keyOne: "valueOne",
+    keyTwo: 5,
+    keyThree: ["hi", "hello"]
+};
 
-                    // let's get a value from the object...
-                    var myString = myObject.keyOne;
+// let's get a value from the object...
+var myString = myObject.keyOne;
 
-                    // and now set a value...
-                    myObject.keyTwo = 7;
+// and now set a value...
+myObject.keyTwo = 7;
 
-                    // keys can be added dynamically too...
-                    myObject.anotherKey = "another value";
+// keys can be added dynamically too...
+myObject.anotherKey = "another value";
 
-                    // let's check what the object now contains...
-                    console.log(myObject);
+// let's check what the object now contains...
+console.log(myObject);
                 </code>
             </pre>
         <p class="top-tip">Because JavaScript supports functions as variables, as we'll discuss in the next section,

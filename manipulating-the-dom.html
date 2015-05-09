@@ -43,23 +43,23 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;p id="my-paragraph"&gt;This is a paragraph&lt;/p&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p id="my-paragraph"&gt;This is a paragraph&lt;/p&gt;
 
-                    &lt;script&gt;
-                    /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
-                    var paragraph = document.getElementById(&quot;my-paragraph&quot;);
+        &lt;script&gt;
+            /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
+            var paragraph = document.getElementById(&quot;my-paragraph&quot;);
 
-                    /* paragraph now contains the p element we wanted to select, let's check... */
-                    console.log(paragraph);
+            /* paragraph now contains the p element we wanted to select, let's check... */
+            console.log(paragraph);
 
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
         <p class="top-tip">As noted in the code comments above, you should wait until the page elements are rendered
@@ -85,42 +85,42 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
 
 
-                    &lt;script&gt;
-                    /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
-                    /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
-                    var heading = document.querySelector(&quot;h1&quot;);
+        &lt;script&gt;
+            /* this JavaScript is ran after the paragraph above (that we're selecting) is rendered */
+            /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
+            var heading = document.querySelector(&quot;h1&quot;);
 
-                    /* check we got the heading... */
-                    console.log(&quot;The heading is &quot; + heading);
+            /* check we got the heading... */
+            console.log(&quot;The heading is &quot; + heading);
 
-                    /* select all of the .fancy-paragraph's into an array... */
-                    /* see how we're using the .fancy-paragraph selector -
-                    just like in CSS - to select all instances of that class */
-                    var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
+            /* select all of the .fancy-paragraph's into an array... */
+            /* see how we're using the .fancy-paragraph selector -
+            	just like in CSS - to select all instances of that class */
+            var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
 
-                    /* loop through our paragraphs... */
-                    for (var i = 0; i &lt; paragraphs.length; i++) {
-                    /* get the paragraph from the array */
-                    var currentParagraph = paragraphs[i];
+            /* loop through our paragraphs... */
+            for (var i = 0; i &lt; paragraphs.length; i++) {
+                /* get the paragraph from the array */
+                var currentParagraph = paragraphs[i];
 
-                    /* let's log it too... */
-                    console.log(&quot;Fancy paragraph &quot; + String(i) + &quot; is &quot; + currentParagraph);
-                    }
+                /* let's log it too... */
+                console.log(&quot;Fancy paragraph &quot; + String(i) + &quot; is &quot; + currentParagraph);
+            }
 
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
         <p class="top-tip">Whilst CSS selectors such as the direct child selector work with QuerySelectors, sadly the
@@ -141,41 +141,41 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
-                    &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is a paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;This is another paragraph&lt;/p&gt;
+        &lt;p class=&quot;fancy-paragraph&quot;&gt;And this is yet another paragraph&lt;/p&gt;
 
 
-                    &lt;script&gt;
-                    /* lets practice some getting... */
-                    /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
-                    var heading = document.querySelector(&quot;h1&quot;);
+        &lt;script&gt;
+            /* lets practice some getting... */
+            /* select the one H1 heading... see how we're using the h1 selector - just like in CSS */
+            var heading = document.querySelector(&quot;h1&quot;);
 
-                    /* check we got the heading... */
-                    console.log(&quot;The contents of the heading is &quot; + heading.textContent);
+            /* check we got the heading... */
+            console.log(&quot;The contents of the heading is &quot; + heading.textContent);
 
-                    /* now lets practice some setting... */
-                    /* select all of the .fancy-paragraph's into an array... */
-                    var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
+            /* now lets practice some setting... */
+            /* select all of the .fancy-paragraph's into an array... */
+            var paragraphs = document.querySelectorAll(&quot;.fancy-paragraph&quot;);
 
-                    /* loop through our paragraphs... */
-                    for (var i = 0; i &lt; paragraphs.length; i++) {
-                    /* get the paragraph from the array */
-                    var currentParagraph = paragraphs[i];
+            /* loop through our paragraphs... */
+            for (var i = 0; i &lt; paragraphs.length; i++) {
+                /* get the paragraph from the array */
+            	var currentParagraph = paragraphs[i];
 
-                    /* set the paragraph's content to be the number in the array that it's at... */
-                    currentParagraph.textContent = String(i);
-                    }
+                /* set the paragraph's content to be the number in the array that it's at... */
+                currentParagraph.textContent = String(i);
+            }
 
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
         <p>A video example of using QuerySelectors to get and set the content of HTML elements is below so you can
@@ -214,50 +214,49 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;style&gt;
-                    .cool-text {
-                    background-color: rgb(0, 255, 0);
-                    color: rgb(255, 255, 255);
-                    }
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+        &lt;style&gt;
+            .cool-text {
+				background-color: rgb(0, 255, 0);
+             	color: rgb(255, 255, 255);
+             }
 
-                    #littleish-heading {
-                    font-size: 16pt;
-                    font-weight: bold;
-                    }
-                    &lt;/style&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
-                    &lt;h2&gt;A 'lil heading&lt;/h2&gt;
-                    &lt;p&gt;This is a paragraph&lt;/p&gt;
+             #littleish-heading {
+                font-size: 16pt;
+    	    	font-weight: bold;
+             }
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
+        &lt;h2&gt;A 'lil heading&lt;/h2&gt;
+        &lt;p&gt;This is a paragraph&lt;/p&gt;
 
-                    &lt;script&gt;
-                    /* let's change the heading colour... */
-                    /* select the one H1 heading...*/
-                    var heading = document.querySelector(&quot;h1&quot;);
+        &lt;script&gt;
+            /* let's change the heading colour... */
+            /* select the one H1 heading...*/
+            var heading = document.querySelector(&quot;h1&quot;);
 
-                    /* set it's 'color' style attribute */
-                    heading.style.color = "rgb(255, 0 ,0)";
+            /* set it's 'color' style attribute */
+            heading.style.color = "rgb(255, 0 ,0)";
 
-                    /* now let's practice adding classes... */
-                    var paragraph = document.querySelector(&quot;p&quot;);
+            /* now let's practice adding classes... */
+            var paragraph = document.querySelector(&quot;p&quot;);
 
-                    /* add the cool-text class... */
-                    paragraph.classList.add("cool-text");
+            /* add the cool-text class... */
+            paragraph.classList.add("cool-text");
 
-                    /* now let's add an ID to the littler heading (h2) */
-                    var smallHeading = document.querySelector(&quot;h2&quot;);
+            /* now let's add an ID to the littler heading (h2) */
+            var smallHeading = document.querySelector(&quot;h2&quot;);
 
-                    /* add the ID... */
-                    smallHeading.id = "littleish-heading";
+            /* add the ID... */
+            smallHeading.id = "littleish-heading";
 
-
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -279,30 +278,30 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;p id=&quot;click-me&quot;&gt;Click me!&lt;/p&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p id=&quot;click-me&quot;&gt;Click me!&lt;/p&gt;
 
-                    &lt;script&gt;
-                    /* write the function to call when clicked */
-                    function thisHappensOnClick() {
-                    // here's the code to be executed on click...
-                    console.log(&quot;You clicked!&quot;);
+        &lt;script&gt;
+            /* write the function to call when clicked */
+            function thisHappensOnClick() {
+            	// here's the code to be executed on click...
+                console.log(&quot;You clicked!&quot;);
 
-                    }
+            }
 
-                    /* select the clicking element...*/
-                    var clickable = document.querySelector(&quot;#click-me&quot;);
+            /* select the clicking element...*/
+            var clickable = document.querySelector(&quot;#click-me&quot;);
 
-                    /* add the function to an onclick listener */
-                    clickable.onclick = thisHappensOnClick;
+            /* add the function to an onclick listener */
+            clickable.onclick = thisHappensOnClick;
 
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
         <p class="top-tip">Because JavaScript supports functions as variables, you can simply pass a function straight
@@ -334,25 +333,25 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
 
-                    &lt;script&gt;
-                    /* define the function to call on DOM load*/
-                    function loaded() {
-                    // here's the code to be executed when the DOM has loaded...
-                    console.log("The DOM has loaded - let the fun and games begin!");
-                    }
+        &lt;script&gt;
+            /* define the function to call on DOM load*/
+            function loaded() {
+                // here's the code to be executed when the DOM has loaded...
+                console.log("The DOM has loaded - let the fun and games begin!");
+            }
 
-                    /* add the function to the window's onclick listener */
-                    window.onload = loaded;
+            /* add the function to the window's onclick listener */
+            window.onload = loaded;
 
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
         <p class="top-tip">Some legacy browsers may have poor support for onload events, which when it is such a crucial

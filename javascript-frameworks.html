@@ -53,23 +53,23 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    console.log("jQuery Document Ready!");
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+    &lt;!-- Link jQuery from the official CDN --&gt;
+    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+    &lt;!-- Now for the script that requires jQuery... --&gt;
+    &lt;script&gt;
+        /* $(document).ready() is the jQuery equivalent of window.onload */
+        $(document).ready(function() {
+            console.log("jQuery Document Ready!");
+        });
+    &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -89,46 +89,46 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;ul&gt;
-                    &lt;li&gt;Item 1&lt;/li&gt;
-                    &lt;li&gt;Item 2&lt;/li&gt;
-                    &lt;li&gt;Item 3&lt;/li&gt;
-                    &lt;/ul&gt;
+ &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Item 1&lt;/li&gt;
+            &lt;li&gt;Item 2&lt;/li&gt;
+            &lt;li&gt;Item 3&lt;/li&gt;
+        &lt;/ul&gt;
 
-                    &lt;div id="container"&gt;
-                    &lt;/div&gt;
+    &lt;div id="container"&gt;
+    &lt;/div&gt;
 
-                    &lt;p class="fancy"&gt;Paragraph 1&lt;/p&gt;
-                    &lt;p class="fancy"&gt;Paragraph 2&lt;/p&gt;
-                    &lt;p class="fancy"&gt;Paragraph 3&lt;/p&gt;
+    &lt;p class="fancy"&gt;Paragraph 1&lt;/p&gt;
+    &lt;p class="fancy"&gt;Paragraph 2&lt;/p&gt;
+    &lt;p class="fancy"&gt;Paragraph 3&lt;/p&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    // let's select all list items
-                    var listItems = $("li");
-                    console.log(listItems);
+    &lt;!-- Link jQuery from the official CDN --&gt;
+    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+    &lt;!-- Now for the script that requires jQuery... --&gt;
+    &lt;script&gt;
+        /* $(document).ready() is the jQuery equivalent of window.onload */
+        $(document).ready(function() {
+            // let's select all list items
+            var listItems = $("li");
+            console.log(listItems);
 
-                    // let's select the container div...
-                    var container = $("div#container");
-                    console.log(container);
+            // let's select the container div...
+            var container = $("div#container");
+            console.log(container);
 
-                    // let's select the fancy class instances...
-                    var fancyElements = $(".fancy");
-                    console.log(fancyElements);
+            // let's select the fancy class instances...
+            var fancyElements = $(".fancy");
+            console.log(fancyElements);
 
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        });
+    &lt;/script&gt;
+    &lt;/body&gt;
+ &lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -143,26 +143,26 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
+ &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    // select and change text...
-                    $("h1").text("The new title...");
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select and change text...
+                $("h1").text("The new title...");
 
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+            });
+        &lt;/script&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -181,31 +181,31 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
+ &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
 
-                    &lt;h2&gt;A little heading&lt;/h2&gt;
+        &lt;h2&gt;A little heading&lt;/h2&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    // select and change large heading text colour...
-                    $("h1").style("color", "#ff00ff");
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select and change large heading text colour...
+                $("h1").style("color", "#ff00ff");
 
-                    // select and change small heading text and background colour...
-                    $("h2").css("color": "#ff00ff", "background-color": "#00ff00");
+                // select and change small heading text and background colour...
+                $("h2").css("color": "#ff00ff", "background-color": "#00ff00");
+            });
 
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+        &lt;/script&gt;
+    &lt;/body&gt;
+ &lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -223,29 +223,30 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;p&gt;Click me!!&lt;/p&gt;
+ &lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p&gt;Click me!!&lt;/p&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    // select the p tag and add a .click listener...
-                    $("p").click(function() {
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select the p tag and add a .click listener...
+                $("p").click(function() {
                     /* the code in this anonymous function is executed
                     when the click listener is fired (on click) */
                     console.log("Clicked!");
-                    });
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+                });
+            });
+
+        &lt;/script&gt;
+    &lt;/body&gt;
+ &lt;/html&gt;
                 </code>
             </pre>
     </section>
@@ -264,30 +265,30 @@
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
-                    &lt;html&gt;
-                    &lt;head&gt;
-                    &lt;title&gt;DOM Test&lt;/title&gt;
-                    &lt;/head&gt;
-                    &lt;body&gt;
-                    &lt;h1&gt;A big heading&lt;/h1&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;DOM Test&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;A big heading&lt;/h1&gt;
 
-                    &lt;h2&gt;A little heading&lt;/h2&gt;
+        &lt;h2&gt;A little heading&lt;/h2&gt;
 
-                    &lt;!-- Link jQuery from the official CDN --&gt;
-                    &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
-                    &lt;!-- Now for the script that requires jQuery... --&gt;
-                    &lt;script&gt;
-                    /* $(document).ready() is the jQuery equivalent of window.onload */
-                    $(document).ready(function() {
-                    // select the p tag and add a .click listener...
-                    $("p").click(function() {
+        &lt;!-- Link jQuery from the official CDN --&gt;
+        &lt;script src="https://code.jquery.com/jquery-2.1.4.js"&gt;&lt;/script&gt;
+        &lt;!-- Now for the script that requires jQuery... --&gt;
+        &lt;script&gt;
+            /* $(document).ready() is the jQuery equivalent of window.onload */
+            $(document).ready(function() {
+                // select the p tag and add a .click listener...
+                $("p").click(function() {
                     // let's fade out the 'p' when clicked, in 500ms...
                     $("p").fadeOut(500);
-                    });
-                    });
-                    &lt;/script&gt;
-                    &lt;/body&gt;
-                    &lt;/html&gt;
+                });
+            });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
                 </code>
             </pre>
     </section>
