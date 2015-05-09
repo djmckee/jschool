@@ -6,7 +6,8 @@
 @import url("reset.css");
 /* Import font dependencies from the fonts stylesheet */
 @import url("fonts.css");
-/* Import the theme that highlight.js requires for syntax colouring */
+/* Import the theme that highlight.js requires for syntax colouring
+    (taken from https://github.com/isagalaev/highlight.js/blob/master/src/styles/railscasts.css)*/
 @import url("highlightjs-theme.css");
 /* Import animation classes from the animations stylesheet */
 @import url("animations.css");
