@@ -2,7 +2,7 @@
 // data into profile.js upon completion).
 // Created by Dylan McKee on 16/04/2015.
 
-var Quiz = new function() {
+var Quiz = new function () {
 
     // a placeholder variable to hold our quiz questions array
     var quizQuestions = [];
@@ -21,7 +21,7 @@ var Quiz = new function() {
 
     // to be called in the document ready method of the main.js, once we've
     // established that the current page is indeed a quiz page.
-    this.initialiseQuizPage = function(){
+    this.initialiseQuizPage = function () {
 
         // placeholder variable for the quiz name, so we can perform null checking later on.
         var decodedName = null;
@@ -93,7 +93,7 @@ var Quiz = new function() {
             nextQuestionClicked();
         }
 
-    }
+    };
 
     //called when an answer's been selected - with the button that was clicked on to select the answer being passed into it
     function answerClicked(clickedButton) {
@@ -106,11 +106,8 @@ var Quiz = new function() {
         // get the id number from the set
         var buttonId = dataObjects.quizAnswerId;
 
-        // cast buttonId to a Number.
-        var selected = +buttonId;
-
-        // make current selection what's been selected...
-        currentAnswerSelection = selected;
+        // make current selection what's been selected... (casted as a number for safety)
+        currentAnswerSelection = +buttonId;
 
         // go to the next question...
         nextQuestionClicked();
@@ -181,8 +178,8 @@ var Quiz = new function() {
 
         // attach an 'answer clicked' listener to answer buttons, passing the button through to the function so that
         // its state can be set properly
-        $('.answer-button').click(function(){
-            // call the answer button clicked method, passing through the button so that it can be maninpulated
+        $('.answer-button').click(function () {
+            // call the answer button clicked method, passing through the button so that it can be manipulated
             // and have data read from it.
             answerClicked(this);
         });
@@ -238,7 +235,7 @@ var Quiz = new function() {
 
         // after animations have completed, in 1s (1000 milliseconds) time, remove elements that were being animated
         // out from the DOM, and add the new elements
-        setTimeout(function(){
+        setTimeout(function () {
             // remove the previously faded out elements from the DOM - their animated fade out is complete by now
             $('#answer-container').remove();
             $('#progress-update').remove();
@@ -248,25 +245,16 @@ var Quiz = new function() {
             var quizCompleteElement = '<div id="quiz-complete" class="fade-in">';
 
             // add a nice large tick icon from FontAwesome
-            var tick = '<i class="fa fa-check-circle-o"></i>';
+            quizCompleteElement += '<i class="fa fa-check-circle-o"></i>';
 
-            quizCompleteElement += tick;
-
-            // add 'well done' message in pargraph element
-            var wellDoneParagraph = '<p>' + completionString + '</p>';
-
-            // append to quiz complete element
-            quizCompleteElement += wellDoneParagraph;
+            // add 'well done' message in pargraph element and append to quiz complete element
+            quizCompleteElement += '<p>' + completionString + '</p>';
 
             // append 'result will be saved' string...
-            var savedString = '<p id="result-saved-string">Your result has been saved to your profile.</p>';
-
-            quizCompleteElement += savedString;
+            quizCompleteElement += '<p id="result-saved-string">Your result has been saved to your profile.</p>';
 
             // append 'back to quizzes' link
-            var backLink = '<a href="quizzes.html">Back to quizzes...</a>';
-
-            quizCompleteElement += backLink;
+            quizCompleteElement += '<a href="quizzes.html">Back to quizzes...</a>';
 
             // append social sharing buttons
             var socialSharingContainer = '<div id="social-links">';
@@ -290,4 +278,4 @@ var Quiz = new function() {
 
     }
 
-}
+};

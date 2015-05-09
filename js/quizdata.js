@@ -4,14 +4,14 @@
 // within my JavaScript and split up my data model from my actually code that controls the quiz view.
 // Created by Dylan McKee on 16/04/2015.
 
-var QuizData = new function() {
+var QuizData = new function () {
     this.data = [
         {
-            title:"Introduction",
+            title: "Introduction",
             description: "History, facts and syntax.",
             questions: [
                 {
-                    question:"In which year was JavaScript first invented?",
+                    question: "In which year was JavaScript first invented?",
                     answers: [
                         "1995",
                         "1989",
@@ -20,7 +20,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"Who standardises the JavaScript language?",
+                    question: "Who standardises the JavaScript language?",
                     answers: [
                         "Netscape",
                         "Google",
@@ -29,14 +29,14 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"Is \"22\" === 22 true or false?",
+                    question: "Is \"22\" === 22 true or false?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"Which langauges inspired JavaScript's syntax?",
+                    question: "Which langauges inspired JavaScript's syntax?",
                     answers: [
                         "HTML & XML",
                         "Python & Ruby",
@@ -46,7 +46,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"Which langauges can be ran in the browser?",
+                    question: "Which langauges can be ran in the browser?",
                     answers: [
                         "Only Python",
                         "Only JavaScript",
@@ -57,11 +57,11 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"Data Types in JavaScript",
+            title: "Data Types in JavaScript",
             description: "JavaScript's key built-in data types.",
             questions: [
                 {
-                    question:"Given the following decleration: var a = 5.65; - what type would a be?",
+                    question: "Given the following decleration: var a = 5.65; - what type would a be?",
                     answers: [
                         "A float",
                         "A double",
@@ -70,14 +70,14 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"True or False: Strings can be added together using the '+' operator, just like numbers?",
+                    question: "True or False: Strings can be added together using the '+' operator, just like numbers?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"How would a String be converted to a Number?",
+                    question: "How would a String be converted to a Number?",
                     answers: [
                         "\"5\".toNumber",
                         "Number(\"5\")",
@@ -85,7 +85,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would the 3rd element of myArray be accessed?",
+                    question: "How would the 3rd element of myArray be accessed?",
                     answers: [
                         "myArray[3]",
                         "myArray.get(2)",
@@ -97,11 +97,11 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"Functions in JavaScript",
+            title: "Functions in JavaScript",
             description: "How do functions work in JavaScript?",
             questions: [
                 {
-                    question:"What keyword defines a function?",
+                    question: "What keyword defines a function?",
                     answers: [
                         "func",
                         "funky",
@@ -110,14 +110,14 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"True or False: JavaScript functions have to declare a return type?",
+                    question: "True or False: JavaScript functions have to declare a return type?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"How many parameters can a JavaScript function have?",
+                    question: "How many parameters can a JavaScript function have?",
                     answers: [
                         "None",
                         "1",
@@ -126,7 +126,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"How many objects can a JavaScript function return?",
+                    question: "How many objects can a JavaScript function return?",
                     answers: [
                         "Unlimited",
                         "2",
@@ -136,7 +136,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"Can functions be treated as variables?",
+                    question: "Can functions be treated as variables?",
                     answers: [
                         "Yes - as anonymous functions",
                         "Yes - as static functions",
@@ -144,7 +144,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"Can JavaScript objects hold functions within them?",
+                    question: "Can JavaScript objects hold functions within them?",
                     answers: [
                         "Yes",
                         "No"
@@ -153,11 +153,11 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"The Console",
+            title: "The Console",
             description: "What's the console, and how can it be used when coding JavaScript?",
             questions: [
                 {
-                    question:"Where is the console located?",
+                    question: "Where is the console located?",
                     answers: [
                         "The Moon",
                         "The Web Inspector",
@@ -166,21 +166,21 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"True or False: JavaScript variables can be defined in the console?",
+                    question: "True or False: JavaScript variables can be defined in the console?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"True or False: JavaScript functions can be defined in the console?",
+                    question: "True or False: JavaScript functions can be defined in the console?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"JavaScript written in the console gets saved with the web page on exit?",
+                    question: "JavaScript written in the console gets saved with the web page on exit?",
                     answers: [
                         "True",
                         "False"
@@ -189,11 +189,11 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"JavaScript in HTML",
+            title: "JavaScript in HTML",
             description: "How can JavaScript be linked in with HTML?",
             questions: [
                 {
-                    question:"What tag is used to link JavaScript in HTML?",
+                    question: "What tag is used to link JavaScript in HTML?",
                     answers: [
                         "&lt;java&gt;",
                         "&lt;javascript&gt;",
@@ -202,14 +202,14 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"True or False: JavaScript should be in seperate files that are linked to when used on production websites?",
+                    question: "True or False: JavaScript should be in seperate files that are linked to when used on production websites?",
                     answers: [
                         "True",
                         "False"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"Where should JavaScript script tags be located ideally?",
+                    question: "Where should JavaScript script tags be located ideally?",
                     answers: [
                         "Within the &lt;head&gt;",
                         "After the &lt;/html&gt;",
@@ -218,7 +218,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"Does the order in which JavaScript files are linked matter?",
+                    question: "Does the order in which JavaScript files are linked matter?",
                     answers: [
                         "Yes",
                         "No"
@@ -227,11 +227,11 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"Manipulating the DOM",
+            title: "Manipulating the DOM",
             description: "How can you modify HTML to make pages interactive with JavaScript?",
             questions: [
                 {
-                    question:"How would a HTML element with an ID attribute be selected?",
+                    question: "How would a HTML element with an ID attribute be selected?",
                     answers: [
                         "element.id",
                         "selectElementWithIDAttribute()",
@@ -240,7 +240,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"How would all elements with class 'fancy-text' be selected?",
+                    question: "How would all elements with class 'fancy-text' be selected?",
                     answers: [
                         "document.findElementsWithClass('fancy-text')",
                         "document.find('fancy-text')",
@@ -249,7 +249,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"How would all <p> tags on the page be selected?",
+                    question: "How would all <p> tags on the page be selected?",
                     answers: [
                         "document.find('p')",
                         "document.querySelectorAll('&lt;p&gt;')",
@@ -258,7 +258,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would the text inside of a paragraph tag element 'myParagraph' be set to \"Hello\"?",
+                    question: "How would the text inside of a paragraph tag element 'myParagraph' be set to \"Hello\"?",
                     answers: [
                         "myParagraph.text = \"Hello\";",
                         "myParagraph.text(\"Hello\");",
@@ -267,7 +267,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would you get the text within 'myParagraph' (a paragraph element)?",
+                    question: "How would you get the text within 'myParagraph' (a paragraph element)?",
                     answers: [
                         "myParagraph.getText()",
                         "myParagraph.textContent",
@@ -276,7 +276,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"How would you make element myButton perform function myFunction when clicked?",
+                    question: "How would you make element myButton perform function myFunction when clicked?",
                     answers: [
                         "myButton.setOnClick(myFunction);",
                         "myButton.onclick = myFunction();",
@@ -285,7 +285,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would you make the function loaded run when the DOM has finished loading?",
+                    question: "How would you make the function loaded run when the DOM has finished loading?",
                     answers: [
                         "window.onload = loaded();",
                         "window.onload = loaded;",
@@ -294,7 +294,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"Why is it important to use a window.onload handler?",
+                    question: "Why is it important to use a window.onload handler?",
                     answers: [
                         "The web browser is slow",
                         "The window may close if you do not wait for it to load",
@@ -304,20 +304,20 @@ var QuizData = new function() {
                 }
             ]
         }, {
-            title:"JavaScript Frameworks",
+            title: "JavaScript Frameworks",
             description: "How can jQuery be used to ease cross-browser compatibility issues?",
             questions: [
                 {
-                    question:"Does jQuery need to be included?",
+                    question: "Does jQuery need to be included?",
                     answers: [
                         "Yes",
                         "No"
                     ],
                     correctAnswer: 1
                 }, {
-                    question:"Does it matter where jQuery is located within the document?",
+                    question: "Does it matter where jQuery is located within the document?",
                     answers: [
-                        "It doesn't matter - anywhere's fine",
+                        "It doesn't matter - anywhere is fine",
                         "It must be after the code that requires jQuery",
                         "It must be before the code that requires jQuery",
                         "It must be within the &lt;head&gt; tags",
@@ -325,7 +325,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would all <p> tags on the page be selected?",
+                    question: "How would all <p> tags on the page be selected?",
                     answers: [
                         "document.find('p')",
                         "jQuery.select('p')",
@@ -334,7 +334,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 3
                 }, {
-                    question:"How would the text inside of a paragraph tag element with an ID of'myParagraph' be set to \"Hello\"?",
+                    question: "How would the text inside of a paragraph tag element with an ID of 'myParagraph' be set to \"Hello\"?",
                     answers: [
                         "myParagraph.text = \"Hello\";",
                         "myParagraph.text(\"Hello\");",
@@ -343,7 +343,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"How would you get the text within a paragraph element with the ID of myParagraph?",
+                    question: "How would you get the text within a paragraph element with the ID of myParagraph?",
                     answers: [
                         "$('#myParagraph').getText()",
                         "$('#myParagraph').text()",
@@ -352,7 +352,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"How would you make an element with ID 'myButton' perform function myFunction when clicked?",
+                    question: "How would you make an element with ID 'myButton' perform function myFunction when clicked?",
                     answers: [
                         "#myButton.setOnClick(myFunction);",
                         "$('#myButton').click = myFunction;",
@@ -361,7 +361,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 4
                 }, {
-                    question:"How would you make the function loaded() run when the DOM has finished loading?",
+                    question: "How would you make the function loaded() run when the DOM has finished loading?",
                     answers: [
                         "$(DOM).loaded();",
                         "$(document).ready(loaded);",
@@ -370,7 +370,7 @@ var QuizData = new function() {
                     ],
                     correctAnswer: 2
                 }, {
-                    question:"Why is using jQuery advantageous?",
+                    question: "Why is using jQuery advantageous?",
                     answers: [
                         "No 'document loaded' callback is required",
                         "The window may close if you do not wait for it to load",
@@ -383,4 +383,4 @@ var QuizData = new function() {
 
 
     ];
-}
+};

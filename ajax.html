@@ -1,73 +1,83 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>AJAX | Jschool</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
-  </head>
-  <body>
-    <header>
-        <!-- Page header containing logo/site title, with a navbar
-        nested inside of it-->
-        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+</head>
+<body>
+<header>
+    <!-- Page header containing logo/site title, with a navbar
+    nested inside of it-->
+    <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
 
-        <!-- Navbar in the semantically nice nav element -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#tutorial-section">Tutorials</a></li>
-                <li><a href="quizzes.html">Quizzes</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div id="tutorial-container" class="fade-in">
-        <section class="lead">
-            <h1>AJAX</h1>
-            <p>Functions are a key part of JavaScript and allow you to write code that is efficient, without repeating yourself. Aditionally, JavaScript treats functions as objects, so they can be passed around as variables (where the value of the variable is what the function returns).</p>
-        </section>
-        <section>
-            <h2>A simple function</h2>
-            <p>Functions are declared in JavaScript using the function keyword, followed by () brackets to hold any paramters the fucntion requires, and { } brackets, where the code that the fucntion excecutes is held; and look somewhat similar to methods in Java. Functions are called simply by using their name, followed by () brackets containing any parameters they need passed in, and then a semi-colon. Below is a simple example...</p>
-            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
-            <pre>
-                <code>
-// define the function...
-function myFunction() {
-    // the following code is executed when myFunction is called...
-    console.log("Hello function world!");
-}
-
-// let's call myFunction...
-myFunction();
-
-                </code>
-            </pre>
-            <p class="top-tip">Because functions can be treated as variables, they can also be stored in arrays, or as values within objects, so objects can be given methods - rather than just holding static values. The technical term for treating functions as variables is 'anonymous functions'.</p>
-        </section>
-    </div>
-
-    <!-- Consistent footer containing links and other information -->
-    <footer>
+    <!-- Navbar in the semantically nice nav element -->
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#tutorial-section">Tutorials</a></li>
             <li><a href="quizzes.html">Quizzes</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="credits.html">Credits</a></li>
         </ul>
-        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
-    </footer>
+    </nav>
+</header>
 
-    <!-- linking JavaScript at the end for page load speed benefits.
-        Using RequireJS has meant that I only need to link one file into the actual
-        HTML, allowing my HTML to be semantically beautiful.
-        I can also load JavaScript in Async, which is ideal to speed up loading,
-        again thanks to RequireJS.
-    -->
-    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
-  </body>
+<div id="tutorial-container" class="fade-in">
+    <section class="lead">
+        <h1>AJAX</h1>
+
+        <p>Functions are a key part of JavaScript and allow you to write code that is efficient, without repeating
+            yourself. Aditionally, JavaScript treats functions as objects, so they can be passed around as variables
+            (where the value of the variable is what the function returns).</p>
+    </section>
+    <section>
+        <h2>A simple function</h2>
+
+        <p>Functions are declared in JavaScript using the function keyword, followed by () brackets to hold any
+            paramters the fucntion requires, and { } brackets, where the code that the fucntion executes is held; and
+            look somewhat similar to methods in Java. Functions are called simply by using their name, followed by ()
+            brackets containing any parameters they need passed in, and then a semi-colon. Below is a simple
+            example...</p>
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+                    // define the function...
+                    function myFunction() {
+                    // the following code is executed when myFunction is called...
+                    console.log("Hello function world!");
+                    }
+
+                    // let's call myFunction...
+                    myFunction();
+
+                </code>
+            </pre>
+        <p class="top-tip">Because functions can be treated as variables, they can also be stored in arrays, or as
+            values within objects, so objects can be given methods - rather than just holding static values. The
+            technical term for treating functions as variables is 'anonymous functions'.</p>
+    </section>
+</div>
+
+<!-- Consistent footer containing links and other information -->
+<footer>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tutorial-section">Tutorials</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="credits.html">Credits</a></li>
+    </ul>
+    <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+</footer>
+
+<!-- linking JavaScript at the end for page load speed benefits.
+    Using RequireJS has meant that I only need to link one file into the actual
+    HTML, allowing my HTML to be semantically beautiful.
+    I can also load JavaScript in Async, which is ideal to speed up loading,
+    again thanks to RequireJS.
+-->
+<script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+</body>
 </html>

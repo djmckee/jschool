@@ -1,0 +1,96 @@
+/* style.css is a stylesheet to hold generic CSS animations and animation classes for the Jschool website
+    created by Dylan McKee on 09/05/2015
+    cross browser support prefixes generated with http://pleeease.io/play/
+*/
+
+/* sadly, the @-webkit-keyframes animations do NOT currently validate on the W3C validator, however
+    they are ABSOLUTELY REQUIRED to make animations work in current versions of Chrome, so I left them in
+    deciding that working animations in the world's most popular browser was better than 100% CSS validity... */
+
+/* Generic animations */
+/* define the fade out animations */
+@-webkit-keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+/* a generic class that performs the fade out animation defined above */
+.fade-out {
+    -webkit-animation-name: fadeout;
+    animation-name: fadeout;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+/* define the fade in animations */
+@-webkit-keyframes fadein {
+    from {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    to {
+        opacity: 100;
+        filter: alpha(opacity=1);
+    }
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    to {
+        opacity: 1;
+        filter: alpha(opacity=1);
+    }
+}
+
+/* a generic class that performs the fade in animation defined above */
+.fade-in {
+    -webkit-animation-name: fadein;
+    animation-name: fadein;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+}
+
+/* Credits animation */
+/* define rolling credits that look like movie credits, scrolling down from the
+    top of the screen (then stopping) - applied by classes in the normal style.css */
+@-webkit-keyframes credit-roll {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes credit-roll {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 0;
+    }
+}

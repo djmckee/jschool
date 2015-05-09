@@ -1,146 +1,173 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Data Types Tutorial | Jschool</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
-  </head>
-  <body>
-    <header>
-        <!-- Page header containing logo/site title, with a navbar
-        nested inside of it-->
-        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+</head>
+<body>
+<header>
+    <!-- Page header containing logo/site title, with a navbar
+    nested inside of it-->
+    <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
 
-        <!-- Navbar in the semantically nice nav element -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#tutorial-section">Tutorials</a></li>
-                <li><a href="quizzes.html">Quizzes</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div id="tutorial-container" class="fade-in">
-        <section class="lead">
-            <h1>Data Types in JavaScript</h1>
-            <p>JavaScript has several key built in data types - it's extremely important to know about them and what they are...</p>
-        </section>
-        <section>
-            <h2>Number</h2>
-            <p>Unlike many programming languages, JavaScript has only one Number data type which handles all arithematic and numerical values - unlike the usual approach of having different types for integer, floating point, and double precision numbers. Other types can be typecast to a Number type, for example for use in calculations, simply by inserting a + before their variable name. This makes JavaScript arithematic very simple to learn, as demonstrated below...</p>
-            <pre>
-                <code>
-var numberOne = 1;
-var numberTwo = 2;
-var numberString = "3";
-
-/* note the + before numberString, which performs a type conversion -
-    making it a Number type rather than a String type. */
-var total = numberOne + numberTwo + +numberString;
-
-                </code>
-            </pre>
-        </section>
-        <section>
-            <h2>String</h2>
-            <p>JavaScript has a String type, which can be created using the double-quote literal syntax. The String type can be concatenated using the + operator, and has several useful functions <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">as discussed in the language reference here</a>. The String type can hold any unicode character sequence. To convert other types to strings, you can either use String(myObject), or call myObject.toString() (where myObject is the object you want to convert).</p>
-            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
-            <pre>
-                <code>
-// String literals simply use double quotes...
-var hello = "Hello";
-var world = "World";
-var number = 5;
-
-// strings can be concatenated using the + operator...
-var result = hello + " " + world + " " + String(number);
-
-// and printed straight to the console...
-console.log(result);
-
-                </code>
-            </pre>
-            <p class="top-tip">Either myObject.toString() or String(myObject) can be used to convert any variable to a String - however, use of .toString() can create an error if the variable you call it on is nil - the use of String() avoids this possible issue.</p>
-        </section>
-        <section>
-            <h2>Array</h2>
-            <p>Arrays allow many objects to be stored in one - like a 'list' of items. They are zero-indexed in JavaScript, meaning that the first item in the array is at position 0. Arrays can be created using the [] literal syntax (or created full of objects like [object1, object2, object3]). Items can be added to the array using 'bracket syntax' - so myArray[2] = myObject sets object 3 in myArray to be myObject, and myObject = myArray[2] sets myObject to be equal to the 3rd object in myArray.</p>
-            <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
-            <pre>
-                <code>
-var blankArray = [];
-var fullArray = ["Hello", "How are you today?", "JavaScript is the best!"];
-
-// how big is the full array?
-var arraySize = fullArray.length;
-
-// copy items from the fullArray into the blankArray...
-for (var i = 0; i < arraySize; i++) {
-    blankArray[i] = fullArray[i];
-}
-
-// now let's print out the not-so-blank contents of blankArray
-// (along with some info on where things were...)
-for (var i = 0; i < blankArray.length; i++) {
-    var stringToPrint = blankArray[i];
-    console.log(stringToPrint + " was at index " + String(i));
-}
-
-                </code>
-            </pre>
-            <p class="top-tip">Array size can be accessed through myArray.length - arrays also feature built in sorting methods which can be very useful - <a href="http://www.w3schools.com/js/js_array_methods.asp">more on those here...</a></p>
-        </section>
-        <section>
-            <h2>Objects</h2>
-            <p>JavaScript uses objects heavily. They're a key-value based data type - similar to Dictionaries in Python, or Maps in Java - where the object's data values are held with a corresponding key. Objects can be created using the convenient { myKey: myValue } literal syntax, and then values can be accessed via dot notation, as in the example below...</p>
-            <pre>
-                <code>
-// let's create a literal object...
-var myObject = {
-    keyOne: "valueOne",
-    keyTwo: 5,
-    keyThree: ["hi", "hello"]
-};
-
-// let's get a value from the object...
-var myString = myObject.keyOne;
-
-// and now set a value...
-myObject.keyTwo = 7;
-
-// keys can be added dynamically too...
-myObject.anotherKey = "another value";
-
-// let's check what the object now contains...
-console.log(myObject);
-                </code>
-            </pre>
-            <p class="top-tip">Because JavaScript supports functions as variables, as we'll discuss in the next section, objects can easily be given methods too.</p>
-        </section>
-</div>
-
-    <!-- Consistent footer containing links and other information -->
-    <footer>
+    <!-- Navbar in the semantically nice nav element -->
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#tutorial-section">Tutorials</a></li>
             <li><a href="quizzes.html">Quizzes</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="credits.html">Credits</a></li>
         </ul>
-        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
-    </footer>
+    </nav>
+</header>
 
-    <!-- linking JavaScript at the end for page load speed benefits.
-        Using RequireJS has meant that I only need to link one file into the actual
-        HTML, allowing my HTML to be semantically beautiful.
-        I can also load JavaScript in Async, which is ideal to speed up loading,
-        again thanks to RequireJS.
-    -->
-    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
-  </body>
+<div id="tutorial-container" class="fade-in">
+    <section class="lead">
+        <h1>Data Types in JavaScript</h1>
+
+        <p>JavaScript has several key built in data types - it's extremely important to know about them and what they
+            are...</p>
+    </section>
+    <section>
+        <h2>Number</h2>
+
+        <p>Unlike many programming languages, JavaScript has only one Number data type which handles all arithmetic and
+            numerical values - unlike the usual approach of having different types for integer, floating point, and
+            double precision numbers. Other types can be typecast to a Number type, for example for use in calculations,
+            simply by inserting a + before their variable name. This makes JavaScript arithmetic very simple to learn,
+            as demonstrated below...</p>
+            <pre>
+                <code>
+                    var numberOne = 1;
+                    var numberTwo = 2;
+                    var numberString = "3";
+
+                    /* note the + before numberString, which performs a type conversion -
+                    making it a Number type rather than a String type. */
+                    var total = numberOne + numberTwo + +numberString;
+
+                </code>
+            </pre>
+    </section>
+    <section>
+        <h2>String</h2>
+
+        <p>JavaScript has a String type, which can be created using the double-quote literal syntax. The String type can
+            be concatenated using the + operator, and has several useful functions <a
+                    href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">as
+                discussed in the language reference here</a>. The String type can hold any unicode character sequence.
+            To convert other types to strings, you can either use String(myObject), or call myObject.toString() (where
+            myObject is the object you want to convert).</p>
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+                    // String literals simply use double quotes...
+                    var hello = "Hello";
+                    var world = "World";
+                    var number = 5;
+
+                    // strings can be concatenated using the + operator...
+                    var result = hello + " " + world + " " + String(number);
+
+                    // and printed straight to the console...
+                    console.log(result);
+
+                </code>
+            </pre>
+        <p class="top-tip">Either myObject.toString() or String(myObject) can be used to convert any variable to a
+            String - however, use of .toString() can create an error if the variable you call it on is nil - the use of
+            String() avoids this possible issue.</p>
+    </section>
+    <section>
+        <h2>Array</h2>
+
+        <p>Arrays allow many objects to be stored in one - like a 'list' of items. They are zero-indexed in JavaScript,
+            meaning that the first item in the array is at position 0. Arrays can be created using the [] literal syntax
+            (or created full of objects like [object1, object2, object3]). Items can be added to the array using
+            'bracket syntax' - so myArray[2] = myObject sets object 3 in myArray to be myObject, and myObject =
+            myArray[2] sets myObject to be equal to the 3rd object in myArray.</p>
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+            <pre>
+                <code>
+                    var blankArray = [];
+                    var fullArray = ["Hello", "How are you today?", "JavaScript is the best!"];
+
+                    // how big is the full array?
+                    var arraySize = fullArray.length;
+
+                    // copy items from the fullArray into the blankArray...
+                    for (var i = 0; i < arraySize; i++) {
+                    blankArray[i] = fullArray[i];
+                    }
+
+                    // now let's print out the not-so-blank contents of blankArray
+                    // (along with some info on where things were...)
+                    for (var i = 0; i < blankArray.length; i++) {
+                    var stringToPrint = blankArray[i];
+                    console.log(stringToPrint + " was at index " + String(i));
+                    }
+
+                </code>
+            </pre>
+        <p class="top-tip">Array size can be accessed through myArray.length - arrays also feature built in sorting
+            methods which can be very useful - <a href="http://www.w3schools.com/js/js_array_methods.asp">more on those
+                here...</a></p>
+    </section>
+    <section>
+        <h2>Objects</h2>
+
+        <p>JavaScript uses objects heavily. They're a key-value based data type - similar to Dictionaries in Python, or
+            Maps in Java - where the object's data values are held with a corresponding key. Objects can be created
+            using the convenient { myKey: myValue } literal syntax, and then values can be accessed via dot notation, as
+            in the example below...</p>
+            <pre>
+                <code>
+                    // let's create a literal object...
+                    var myObject = {
+                    keyOne: "valueOne",
+                    keyTwo: 5,
+                    keyThree: ["hi", "hello"]
+                    };
+
+                    // let's get a value from the object...
+                    var myString = myObject.keyOne;
+
+                    // and now set a value...
+                    myObject.keyTwo = 7;
+
+                    // keys can be added dynamically too...
+                    myObject.anotherKey = "another value";
+
+                    // let's check what the object now contains...
+                    console.log(myObject);
+                </code>
+            </pre>
+        <p class="top-tip">Because JavaScript supports functions as variables, as we'll discuss in the next section,
+            objects can easily be given methods too.</p>
+    </section>
+</div>
+
+<!-- Consistent footer containing links and other information -->
+<footer>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tutorial-section">Tutorials</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="credits.html">Credits</a></li>
+    </ul>
+    <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+</footer>
+
+<!-- linking JavaScript at the end for page load speed benefits.
+    Using RequireJS has meant that I only need to link one file into the actual
+    HTML, allowing my HTML to be semantically beautiful.
+    I can also load JavaScript in Async, which is ideal to speed up loading,
+    again thanks to RequireJS.
+-->
+<script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+</body>
 </html>

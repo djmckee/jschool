@@ -5,13 +5,13 @@
 
 // Created by Dylan McKee on 21/04/2015.
 
-var CertificateGenerator = new function() {
+var CertificateGenerator = new function () {
 
     // Storing SVG data as a variable because AJAX doesn't work locally in Google Chrome due to security reasons, grr.
     // In real life this would obviously be serverside in an appropriate location in its own SVG file, but this sadly
     // isn't possible here due to Cross Site Scripting security limitations.
     // The SVG data is from certificate.svg, in the images folder.
-    var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">';
+    var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">';
     certificateSvgData += '<rect id="box" fill="#2C3E50" stroke="#000000" stroke-miterlimit="10" width="841.89" height="595.28"/>';
     certificateSvgData += '<rect id="box_1_" x="33.904" y="23.972" fill="#F1F2F2" stroke="#000000" stroke-miterlimit="10" width="774.083" height="547.336"/>';
     certificateSvgData += '<rect id="box_2_" x="64.479" y="45.591" fill="#35495E" stroke="#000000" stroke-miterlimit="10" width="712.931" height="504.098"/>';
@@ -27,11 +27,11 @@ var CertificateGenerator = new function() {
     certificateSvgData += '<text id="date_label" style="text-anchor: middle; font-weight: 200;" transform="matrix(1 0 0 1 367.0859 533.7051)" fill="#FDFDFE" font-family="\'Lato-Regular\'" font-size="20">22/04/2016</text>';
     certificateSvgData += '</svg>';
 
-    this.generateCertificate = function(){
+    this.generateCertificate = function () {
         // get the contents of certificateSvgData rendered into
         // a div with an id of certificate-container (set to display none!)
         // create SVG Element...
-        var svgElement = '<div id="certificate-container" display="none">';
+        var svgElement = '<div id="certificate-container" style="display=none;">';
 
         // append the SVG data in...
         svgElement += certificateSvgData;
@@ -61,7 +61,7 @@ var CertificateGenerator = new function() {
         var date = new Date();
         var day = date.getDate();
         // plus one here because JavaScript dates are zero indexed :o
-        var month =  (date.getMonth() + 1);
+        var month = (date.getMonth() + 1);
         var year = date.getFullYear();
 
         var dateString = String(day) + '/' + String(month) + '/' + String(year);
@@ -92,4 +92,4 @@ var CertificateGenerator = new function() {
 
     }
 
-}
+};

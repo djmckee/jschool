@@ -1,19 +1,19 @@
 /* style.css is a stylesheet for the Jschool website,
     created by Dylan McKee on 15/04/2015  */
-
 /* Using imports in the CSS file to keep my HTML as semantically clean as possible
     and not clutter it up with link tags */
+
 /* Import reset stylesheet (taken from http://meyerweb.com/eric/tools/css/reset/) */
 @import url("reset.css");
-
 
 /* Import font dependencies from the fonts stylesheet */
 @import url("fonts.css");
 
-
 /* Import the theme that highlight.js requires for syntax colouring */
 @import url("highlightjs-theme.css");
 
+/* Import animation classes from the animations stylesheet */
+@import url("animations.css");
 
 /* Body styles affect everything in the document - so very simply setting background-color and font up */
 body {
@@ -22,7 +22,7 @@ body {
     background-color: #f9f9f9;
 
     /* Web safe modern font stack */
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
 }
 
 /* The header section is at the top of every page and contains logo and nav, in a coloured 'banner' */
@@ -32,24 +32,23 @@ header {
     /* the header needs a minimum height so that desktop sized screens display it properly */
     min-height: 70px;
     /* some padding means logos/links don't collide with the sides of the viewport */
-    padding: 10px 50px;
-    padding-top: 40px;
+    padding: 40px 50px 10px;
+    /* a light font makes the logo/nav links look good! */
+    font-weight: 300;
 }
 
 /* Navigation element is present within the header tag on every page and contains a list of nav links */
 nav {
     /* nav needs to be displayed to the right of the logo within the banner, so display inline where there's space */
     display: inline;
-    font-weight: 300;
 }
 
 /* header logo is the large logo on the top left of the page within the header banner */
 #header-logo {
-    /* give it a large thin font, with light colour to contrast with the dark blue banner background */
+    /* give it a large font, with light colour to contrast with the dark blue banner background */
     color: #ecf0f1;
     font-size: 32pt;
     display: inline;
-    font-weight: 300;
 }
 
 /* links within the header don't want an ugly underline, they simply need a nice visible white colour */
@@ -64,7 +63,7 @@ nav ul {
     float: right;
 }
 
-/* nagiation 'list' items need to display inline next to each other, with a button style box around them, with rounded corners, and the link title in the center */
+/* navigation 'list' items need to display inline next to each other, with a button style box around them, with rounded corners, and the link title in the center */
 nav ul li {
     display: inline-block;
     font-size: 14pt;
@@ -91,7 +90,7 @@ footer {
 }
 
 /* the footer paragraph contains credit notice, and must be in a light font on teh right hand side,
-    aligned vertiacally with the links on the left hand of the footer (when on a desktop sized viewport) */
+    aligned vertically with the links on the left hand of the footer (when on a desktop sized viewport) */
 footer p {
     font-weight: 200;
     float: right;
@@ -100,14 +99,14 @@ footer p {
     top: -16px;
 }
 
-/* footer links are displayed in a horizontal manner with some seperation between them */
+/* footer links are displayed in a horizontal manner with some separated between them */
 footer > ul > li {
     display: inline;
     margin-left: 10px;
     margin-right: 10px;
 }
 
-/* footer links need to be visable on a dark background, and don't want any underlining */
+/* footer links need to be visible on a dark background, and don't want any underlining */
 footer a {
     text-decoration: none;
     font-weight: normal;
@@ -171,7 +170,7 @@ section a:hover {
 
 /* divs within the grid must have a max width suitable for small screens,
     and must display inline-block (to physically be in grid form, resizable
-    as the browser resizes). They have a dark blue border around them, with
+    as the browser re-sizes). They have a dark blue border around them, with
     rounded corners */
 .grid > div {
     max-width: 300px;
@@ -198,8 +197,7 @@ section a:hover {
     margin-bottom: 30px;
 }
 
-
-#tutorial-section > div > div > i{
+#tutorial-section > div > div > i {
     color: #f9f9f9;
     background-color: #2c3e50;
     padding: 20px;
@@ -220,7 +218,7 @@ section a:hover {
     font-weight: 200;
 }
 
-/* the button turns a lighter green when hoevered, and its text goes bolder (but not underlined) */
+/* the button turns a lighter green when hovered, and its text goes bolder (but not underlined) */
 .rounded-button:hover {
     background-color: #2ecc71;
     text-decoration: none;
@@ -251,16 +249,13 @@ section a:hover {
     background-color: #34495e;
     color: #f9f9f9;
     border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
     display: block;
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 10px auto;
     max-width: 350px;
 }
 
-/* the button goes a ligter blue when hovered over to indicate to the user that they're about to select that answer */
+/* the button goes a lighter blue when hovered over to indicate to the user that they're about to select that answer */
 .answer-button:hover {
     background-color: #4C6C8B;
 }
@@ -272,7 +267,7 @@ section a:hover {
 }
 
 /* the progress bar in the progress section doesn't want to be *too* wide */
-#progress-update > progress{
+#progress-update > progress {
     max-width: 300px;
 }
 
@@ -355,7 +350,7 @@ section a:hover {
     line-height: 1.2;
     font-size: 14pt;
 
-    /* sections of text are unplesant to read after ~1080px, so constrain width to a comfortable maximum */
+    /* sections of text are unpleasant to read after ~1080px, so constrain width to a comfortable maximum */
     max-width: 1080px;
 
     /* over this max width, sections must be centered nicely */
@@ -380,10 +375,7 @@ section a:hover {
     which needs center alignment - along with decent vertical spacing */
 #tutorial-container > section:last-child {
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px auto;
 }
 
 /* tutorial videos need to be centered, and decently padded */
@@ -415,7 +407,7 @@ code {
     font-size: 12pt;
 }
 
-/* code examples need to be preceeded by a 'Code Example title too' */
+/* code examples need to be preceded by a 'Code Example title too' */
 code::before {
     content: "Code Example";
     display: block;
@@ -441,20 +433,7 @@ code::before {
     font-weight: bold;
 }
 
-
 /* Credits */
-/* define rolling credits that look like movie credits, scrolling down from the
-    top of the screen (then stopping) */
-@-webkit-keyframes creditroll {
-    from {top: -100%;}
-    to {top: 0;}
-}
-
-@keyframes creditroll {
-    from {top: -100%;}
-    to {top: 0;}
-}
-
 /* a container for the scrolling credits, position relative (to contain the
     position absolute credits), and with a concrete height so the animations
     can work properly */
@@ -464,8 +443,8 @@ code::before {
     height: 420px;
 }
 
-/* the div is what actually scrolls - by applying the creditroll animation defined
-    above. Position absolute to make the 'top' property work as required,
+/* the div is what actually scrolls - by applying the credit-roll animation defined
+    in the animations.css file. Position absolute to make the 'top' property work as required,
     and width set to provide sufficient padding at runtime thanks to the
     CSS3 calc function */
 #scrolling-credits > div {
@@ -475,12 +454,14 @@ code::before {
     margin-right: auto;
     width: calc(100% - 50px);
     line-height: 200%;
-            -webkit-animation-name: creditroll;
-                    animation-name: creditroll;
-            -webkit-animation-duration: 3s;
-                    animation-duration: 3s;
-                    -webkit-animation-direction: forwards;
-                            animation-direction: forwards;
+    -webkit-animation-name: credit-roll;
+    animation-name: credit-roll;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-direction: normal;
+    animation-direction: normal;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 
 }
 
@@ -490,50 +471,6 @@ code::before {
     font-size: 16pt;
 
 }
-
-/* Generic animations - cross browser support prefixes generated with http://pleeease.io/play/ */
-/* define the fade out animations */
-@-webkit-keyframes fadeout {
-    from {opacity: 1;filter: alpha(opacity=100);}
-    to {opacity: 0;filter: alpha(opacity=0);}
-}
-
-@keyframes fadeout {
-    from {opacity: 1;filter: alpha(opacity=100);}
-    to {opacity: 0;filter: alpha(opacity=0);}
-}
-
-/* a generic class that performs the fade out animation defined above */
-.fade-out {
-    -webkit-animation-name: fadeout;
-            animation-name: fadeout;
-    -webkit-animation-direction: forwards;
-            animation-direction: forwards;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-}
-
-/* define the fade in animations */
-@-webkit-keyframes fadein {
-    from {opacity: 0;filter: alpha(opacity=0);}
-    to {opacity: 100;filter: alpha(opacity=1);}
-}
-
-@keyframes fadein {
-    from {opacity: 0;filter: alpha(opacity=0);}
-    to {opacity: 100;filter: alpha(opacity=1);}
-}
-
-/* a generic class that performs the fade in animation defined above */
-.fade-in {
-    -webkit-animation-name: fadein;
-            animation-name: fadein;
-    -webkit-animation-direction: forwards;
-            animation-direction: forwards;
-    -webkit-animation-duration: 1s;
-            animation-duration: 1s;
-}
-
 
 /* Media queries for screens smaller than standard desktop */
 @media screen and (max-width: 745px) {
@@ -554,7 +491,7 @@ code::before {
         margin-top: 10px;
     }
 
-    /* display the nav links in the header in block form, unfloated, with some vertical spacing between them */
+    /* display the nav links in the header in block form, un-floated, with some vertical spacing between them */
     nav ul {
         float: none;
     }

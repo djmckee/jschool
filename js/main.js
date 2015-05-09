@@ -7,11 +7,11 @@
 // within the js/lib directory.
 
 /* RequireJS is a library that I downloaded from http://requirejs.org/ on the
-   16/04/15, and is licensed under the MIT liscence.
+ 16/04/15, and is licensed under the MIT liscence.
 
-   It is being used as a dependency/library management system within this project.
+ It is being used as a dependency/library management system within this project.
 
-*/
+ */
 // set up RequireJS, configuring the libraries that I wish to import with it...
 require.config({
     baseUrl: 'js/lib',
@@ -26,13 +26,13 @@ require.config({
         quizData: '../quizdata',
         quiz: '../quiz',
         certificategenerator: '../certificategenerator'
-        }
+    }
 });
 
 // import our requirements - bringing the libraries we specified above into scope - and begin the actual JavaScripting
-require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificategenerator"], function() {
+require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificategenerator"], function () {
     // this code is called once RequireJS has loaded the libraries I require.
-    $(document).ready(function() {
+    $(document).ready(function () {
         // whilst library loading will *probably* take longer than loading the DOM,
         // I don't wanna assume anything - so be cautious and use document ready
         // (from jQuery) to ensure that the DOM is loaded fully before performing JS.
@@ -44,7 +44,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
         if ($('code') !== null) {
             // If there's code in the page, highlight it...
             // iterate through the code tags...
-            $('code').each(function(i, block) {
+            $('code').each(function (i, block) {
                 // highlight the code within the tag.
                 hljs.highlightBlock(block);
             });
@@ -152,7 +152,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             }
 
             // add the 'clear all button' functionality
-            $('#quiz-clear-section > a').click(function(){
+            $('#quiz-clear-section > a').click(function () {
                 // prompt the user?
                 var shouldClear = confirm("Are you sure you want to clear all quiz score history forever?");
 
@@ -168,6 +168,8 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             });
 
             // see if the user's completed all quizzes yet?
+            /* I looked up the Object.keys method at
+                http://stackoverflow.com/questions/3068534/getting-javascript-object-key-list */
             if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
                 // they've completed (at least) as many quizzes as are available
                 // allow them to print the certificate.
@@ -175,7 +177,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
                 $('#quiz-info-lead').append(congratulationsMessage);
 
                 // add 'make certificate' button functionality...
-                $('#certificate-claim-button').click(function(){
+                $('#certificate-claim-button').click(function () {
                     // check the user's earned a certificate, otherwise fail with alert!
                     if (Object.keys(Profile.profileData.data).length >= QuizData.data.length) {
                         // they've earned it - go ahead and generate...
@@ -185,7 +187,7 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
                         $('p#claim-text').addClass('fade-out');
 
                         // remove from DOM once CSS fade is complete...
-                        setTimeout(function(){
+                        setTimeout(function () {
                             $('p#claim-text').remove();
                         }, 900);
 

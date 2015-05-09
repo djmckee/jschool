@@ -1,74 +1,77 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Quiz | Jschool</title>
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="images/js-icon.png" type="image/x-icon">
-  </head>
-  <body>
-    <header>
-        <!-- Page header containing logo/site title, with a navbar
-        nested inside of it-->
-        <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
+</head>
+<body>
+<header>
+    <!-- Page header containing logo/site title, with a navbar
+    nested inside of it-->
+    <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
 
-        <!-- Navbar in the symantically nice nav element -->
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#tutorial-section">Tutorials</a></li>
-                <li><a href="quizzes.html">Quizzes</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <div id="no-js-warning">
-        <!-- This is dynamically removed as soon as JavaScript is detected (by JavaScript), but the quiz literally won't work without JavaScript so it really is required -->
-        <!-- I think this somewhat ungraceful fallback is fine, since I question why a user is on a website that teaches JavaScript when they have JavaScript disabled themselves... -->
-        <p>We're sorry, but this quiz requires JavaScript to function properly. Please enable it and then re-visit this page.</p>
-    </div>
-
-    <section class="lead">
-        <!-- No content in here these quiz based elements - it's all set dynamically via JavaScript (quiz.js) -->
-        <h2 id="quiz-title"></h2>
-        <div id="question-container">
-            <p id="question-number"></p>
-            <p id="question-text"></p>
-        </div>
-    </section>
-
-
-    <!-- No content in here these quiz based elements - it's all set dynamically via JavaScript (quiz.js) -->
-    <section id="quiz-container">
-        <div id="answer-container"></div>
-    </section>
-
-    <section id="progress-update">
-        <!-- Progress section is set dynamically via JavaScript (quiz.js) -->
-        <progress value="0" max="100"></progress>
-        <span>0/10</span>
-    </section>
-
-    <!-- Consistent footer containing links and other information -->
-    <footer>
+    <!-- Navbar in the semantically nice nav element -->
+    <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="index.html#tutorial-section">Tutorials</a></li>
             <li><a href="quizzes.html">Quizzes</a></li>
             <li><a href="about.html">About</a></li>
-            <li><a href="credits.html">Credits</a></li>
         </ul>
-        <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
-    </footer>
+    </nav>
+</header>
 
-    <!-- linking JavaScript at the end for page load speed benefits.
-        Using RequireJS has meant that I only need to link one file into the actual
-        HTML, allowing my HTML to be symantically beautiful.
-        I can also load JavaScript in Async, which is ideal to speed up loading,
-        again thanks to RequireJS.
-    -->
-    <script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
-  </body>
+<div id="no-js-warning">
+    <!-- This is dynamically removed as soon as JavaScript is detected (by JavaScript), but the quiz literally won't work without JavaScript so it really is required -->
+    <!-- I think this somewhat ungraceful fallback is fine, since I question why a user is on a website that teaches JavaScript when they have JavaScript disabled themselves... -->
+    <p>We're sorry, but this quiz requires JavaScript to function properly. Please enable it and then re-visit this
+        page.</p>
+</div>
+
+<section class="lead">
+    <!-- No content in here these quiz based elements - it's all set dynamically via JavaScript (quiz.js) -->
+    <h2 id="quiz-title"></h2>
+
+    <div id="question-container">
+        <p id="question-number"></p>
+
+        <p id="question-text"></p>
+    </div>
+</section>
+
+
+<!-- No content in here these quiz based elements - it's all set dynamically via JavaScript (quiz.js) -->
+<section id="quiz-container">
+    <div id="answer-container"></div>
+</section>
+
+<section id="progress-update">
+    <!-- Progress section is set dynamically via JavaScript (quiz.js) -->
+    <progress value="0" max="100"></progress>
+    <span>0/10</span>
+</section>
+
+<!-- Consistent footer containing links and other information -->
+<footer>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#tutorial-section">Tutorials</a></li>
+        <li><a href="quizzes.html">Quizzes</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="credits.html">Credits</a></li>
+    </ul>
+    <p>&copy; Dylan McKee 2015 - for Newcastle University.</p>
+</footer>
+
+<!-- linking JavaScript at the end for page load speed benefits.
+    Using RequireJS has meant that I only need to link one file into the actual
+    HTML, allowing my HTML to be semantically beautiful.
+    I can also load JavaScript in Async, which is ideal to speed up loading,
+    again thanks to RequireJS.
+-->
+<script data-main="js/main" type="text/javascript" src="js/lib/require.js" async></script>
+</body>
 </html>
