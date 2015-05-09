@@ -193,6 +193,7 @@ section a:hover {
     margin-bottom: 30px;
 }
 
+/* tutorial icons must be dark blue rounded items, with a light foreground colour */
 #tutorial-section > div > div > i {
     color: #f9f9f9;
     background-color: #2c3e50;
@@ -273,15 +274,18 @@ section a:hover {
     font-weight: 200;
 }
 
+/* quiz completion text must be large and well spaced */
 #quiz-complete > p {
     font-size: 28pt;
     padding: 20px;
 }
 
+/* result-saved-string is a smaller bit of text informing the user of the save success */
 #quiz-complete #result-saved-string {
     font-size: 15pt;
 }
 
+/* a simple, somewhat small link element */
 #quiz-complete > a {
     font-size: 16pt;
     font-weight: 200;
@@ -289,6 +293,7 @@ section a:hover {
     color: #2c3e50;
 }
 
+/* social share buttons are well-padded links with rounded corners and borders */
 #social-links a {
     padding: 15px;
     color: #f9f9f9;
@@ -301,30 +306,38 @@ section a:hover {
     margin-bottom: 10px;
 }
 
+/* give the facebook share button the 'facebook blue' background
+    as per http://brandcolors.net/ */
 #social-links a#facebook-button {
     background-color: #3b5998;
 }
 
+/* give the facebook share button the 'twitter blue' background
+    as per http://brandcolors.net/ */
 #social-links a#twitter-button {
     background-color: #55acee;
 }
 
+/* the tick icon needs a green colour, since the quiz has been complete by this point */
 #quiz-complete > i {
     /* colour a nice flat green colour since it's a positive icon */
     color: #2ecc71;
     font-size: 90pt;
 }
 
+/* social links section needs to be decently padded away from everythign else */
 #social-links {
     padding: 20px;
 }
 
 /* Quizzes page styles */
+/* quiz status is light and darnk blue */
 .quiz-status {
     color: #27ae60;
     font-weight: 200;
 }
 
+/* quiz history clearing button must be centered and decently spaced to avoid accidental hits */
 #quiz-clear-section {
     text-align: center;
     margin: 20px;
