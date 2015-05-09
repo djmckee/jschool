@@ -76,39 +76,40 @@ var apiUrl = "http://my-cool-api.com/api/endpoint";
 // set the request method in a string (i.e. POST, GET, DELETE, etc.)
 var requestType = "POST";
 
-                    // set the request data to POST too (if it's a POST request)...
-                    var postData = "data=Hello%20World";
+// set the request data to POST too (if it's a POST request)...
+var postData = "data=Hello%20World";
 
-                    // set the AJAX request type and URL to the variables we set up previously
-                    ajaxRequest.open(requestType, apiUrl, true);
+// set the AJAX request type and URL to the variables we set up previously
+ajaxRequest.open(requestType, apiUrl, true);
 
-                    // add an anonymous 'callback' function to execute once the request is complete...
-                    ajaxRequest.onreadystatechange = function () {
-                    if (ajaxRequest.readyState != 4 || ajaxRequest.status != 200) {
-                    /* an error occurred -
-                    the request has not been carried out correctly */
+// add an anonymous 'callback' function to execute once the request is complete...
+ajaxRequest.onreadystatechange = function () {
 
-                    // let's log the failure...
-                    console.log("AJAX Request failed with status " + String(ajaxRequest.status));
+    if (ajaxRequest.readyState != 4 || ajaxRequest.status != 200) {
+        /* an error occurred -
+        the request has not been carried out correctly */
 
-                    // nothing we can do... give up and return.
-                    return;
-                    }
+        // let's log the failure...
+        console.log("AJAX Request failed with status " + String(ajaxRequest.status));
+
+        // nothing we can do... give up and return.
+        return;
+    }
 
 
-                    /* if we've reached this point we can be sure the request
-                    completed properly, let's log that, and the data we got back... */
+    /* if we've reached this point we can be sure the request
+        completed properly, let's log that, and the data we got back... */
 
-                    // log the success and the status of the request...
-                    console.log("AJAX Request succeeded with status " + String(ajaxRequest.status));
+    // log the success and the status of the request...
+    console.log("AJAX Request succeeded with status " + String(ajaxRequest.status));
 
-                    // and log the data we received back...
-                    console.log("Received data: " + String(ajaxRequest.responseText));
+    // and log the data we received back...
+    console.log("Received data: " + String(ajaxRequest.responseText));
 
-                    };
+};
 
-                    // send the POST data that we prepared earlier
-                    ajaxRequest.send(postData);
+// send the POST data that we prepared earlier
+ajaxRequest.send(postData);
 
                 </code>
             </pre>
