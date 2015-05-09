@@ -379,6 +379,39 @@ var QuizData = new function () {
                     correctAnswer: 3
                 }
             ]
+        }, {
+            title: "AJAX",
+            description: "How can AJAX be used to communicate with API services from JavaScript?",
+            questions: [
+                {
+                    question: "What type of object is used to create AJAX requests in JavaScript?",
+                    answers: [
+                        "HTTPRequest",
+                        "XMLHttpRequest",
+                        "AJAXRequest",
+                        "AJAX"
+                    ],
+                    correctAnswer: 2
+                }, {
+                    question: "What types of HTTP request methods can be carried out with AJAX requests?",
+                    answers: [
+                        "GET and POST",
+                        "GET only",
+                        "POST only",
+                        "All of them"
+                    ],
+                    correctAnswer: 4
+                }, {
+                    question: "What HTTP status code indicates a successful request?",
+                    answers: [
+                        "400",
+                        "202",
+                        "200",
+                        "505"
+                    ],
+                    correctAnswer: 3
+                }
+            ]
         }
 
 

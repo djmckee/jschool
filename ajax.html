@@ -28,35 +28,71 @@
     <section class="lead">
         <h1>AJAX</h1>
 
-        <p>Functions are a key part of JavaScript and allow you to write code that is efficient, without repeating
-            yourself. Aditionally, JavaScript treats functions as objects, so they can be passed around as variables
-            (where the value of the variable is what the function returns).</p>
+        <p>AJAX allows your JavaScript code to communicate with servers over the internet, <a href="http://rve.org.uk/dumprequest" target="_blank">performing HTTP requests with them</a>,
+        and retrieving any data that they may send back - meaning you can use data sent from servers within your web page
+            interactively, no page refreshing needed...</p>
     </section>
     <section>
-        <h2>A simple function</h2>
+        <p class="top-tip">Unsure of what a HTTP request is? <a href="http://www.loadtestingtool.com/blog/general/what-is-http-request/" target="_blank">
+            Find out more about them here</a>, and specifically more <a href="http://rve.org.uk/dumprequest" target="_blank">about what they actually contain here</a>.</p>
 
-        <p>Functions are declared in JavaScript using the function keyword, followed by () brackets to hold any
-            paramters the fucntion requires, and { } brackets, where the code that the fucntion executes is held; and
-            look somewhat similar to methods in Java. Functions are called simply by using their name, followed by ()
-            brackets containing any parameters they need passed in, and then a semi-colon. Below is a simple
-            example...</p>
+        <h2>A simple AJAX request example</h2>
+
+        <p>AJAX allow HTTP requests (of any type - POST, GET, etc.) to be carried out 'in the background' asynchrnously in JavaScript, and their response data (along with response code) to be returned to your JavaScript - meaning that you can then use the data you've received back - for example by formatting it into HTML and adding it to the web page. This means that you can then display new data that you've retrieved from a web server to a user, without them having to refresh the page themselves, as an example.</p>
+        <p>An AJAX request is to be created by creating a <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest" target="_blank">XMLHttpRequest object</a>, and then having a request URL and request method set on it using the .open() method. The request can then be sent with the .send() method. In POST requests, POST data can also be added using the .send(myData) method, passing in your encoded POST data as a parameter (where myData is in the example).</p>
+        <p>The response is handed to a 'callback' function when complete, and this function firstly needs to check if the request was completed successfully by looking at its status code (the .statusCode property, containing a Number, which has the <a href="http://www.w3.org/Protocols/HTTP/HTRESP.html" target="_blank">standard HTTP response code</a> to state how the request was completed), before then using the .responseText to get the raw response data that the server has returned (in the case that the request was a success).</p>
+        <p>A simple example of an AJAX POST request is shown below...</p>
         <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- I got the AJAX request example from http://vanilla-js.com/ and modified it to suit a tutorial context/
+                my tutorial's needs -->
             <pre>
                 <code>
-                    // define the function...
-                    function myFunction() {
-                    // the following code is executed when myFunction is called...
-                    console.log("Hello function world!");
-                    }
+                    // create a new AJAX request
+                    var ajaxRequest = new XMLHttpRequest();
 
-                    // let's call myFunction...
-                    myFunction();
+                    // set the API endpoint URL to carry out the request on...
+                    var apiUrl = "http://my-cool-api.com/api/endpoint";
+
+                    // set the request method in a string (i.e. POST, GET, DELETE, etc.)
+                    var requestType = "POST";
+
+                    // set the request data to POST too (if it's a POST request)...
+                    var postData = "data=Hello%20World";
+
+                    // set the AJAX request's type and URL to the variables we set up previously
+                    ajaxRequest.open(requestType, apiUrl, true);
+
+                    // add an anonymous 'callback' function to execute once the request is complete...
+                    ajaxRequest.onreadystatechange = function () {
+                        if (ajaxRequest.readyState != 4 || ajaxRequest.status != 200) {
+                            /* an error occurred -
+                                the request has not been carried out correctly */
+
+                            // let's log the failure...
+                            console.log("AJAX Request failed with status " + String(ajaxRequest.status));
+
+                            // nothing we can do... give up and return.
+                            return;
+                        }
+
+
+                        /* if we've reached this point we can be sure the request
+                            completed properly, let's log that, and the data we got back... */
+
+                        // log the success and the status of the request...
+                        console.log("AJAX Request succeeded with status " + String(ajaxRequest.status));
+
+                        // and log the data we received back...
+                        console.log("Received data: " + String(ajaxRequest.responseText));
+
+                    };
+
+                    // send the POST data that we prepared earlier
+                    ajaxRequest.send(postData);
 
                 </code>
             </pre>
-        <p class="top-tip">Because functions can be treated as variables, they can also be stored in arrays, or as
-            values within objects, so objects can be given methods - rather than just holding static values. The
-            technical term for treating functions as variables is 'anonymous functions'.</p>
+        <p class="top-tip">200 is the standard response status code for a successful HTTP request - meaning that it's worked as expected. You can view <a href="http://www.w3.org/Protocols/HTTP/HTRESP.html" target="_blank">a full list of possible HTTP response codes here</a>, and include as many as you need to handle within your callback function. <br />Post data should be <a href="http://www.w3schools.com/tags/ref_urlencode.asp" target="_blank">URL Encoded</a> before being sent.</p>
     </section>
 </div>
 
