@@ -1,4 +1,4 @@
-/* fonts.css is a stylesheet that handles font importing for the Jschools website,
+/* fonts.css is a stylesheet that handles font importing for the Jschool website,
     created by Dylan McKee on 16/04/2015
 
     Fonts are located in the fonts subdirectory relative to this CSS file
@@ -6,7 +6,7 @@
     I looked up how to use the @font-face directive here... http://www.w3schools.com/css/css3_fonts.asp
 */
 /* FontAwesome was taken from https://fortawesome.github.io/Font-Awesome/ on 16/04/2015 and is an
-    open source icon webfont, licensed under the permissive MIT license */
+    open source icon web-font, licensed under the permissive MIT license */
 /* Import FontAwesome from it's relevant CSS file */
 @import url("fontawesome.css");
 
@@ -17,7 +17,7 @@
     Credit to the original author, Łukasz Dziedzic, and to Google Fonts for providing
     me with the actual files.
 
-    I downloaded this webfont on 15/04/2015 from https://www.google.com/fonts/specimen/Lato
+    I downloaded this web-font on 15/04/2015 from https://www.google.com/fonts/specimen/Lato
 
 */
 

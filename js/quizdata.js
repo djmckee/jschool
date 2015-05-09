@@ -1,6 +1,6 @@
 // quizdata.js stores quiz data in a JavaScript array of objects (which contain the actual
-// quiz data itsself).
-// I've used this seperate data file approach to provide a decent level of abstraction
+// quiz data itself).
+// I've used this separate data file approach to provide a decent level of abstraction
 // within my JavaScript and split up my data model from my actually code that controls the quiz view.
 // Created by Dylan McKee on 16/04/2015.
 
@@ -36,7 +36,7 @@ var QuizData = new function () {
                     ],
                     correctAnswer: 2
                 }, {
-                    question: "Which langauges inspired JavaScript's syntax?",
+                    question: "Which languages inspired JavaScript's syntax?",
                     answers: [
                         "HTML & XML",
                         "Python & Ruby",
@@ -46,7 +46,7 @@ var QuizData = new function () {
                     ],
                     correctAnswer: 3
                 }, {
-                    question: "Which langauges can be ran in the browser?",
+                    question: "Which languages can be ran in the browser?",
                     answers: [
                         "Only Python",
                         "Only JavaScript",
@@ -61,7 +61,7 @@ var QuizData = new function () {
             description: "JavaScript's key built-in data types.",
             questions: [
                 {
-                    question: "Given the following decleration: var a = 5.65; - what type would a be?",
+                    question: "Given the following declaration: var a = 5.65; - what type would a be?",
                     answers: [
                         "A float",
                         "A double",
@@ -202,7 +202,7 @@ var QuizData = new function () {
                     ],
                     correctAnswer: 4
                 }, {
-                    question: "True or False: JavaScript should be in seperate files that are linked to when used on production websites?",
+                    question: "True or False: JavaScript should be in separate files that are linked to when used on production websites?",
                     answers: [
                         "True",
                         "False"
@@ -254,7 +254,7 @@ var QuizData = new function () {
                         "document.find('p')",
                         "document.querySelectorAll('&lt;p&gt;')",
                         "document.querySelectorAll('p')",
-                        "documnet.selectParagraphTags()"
+                        "document.selectParagraphTags()"
                     ],
                     correctAnswer: 3
                 }, {
@@ -298,7 +298,7 @@ var QuizData = new function () {
                     answers: [
                         "The web browser is slow",
                         "The window may close if you do not wait for it to load",
-                        "The DOM needs to have fully loaded before you can use JavaScript to maninpulate it"
+                        "The DOM needs to have fully loaded before you can use JavaScript to manipulate it"
                     ],
                     correctAnswer: 3
                 }

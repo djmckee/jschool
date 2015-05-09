@@ -9,11 +9,11 @@
 </head>
 <body>
 <header>
-    <!-- Page header containing logo/site title, with a navbar
+    <!-- Page header containing logo/site title, with a navigation bar
     nested inside of it-->
     <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
 
-    <!-- Navbar in the semantically nice nav element -->
+    <!-- navigation bar in the semantically nice nav element -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -43,7 +43,7 @@
 
         <h2>A simple AJAX request example</h2>
 
-        <p>AJAX allow HTTP requests (of any type - POST, GET, etc.) to be carried out 'in the background' asynchrnously
+        <p>AJAX allow HTTP requests (of any type - POST, GET, etc.) to be carried out 'in the background' asynchronously
             in JavaScript, and their response data (along with response code) to be returned to your JavaScript -
             meaning that you can then use the data you've received back - for example by formatting it into HTML and
             adding it to the web page. This means that you can then display new data that you've retrieved from a web
@@ -62,7 +62,7 @@
             the raw response data that the server has returned (in the case that the request was a success).</p>
 
         <p>A simple example of an AJAX POST request is shown below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
         <!-- I got the AJAX request example from http://vanilla-js.com/ and modified it to suit a tutorial context/
                 my tutorial's needs -->
             <pre>
@@ -79,7 +79,7 @@
                     // set the request data to POST too (if it's a POST request)...
                     var postData = "data=Hello%20World";
 
-                    // set the AJAX request's type and URL to the variables we set up previously
+                    // set the AJAX request type and URL to the variables we set up previously
                     ajaxRequest.open(requestType, apiUrl, true);
 
                     // add an anonymous 'callback' function to execute once the request is complete...

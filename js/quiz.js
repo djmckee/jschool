@@ -30,7 +30,7 @@ var Quiz = new function () {
             // this needs to be a in a try/catch block because invalid quiz names throw
             // an ugly InvalidCharacterError - or a TypeError - which needs catching...
 
-            // okay, work out what quiz we want... Base 64 decode the URL's quizid component...
+            // okay, work out what quiz we want... Base 64 decode the URLs 'quizid' component...
             // get URL string piece
             var getQueryComponents = window.location.search.split("?")[1];
             var quizIdEncoded = getQueryComponents.split("quizid=")[1];
@@ -60,9 +60,9 @@ var Quiz = new function () {
         }
 
 
-        //okay, if quizQuestions is null by this point, something's gone *horribly* wrong.
+        //okay, if quizQuestions is null by this point, something has gone *horribly* wrong.
         if (quizQuestions.length < 1 || quizQuestions === null) {
-            // something's gone horribly wrong - let's direct users to the quizzes page...
+            // something went horribly wrong - let's direct users to the quizzes page...
             // remove the progress and answer sections...
             $('#progress-update').remove();
             $('#answer-container').remove();
@@ -156,7 +156,7 @@ var Quiz = new function () {
         // set question label.
         $('#question-text').text(questionText);
 
-        // get the mulitple choice answers.
+        // get the multiple choice answers.
         var answersArray = currentQuestion.answers;
 
         // iterate through the array, making the answer buttons...
@@ -241,13 +241,13 @@ var Quiz = new function () {
             $('#progress-update').remove();
             $('#question-container').remove();
 
-            // programatically create the HTML elements required for the 'quiz complete' section
+            // programmatically create the HTML elements required for the 'quiz complete' section
             var quizCompleteElement = '<div id="quiz-complete" class="fade-in">';
 
             // add a nice large tick icon from FontAwesome
             quizCompleteElement += '<i class="fa fa-check-circle-o"></i>';
 
-            // add 'well done' message in pargraph element and append to quiz complete element
+            // add 'well done' message in paragraph element and append to quiz complete element
             quizCompleteElement += '<p>' + completionString + '</p>';
 
             // append 'result will be saved' string...

@@ -9,11 +9,11 @@
 </head>
 <body>
 <header>
-    <!-- Page header containing logo/site title, with a navbar
+    <!-- Page header containing logo/site title, with a navigation bar
     nested inside of it-->
     <a href="index.html"><h1 id="header-logo">Jschool</h1></a>
 
-    <!-- Navbar in the semantically nice nav element -->
+    <!-- navigation bar in the semantically nice nav element -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -40,7 +40,7 @@
         <p>The simplest way to get started with DOM element selection is to select by ID. You give the HTML element you
             wish to select an ID value, and then use the DOM's document.getElementById("whatever-the-id-was") function
             to select the object. An example of this (with associated HTML) is below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;
@@ -82,7 +82,7 @@
         <p>The major difference between these is that querySelector selects only ONE element (the first one it matches),
             whereas querySelectorAll returns an array of ALL of the matched elements - making it far more useful. Both
             return nil if no elements are matched. An example of these methods in action is below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;
@@ -138,7 +138,7 @@
             below.</p>
 
         <p>To get and set raw HTML, simply replace .textContent with .innerHTML.</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;
@@ -211,7 +211,7 @@
             "cool-unique-id";</p>
 
         <p>An example of some simple and some more complex styling is below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;
@@ -276,7 +276,7 @@
             function (remembering here that functions in JavaScript can be passed as variables!).</p>
 
         <p>An example of the onclick listener being added is shown below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;
@@ -327,11 +327,11 @@
             they haven't then your code won't be able to affect them.</p>
 
         <p>This is clearly a major issue (and has been left out of previous Jschool examples to cut down on code
-            complexity, but may be why some examples don't work striaght away).</p>
+            complexity, but may be why some examples don't work straight away).</p>
 
         <p>To ensure that the DOM has been fully rendered before executing your script, you should add an event for the
             window's .onload event handler (via window.onload). An example of this in action is below...</p>
-        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be unformatted, so indentation does not work! -->
+        <!-- Code snipping to follow... no indentation inside of code tags because the pre tag forces them to be un-formatted, so indentation does not work! -->
             <pre>
                 <code>
                     &lt;html&gt;

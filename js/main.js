@@ -7,7 +7,7 @@
 // within the js/lib directory.
 
 /* RequireJS is a library that I downloaded from http://requirejs.org/ on the
- 16/04/15, and is licensed under the MIT liscence.
+ 16/04/15, and is licensed under the MIT license.
 
  It is being used as a dependency/library management system within this project.
 
@@ -83,13 +83,13 @@ require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificateg
             // I found the following counting method from http://stackoverflow.com/questions/126100/how-to-efficiently-count-the-number-of-keys-properties-of-an-object-in-javascrip
             var completed = Object.keys(completedResults).length;
 
-            // fill in deafult text in case the user hasn't completed quizzes yet
+            // fill in default text in case the user hasn't completed quizzes yet
             var stringToInclude = "It doesn't look like you've completed any quizzes yet - get started by choosing from the selection below!";
 
             if (completed > 0) {
                 // okay the user's actually done something worth writing about.
 
-                // concatenate the string together using String() to typecase Numbers to Strings for simple concatenation purposes
+                // concatenate the string together using String() to typecast Numbers to Strings for simple concatenation purposes
                 stringToInclude = "You've completed " + String(completed) + " of the quizzes so far - well done!";
 
             }

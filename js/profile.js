@@ -38,10 +38,10 @@ var Profile = new function () {
 
     this.saveProfileData = function () {
         // serialize the contents of the data field of the profileData object into a JSON string...
-        var seraialized = JSON.stringify(this.profileData.data);
+        var serialized = JSON.stringify(this.profileData.data);
 
         // save the string to local storage...
-        window.localStorage.setItem(PROFILE_DATA_SAVE_KEY, seraialized);
+        window.localStorage.setItem(PROFILE_DATA_SAVE_KEY, serialized);
 
     };
 

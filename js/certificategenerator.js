@@ -8,7 +8,7 @@
 var CertificateGenerator = new function () {
 
     // Storing SVG data as a variable because AJAX doesn't work locally in Google Chrome due to security reasons, grr.
-    // In real life this would obviously be serverside in an appropriate location in its own SVG file, but this sadly
+    // In real life this would obviously be server-side in an appropriate location in its own SVG file, but this sadly
     // isn't possible here due to Cross Site Scripting security limitations.
     // The SVG data is from certificate.svg, in the images folder.
     var certificateSvgData = '<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="841.89px" height="595.28px" viewBox="0 0 841.89 595.28" enable-background="new 0 0 841.89 595.28" xml:space="preserve">';
@@ -42,7 +42,7 @@ var CertificateGenerator = new function () {
         // append it to the end of the body...
         $('body').append(svgElement);
 
-        // okay, pefrorm SVG rendering...
+        // okay, perform SVG rendering...
         // prompt user for their name to use in the certificate using an alert...
         var name = prompt('Please enter your name for use in the certificate:');
 
