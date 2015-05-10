@@ -57,6 +57,8 @@ var Profile = new function () {
     };
 
     this.getCompletedQuizScores = function () {
+        // load existing data...
+        this.loadProfileData();
 
         // return score data.
         return this.profileData.data;
