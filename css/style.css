@@ -14,7 +14,6 @@
 
 /* Body styles affect everything in the document - so very simply setting background-color and font up */
 body {
-
     /* A slightly off white background colour, in keeping with flat design */
     background-color: #f9f9f9;
 
@@ -26,10 +25,13 @@ body {
 header {
     /* A dark blue background for the banner, with some padding around it to give it proper shape/size */
     background-color: #2c3e50;
+
     /* the header needs a minimum height so that desktop sized screens display it properly */
     min-height: 70px;
+
     /* some padding means logos/links don't collide with the sides of the viewport */
     padding: 40px 50px 10px;
+
     /* a light font makes the logo/nav links look good! */
     font-weight: 300;
 }
@@ -38,25 +40,37 @@ header {
 nav {
     /* nav needs to be displayed to the right of the logo within the banner, so display inline where there's space */
     display: inline;
+
 }
 
 /* header logo is the large logo on the top left of the page within the header banner */
 #header-logo {
     /* give it a large font, with light colour to contrast with the dark blue banner background */
     color: #ecf0f1;
+
+    /* a large font is needed for the logo */
     font-size: 32pt;
+
+    /* the logo needs to be displayed inline so that it can be physically 'next to/oppisate' the nav */
     display: inline;
 }
 
 /* links within the header don't want an ugly underline, they simply need a nice visible white colour */
 header a {
+    /* links don't want to (normally) be underlined! */
     text-decoration: none;
+
+    /* links are in a tasteful dark blue colour */
     color: #ecf0f1;
+
 }
 
 /* the navigation links must be floated to the right of the logo, and the list they're in doesn't require style (in the way of bullet points) */
 nav ul {
+    /* navigation items don't want bullet points */
     list-style: none;
+
+    /* the nav bar is to be shown on the right (on large desktop sized viewports) */
     float: right;
 }
 
@@ -365,36 +379,53 @@ section a:hover {
 /* tutorial text should be light and nicely spaced (in terms of line spacing)
     to improve readability - also, decently sized */
 #tutorial-container > section {
+    /* light fonts look good */
     font-weight: 200;
+
+    /* line spacing to improve readability */
     line-height: 1.2;
+
+    /* 14pt gives good readabiltiy for normal body text */
     font-size: 14pt;
 }
 
 /* tutorial section headings (in h2's) require large-ish fonts */
 #tutorial-container > section > h2 {
+    /* a fairly large font size */
     font-size: 20pt;
-    margin-top: 10px;
-    margin-bottom: 10px;
+
+    /* vertical margins to separate headings, and horizontal
+        auto margin keeps them centered horizontally */
+    margin: 10px auto;
 }
 
 /* a little spacing between tutorial paragraphs makes things far more readable */
 #tutorial-container > section > p {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* vertical margins to separate tutorial paragraphs, and horizontal
+        auto margin keeps them centered horizontally */
+    margin: 10px auto;
+
 }
 
 /* the last thing in a tutorial container is always a 'take the quiz' button section,
     which needs center alignment - along with decent vertical spacing */
 #tutorial-container > section:last-child {
+    /* center the take the quiz button */
     text-align: center;
+
+    /* the take the quiz button requires decent vertical seperation,
+        and horizontal centering */
     margin: 20px auto;
 }
 
 /* tutorial videos need to be centered, and decently padded */
 .video-container {
+    /* center videos */
     margin-left: auto;
     margin-right: auto;
     text-align: center;
+
+    /* give videos some padding to decently separate them from text content */
     padding: 15px;
 
 }
@@ -402,9 +433,15 @@ section a:hover {
 /* video should have a maximum width, and scale up to that - keeping height at
     auto so that it gets proportionally sized all of the time */
 .video-container > video {
+    /* attempt to make videos as large as possible up to a sane max size */
     width: 100%;
-    height: auto;
+
+    /* max width ensures videos don't go stupidly large */
     max-width: 720px;
+
+    /* auto height ensures videos scale proportionally */
+    height: auto;
+
 }
 
 /* code examples need to be in a monospaced font! */
@@ -417,14 +454,22 @@ code {
 
     /* code font doesn't need to be ridiculously large... */
     font-size: 12pt;
+
 }
 
 /* code examples need to be preceded by a 'Code Example title too' */
 code::before {
+    /* add in the 'Code Example' title content */
     content: "Code Example";
+
+    /* display block to ensure the pre-code heading is extra visible and
+        separated properly from the content text */
     display: block;
+
+    /* make it large(r) and bold because it's a title */
     font-size: 16pt;
     font-weight: bold;
+
 }
 
 /* top tips are special highlighted features within tutorials */
@@ -433,16 +478,25 @@ code::before {
     color: #ecf0f1;
     padding: 15px;
     margin-top: 10px;
+
     /* top tips need rounded corners */
     border-radius: 10px;
+
 }
 
 /* they require a title to be inserted before them too... */
 #tutorial-container > section > p.top-tip::before {
+    /* add in the 'Top Tip' title content */
     content: "Top Tip";
+
+    /* display block to ensure the top tip heading is extra visible and
+        separated properly from the content text */
     display: block;
+
+    /* make it large(r) and bold because it's a title */
     font-size: 16pt;
     font-weight: bold;
+
 }
 
 /* Credits */
@@ -450,9 +504,18 @@ code::before {
     position absolute credits), and with a concrete height so the animations
     can work properly */
 #scrolling-credits {
+    /* the container shouldn't show anything that overflows - otherwise the
+        animation won't work properly (as content will constantly be on show,
+        you won't see it nicely sliding into the container) */
     overflow: hidden;
+
+    /* position relatively in the container */
     position: relative;
+
+    /* a suitable fixed height is required to allow the animated rolling credits
+        enough room to properly display */
     height: 420px;
+
 }
 
 /* the div is what actually scrolls - by applying the credit-roll animation defined
@@ -460,11 +523,21 @@ code::before {
     and width set to provide sufficient padding at runtime thanks to the
     CSS3 calc function */
 #scrolling-credits > div {
+    /* absolute position required to act as a 'container' */
     position: absolute;
+
+    /* center all of the credits */
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    /* calculate a suitable width, giving ourselves 50px of padding -
+        the calc is required because a fixed with is necessary for the animtaions
+        to work properly, and a simple percentage wouldn't scale well on very large
+        or very small screens */
     width: calc(100% - 50px);
+
+    /* bumped up line spacing improves readability */
     line-height: 200%;
 
     /* Webkit animation prefixes don't validate with W3C - but, they're required
@@ -484,7 +557,10 @@ code::before {
 
 /* style the credit's text up */
 #scrolling-credits > div > p {
+    /* a light font looks good */
     font-weight: 200;
+
+    /* readably large */
     font-size: 16pt;
 
 }
@@ -494,32 +570,53 @@ code::before {
     /* below 745px, a collision between links and credit in the footer occurs,
         stop this from happening by displaying it in a block instead of floating */
     footer p {
+        /* give decent vetical spacing */
         margin-top: 16px;
+
+        /* don't float - we're displaying as proper blocks */
         float: none;
+
+        /* align text in the center of smaller screens */
         text-align: center;
+
+        /* inherit position - to reset from floating position if the viewport's resized down from a larger one */
         position: inherit;
+
     }
 
     /* display the list of links in block form, centered, with a decent amount of spacing between them vertically */
     footer > ul > li {
+        /* align footer nav links in the center on small screens */
         text-align: center;
+
+        /* a decent margin between them gives good spacing */
         margin-right: 10px;
-        display: block;
         margin-top: 10px;
+
+        /* display the links in block, one atop another */
+        display: block;
+
     }
 
     /* display the nav links in the header in block form, un-floated, with some vertical spacing between them */
     nav ul {
+        /* navigation list SHOULD NOT be floating on small width displays */
         float: none;
+
     }
 
     nav ul li {
+        /* nav list items must be shown in block on small screens */
         display: block;
+
+        /* items need decent spacing between them too */
         margin-top: 10px;
+
     }
 
     /* credits need a longer run on smaller screens due to text wrapping - increase the height */
     #scrolling-credits {
+        /* a decent height for credits on smaller width screens */
         height: 720px;
     }
 
