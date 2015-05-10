@@ -309,45 +309,90 @@ section a:hover {
 #tutorial-section > div > div > i {
     /* a light off-white 'flat' foreground colour */
     color: #f9f9f9;
+
+    /* a dark blue background colour */
     background-color: #2c3e50;
+
+    /* padding makes the icon surrounds sufficiently large */
     padding: 20px;
+
+    /* give them rounded corners for coolness */
     border-radius: 10px;
+
+    /* make icons large! */
     font-size: 40px;
+
+    /* and make the icon containers at least as large as the icons themselves */
     min-width: 40px;
+
 }
 
-/* a re-usable rounded button to apply to link elements, with a green background colour */
+/* a re-usable rounded 'button' to apply to link elements, with a green background colour */
 .rounded-button {
+    /* give a positively flat mid-green background colour */
     background-color: #27ae60;
+
+    /* button text must be UPPERCASE for impact! */
     text-transform: uppercase;
+
+    /* button text in a flat off-white */
     color: #f9f9f9;
+
+    /* padding turns a standard link into a cool 'button' looking element */
     padding: 10px 35px;
+
+    /* a small off-white border for emphasis */
     border: 1px #f9f9f9 solid;
+
+    /* lots of border radius leading to very rounded corners */
     border-radius: 20px;
+
+    /* don't underline button link text! */
     text-decoration: none;
+
+    /* light text looks cooler */
     font-weight: 200;
+
 }
 
 /* the button turns a lighter green when hovered, and its text goes bolder (but not underlined) */
 .rounded-button:hover {
+    /* make the button go a lighter green (in terms of background) */
     background-color: #2ecc71;
+
+    /* still don't underline... */
     text-decoration: none;
+
+    /* however, do go bold for emphasis and to indicate selection! */
     font-weight: bolder;
+
 }
 
 /* Quiz styles */
 /* question text is to contain the text for the question - medium weighted, fairly large */
 #question-text {
+    /* questions in a mid-weight font */
     font-weight: 400;
+
+    /* make them large! */
     font-size: 26pt;
+
+    /* and provide plenty of vertical spacing */
     margin-top: 20px;
+
 }
 
 /* the title of the quiz - large, bold, prominent */
 #quiz-title {
+    /* provide a good level of vertical spacing between neighbouring elements */
     margin-bottom: 20px;
+
+    /* make title bold for emphasis */
     font-weight: bold;
+
+    /* extra large font for headings! */
     font-size: 35pt;
+
 }
 
 /* a slightly rounded, wide button - to hold possible quiz answer choices */
