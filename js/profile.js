@@ -46,6 +46,9 @@ var Profile = new function () {
     };
 
     this.addQuizScoreToProfileData = function (quizName, quizScore) {
+        // load existing data so as not to overwrite existing completions with the completion status of just one quiz...
+        this.loadProfileData();
+
         // set profileData data key/value pair to what we've been passed....
         this.profileData.data[quizName] = quizScore;
 

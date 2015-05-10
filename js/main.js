@@ -13,6 +13,7 @@
 
  */
 // set up RequireJS, configuring the libraries that I wish to import with it...
+// (configuring as per the docs... http://requirejs.org/docs/jquery.html#modulename)
 require.config({
     baseUrl: 'js/lib',
     paths: {
