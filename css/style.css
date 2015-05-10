@@ -63,7 +63,7 @@ nav {
     /* a large font is needed for the logo */
     font-size: 32pt;
 
-    /* the logo needs to be displayed inline so that it can be physically 'next to/oppisate' the nav */
+    /* the logo needs to be displayed inline so that it can be physically 'next to/opposite' the nav */
     display: inline;
 
 }
@@ -106,7 +106,7 @@ nav ul li {
     /* rounded corners look cool and modern */
     border-radius: 4px;
 
-    /* vertical margins give good sepeation between buttons in the nav bar */
+    /* vertical margins give good separation between buttons in the nav bar */
     margin-left: 5px;
     margin-right: 5px;
 
@@ -263,7 +263,7 @@ section a:hover {
     /* pad the content out for better readability */
     padding: 20px;
 
-    /* margins provide seperation within the grid */
+    /* margins provide separation within the grid */
     margin: 10px 10px;
 
     /* round off corners - they look cool! */
@@ -479,7 +479,7 @@ section a:hover {
 
 /* result-saved-string is a smaller bit of text informing the user of the save success */
 #quiz-complete #result-saved-string {
-    /* samll font size for less significant informational text */
+    /* small font size for less significant informational text */
     font-size: 15pt;
 
 }
@@ -590,7 +590,7 @@ section a:hover {
 
 }
 
-/* the hover pseudoclass allows changing of the button on hover */
+/* the hover pseudo-class allows changing of the button on hover */
 .red-button:hover {
     /* go for a brighter red on hover! */
     background-color: #e74c3c;
@@ -608,7 +608,7 @@ section a:hover {
     /* line spacing to improve readability */
     line-height: 1.2;
 
-    /* 14pt gives good readabiltiy for normal body text */
+    /* 14pt gives good readability for normal body text */
     font-size: 14pt;
 }
 
@@ -636,7 +636,7 @@ section a:hover {
     /* center the take the quiz button */
     text-align: center;
 
-    /* the take the quiz button requires decent vertical seperation,
+    /* the take the quiz button requires decent vertical separation,
         and horizontal centering */
     margin: 20px auto;
 }
@@ -755,7 +755,7 @@ code::before {
     margin-right: auto;
 
     /* calculate a suitable width, giving ourselves 50px of padding -
-        the calc is required because a fixed with is necessary for the animtaions
+        the calc is required because a fixed with is necessary for the animations
         to work properly, and a simple percentage wouldn't scale well on very large
         or very small screens */
     width: calc(100% - 50px);
@@ -783,7 +783,7 @@ code::before {
     /* a light font looks good */
     font-weight: 200;
 
-    /* readably large */
+    /* readability large */
     font-size: 16pt;
 
 }
@@ -793,7 +793,7 @@ code::before {
     /* below 745px, a collision between links and credit in the footer occurs,
         stop this from happening by displaying it in a block instead of floating */
     footer p {
-        /* give decent vetical spacing */
+        /* give decent vertical spacing */
         margin-top: 16px;
 
         /* don't float - we're displaying as proper blocks */
@@ -802,7 +802,7 @@ code::before {
         /* align text in the center of smaller screens */
         text-align: center;
 
-        /* inherit position - to reset from floating position if the viewport's resized down from a larger one */
+        /* inherit position - to reset from floating position if the viewport's re-sized down from a larger one */
         position: inherit;
 
     }
