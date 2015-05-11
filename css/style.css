@@ -766,17 +766,21 @@ code::before {
     /* bumped up line spacing improves readability */
     line-height: 200%;
 
-    /* Webkit animation prefixes don't validate with W3C - but, they're required
-        to make CSS animations work properly in Google Chrome. I decided
-        that support for the world's most popular web browser was more important
+    /* Webkit and moz animation prefixes don't validate with W3C - but, they're required
+        to make CSS animations work properly in Google Chrome and Firefox. I decided
+        that support for the world's most popular web browsers was more important
         than 100% validation */
     -webkit-animation-name: credit-roll;
+    -moz-animation-name: credit-roll;
     animation-name: credit-roll;
     -webkit-animation-duration: 3s;
+    -moz-animation-duration: 3s;
     animation-duration: 3s;
     -webkit-animation-direction: normal;
+    -moz-animation-direction: normal;
     animation-direction: normal;
     -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
 
 }
