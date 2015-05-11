@@ -745,12 +745,12 @@ code::before {
 }
 
 /* the div is what actually scrolls - by applying the credit-roll animation defined
-    in the animations.css file. Position absolute to make the 'top' property work as required,
+    in the animations.css file. Position to make the 'top' property work as required,
     and width set to provide sufficient padding at runtime thanks to the
     CSS3 calc function */
 #scrolling-credits > div {
-    /* absolute position required to act as a 'container' */
-    position: absolute;
+    /* inherit positioning required for cross-platform/browser compatibility */
+    position: inherit;
 
     /* center all of the credits */
     text-align: center;
