@@ -580,9 +580,9 @@ section a:hover {
     /* align the button in the center */
     text-align: center;
 
-    /* a good amount of margin all around to keep good spacing and
+    /* a good amount of padding all around to keep good spacing and
         reduce accidental hit potential */
-    margin: 20px;
+    padding: 35px;
 
 }
 
