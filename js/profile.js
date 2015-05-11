@@ -18,11 +18,11 @@ var Profile = new function () {
         // to be called on quiz page initialisation/homepage initialisation.
         // this function loads in profile data from local storage, into the data field of the variable in this file.
 
-        // get item from localStorage
-        var serialized = window.localStorage.getItem(PROFILE_DATA_SAVE_KEY);
+        // get item from localStorage (using the SimpleStore.js polyfill)
+        var data = store(PROFILE_DATA_SAVE_KEY)
 
         // if there's nothing there give up, set the data field to a blank object and return...
-        if (serialized === null) {
+        if (data === null) {
             // no data to retrieve,
             // set data field to a blank object...
             this.profileData.data = {};
@@ -30,18 +30,14 @@ var Profile = new function () {
             return;
         }
 
-        // okay we've verified there's some serialized data, make it into an object by parsing the JSON...
-        // and set the de-serialized object to be the data field of the profileData object.
-        this.profileData.data = JSON.parse(serialized);
+        // okay we've verified there's some data, set it equal to the current profile data...
+        this.profileData.data = data;
 
     };
 
     this.saveProfileData = function () {
-        // serialize the contents of the data field of the profileData object into a JSON string...
-        var serialized = JSON.stringify(this.profileData.data);
-
-        // save the string to local storage...
-        window.localStorage.setItem(PROFILE_DATA_SAVE_KEY, serialized);
+        // save the data to local storage... (using SimpleStore.js polyfill abstraction layer)
+        store(PROFILE_DATA_SAVE_KEY, this.profileData.data);
 
     };
 
@@ -65,8 +61,8 @@ var Profile = new function () {
     };
 
     this.clearAllProfileDataForever = function () {
-        // reset local storage data! The user wishes to reset their account.
-        window.localStorage.clear();
+        // reset local storage data by setting a null value for the key in the SimpleStore.js polyfill abstraction
+        store(PROFILE_DATA_SAVE_KEY, null);
     }
 
 };

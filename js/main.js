@@ -6,7 +6,8 @@
 // 3rd party JavaScript libraries that I've downloaded and am using are stored
 // within the js/lib directory.
 
-/* RequireJS is a library that I downloaded from http://requirejs.org/ on the
+/*
+ RequireJS is a library that I downloaded from http://requirejs.org/ on the
  16/04/15, and is licensed under the MIT license.
 
  It is being used as a dependency/library management system within this project.
@@ -21,8 +22,11 @@ require.config({
         // It is licensed under the jQuery license
         jquery: 'jquery-2.1.4',
         // I downloaded the highlight.js library from https://highlightjs.org/
-        // on 16/04/15. It is licensed under a suitably permissive library.
+        // on 16/04/15. It is licensed under a suitably permissive license.
         highlight: 'highlight.pack',
+        // I downloaded SimpleStore.js from https://gist.github.com/Fluidbyte/4718380
+        // on 11/05/15. It was originally authored by https://gist.github.com/Fluidbyte
+        store: 'SimpleStore',
         profileData: '../profile',
         quizData: '../quizdata',
         quiz: '../quiz',
@@ -31,7 +35,7 @@ require.config({
 });
 
 // import our requirements - bringing the libraries we specified above into scope - and begin the actual JavaScripting
-require(["jquery", "highlight", "profileData", "quizData", "quiz", "certificategenerator"], function () {
+require(["jquery", "highlight", "store", "profileData", "quizData", "quiz", "certificategenerator"], function () {
     // this code is called once RequireJS has loaded the libraries I require.
     $(document).ready(function () {
         // whilst library loading will *probably* take longer than loading the DOM,
