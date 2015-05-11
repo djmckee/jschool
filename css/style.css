@@ -502,6 +502,9 @@ section a:hover {
 
 /* social share buttons are well-padded links with rounded corners and borders */
 #social-links a {
+    /* social links need a light text colour to contrast on the background */
+    color: #f9f9f9;
+
     /* padding to make them 'button like' rather than just text links */
     padding: 15px;
 
