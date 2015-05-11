@@ -791,8 +791,9 @@ code::before {
 
 }
 
-/* Media queries for screens smaller than standard desktop */
-@media screen and (max-width: 745px) {
+/* Media queries for screens smaller than standard desktop -
+    using em's rather than pixels for better screen zoom/'10 foot UI' support scaling */
+@media screen and (max-width: 47em) {
     /* below 745px, a collision between links and credit in the footer occurs,
         stop this from happening by displaying it in a block instead of floating */
     footer p {
