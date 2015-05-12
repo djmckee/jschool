@@ -9,6 +9,7 @@ Jschool was created by [Dylan McKee](http://dylanmckee.co.uk) as a [CSC1026 proj
 * [jQuery](https://jquery.com/)
 * [requirejs](http://requirejs.org/)
 * [highlight.js](https://highlightjs.org/) with [railscasts theme](https://github.com/isagalaev/highlight.js/blob/master/src/styles/railscasts.css)
+* [SimpleStore.js](https://gist.github.com/Fluidbyte/4718380)
 * [FontAwesome](https://fortawesome.github.io/Font-Awesome/)
 * [MeyerWeb CSS Reset](http://meyerweb.com/eric/tools/css/reset/)
 
